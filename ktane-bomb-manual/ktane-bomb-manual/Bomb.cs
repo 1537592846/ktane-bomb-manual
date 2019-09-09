@@ -13,6 +13,7 @@ namespace ktane_bomb_manual
             BatteryAA = 0;
             Ports = new List<Port>();
             Indicators = new List<Indicator>();
+            Modules = new List<Module>();
         }
 
         public int Strikes { get; set; }
@@ -21,6 +22,7 @@ namespace ktane_bomb_manual
         public int BatteryAA { get; set; }
         public List<Port> Ports { get; set; }
         public List<Indicator> Indicators { get; set; }
+        public List<Module> Modules { get; set; }
 
         public Port GetPort(string port)
         {
@@ -104,6 +106,12 @@ namespace ktane_bomb_manual
     {
         public string Tag;
         public bool LitIndicator;
+    }
+
+    public class Module
+    {
+        public dynamic ModuleObject;
+        public bool Solved;
     }
 
     public enum ExistingPorts
