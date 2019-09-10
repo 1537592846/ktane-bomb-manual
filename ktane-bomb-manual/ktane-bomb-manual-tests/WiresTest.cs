@@ -24,28 +24,28 @@ namespace Tests
             wiresModule.WireColors.Add("red");
             wiresModule.WireColors.Add("black");
             wiresModule.WireColors.Add("red");
-            Assert.AreEqual("Cut the third one.", wiresModule.WireToCut(bomb), "Error Test #1", null);
+            Assert.AreEqual("Cut the third one.", wiresModule.Solve(bomb), "Error Test #1", null);
 
             //Test #2 - Cut the last wire
             wiresModule = new Wires();
             wiresModule.WireColors.Add("white");
             wiresModule.WireColors.Add("yellow");
             wiresModule.WireColors.Add("red");
-            Assert.AreEqual("Cut the third one.", wiresModule.WireToCut(bomb), "Error Test #2", null);
+            Assert.AreEqual("Cut the third one.", wiresModule.Solve(bomb), "Error Test #2", null);
 
             //Test #3 - Cut the second wire
             wiresModule = new Wires();
             wiresModule.WireColors.Add("black");
             wiresModule.WireColors.Add("black");
             wiresModule.WireColors.Add("black");
-            Assert.AreEqual("Cut the second one.", wiresModule.WireToCut(bomb), "Error Test #3", null);
+            Assert.AreEqual("Cut the second one.", wiresModule.Solve(bomb), "Error Test #3", null);
 
             //Test #4 - Cut the second wire
             wiresModule = new Wires();
             wiresModule.WireColors.Add("blue");
             wiresModule.WireColors.Add("blue");
             wiresModule.WireColors.Add("white");
-            Assert.AreEqual("Cut the second one.", wiresModule.WireToCut(bomb), "Error Test #4", null);
+            Assert.AreEqual("Cut the second one.", wiresModule.Solve(bomb), "Error Test #4", null);
         }
 
         [Test]

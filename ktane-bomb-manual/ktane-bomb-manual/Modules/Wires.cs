@@ -4,7 +4,7 @@ using System.Speech.Recognition;
 
 namespace ktane_bomb_manual.Modules
 {
-    public class Wires
+    public class Wires : Module
     {
         public Wires()
         {
@@ -12,6 +12,12 @@ namespace ktane_bomb_manual.Modules
         }
 
         public List<string> WireColors { get; set; }
+
+        public override string Solve(Bomb bomb)
+        {
+            Solved = true;
+            return WireToCut(bomb);
+        }
 
         public int ColorCount(string color)
         {
@@ -25,7 +31,7 @@ namespace ktane_bomb_manual.Modules
 
         public string WireToCut(Bomb bomb)
         {
-            string wireToCut="";
+            string wireToCut = "";
             switch (WireColors.Count)
             {
                 case 3: wireToCut = ThreeWires(bomb); break;
@@ -41,13 +47,13 @@ namespace ktane_bomb_manual.Modules
             if (ColorCount("red") == 0) return Position(2);
             if (LastColor() == "white") return Position(3);
             if (ColorCount("blue") == 1)
-                Position(WireColors.LastIndexOf("blue")+1);
+                Position(WireColors.LastIndexOf("blue") + 1);
             return Position(3);
         }
 
         public string FourWires(Bomb bomb)
         {
-            if (ColorCount("red") > 1 && bomb.HasSerialLastDigitOdd()) return Position(WireColors.LastIndexOf("red")+1);
+            if (ColorCount("red") > 1 && bomb.HasSerialLastDigitOdd()) return Position(WireColors.LastIndexOf("red") + 1);
             if (ColorCount("red") == 0 && LastColor() == "yellow") return Position(1);
             if (ColorCount("blue") == 1) return Position(1);
             if (ColorCount("yellow") > 1) return Position(4);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ktane_bomb_manual.Modules;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ktane_bomb_manual
@@ -34,20 +35,24 @@ namespace ktane_bomb_manual
             return Indicators.Where(x => x.Tag == tag).FirstOrDefault();
         }
 
+        public void AddStrike()
+        {
+            Strikes += 1;
+        }
+
         public bool HasPort(string port)
         {
-            return GetPort(port) == null;
+            return GetPort(port) != null;
         }
 
         public bool HasIndicator(string tag)
         {
-            return GetIndicator(tag) == null;
+            return GetIndicator(tag) != null;
         }
 
         public bool HasLitIndicator(string tag)
         {
-            return HasIndicator(tag) ? GetIndicator(tag).LitIndicator : false
-;
+            return HasIndicator(tag) ? GetIndicator(tag).LitIndicator : false;
         }
 
         public bool HasSerialChar(char character)
@@ -87,7 +92,7 @@ namespace ktane_bomb_manual
 
         public bool HasManyBatteries(int number)
         {
-            return BatteryAA + BatteryD > number;
+            return BatteryAA + BatteryD >= number;
         }
 
         public bool CanDefuse()
@@ -98,30 +103,25 @@ namespace ktane_bomb_manual
 
     public class Port
     {
+        public Port(string name, int quantity)
+        {
+            Name = name;
+            Quantity = quantity;
+        }
+
         public string Name;
         public int Quantity;
     }
 
     public class Indicator
     {
+        public Indicator(string tag, bool litIndicator)
+        {
+            Tag = tag;
+            LitIndicator = litIndicator;
+        }
+
         public string Tag;
         public bool LitIndicator;
-    }
-
-    public class Module
-    {
-        public dynamic ModuleObject;
-        public bool Solved;
-    }
-
-    public enum ExistingPorts
-    {
-        USB,
-        DVI,
-        Parallel,
-        PS2,
-        RJ45,
-        Serial,
-        Stereo
     }
 }
