@@ -13,13 +13,13 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            var messagem = "";
+            var message = "";
             foreach (var wire in Wires)
             {
-                messagem += ShouldICutThisWire(bomb, wire) + " wire number " + (Wires.IndexOf(wire) + 1) + ". ";
+                message += ShouldICutThisWire(bomb, wire) + " wire number " + (Wires.IndexOf(wire) + 1) + ". ";
             }
             Solved = true;
-            return messagem.TrimEnd();
+            return message.TrimEnd();
         }
 
         public string ShouldICutThisWire(Bomb bomb, ComplicatedWire wire)

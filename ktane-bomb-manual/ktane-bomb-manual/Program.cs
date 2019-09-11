@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ktane_bomb_manual;
+using System;
 using System.Speech.Recognition;
 
-namespace ktane_bomb_manual
+namespace SpeechRecognitionApp
 {
     class Program
     {
@@ -9,14 +10,12 @@ namespace ktane_bomb_manual
         static void Main(string[] args)
         {
             bomb = new Bomb();
-
+            var culture = new System.Globalization.CultureInfo("en-US", true);
+            var speechRecEngine = new SpeechRecognizer(culture:culture);
             // Create an in-process speech recognizer for the en-US locale.  
             using (
-            SpeechRecognitionEngine recognizer =
-              new SpeechRecognitionEngine(
-                new System.Globalization.CultureInfo("en-US")))
+            SpeechRecognizer recognizer = speechRecEngine)
             {
-
                 // Create and load a dictation grammar.  
                 recognizer.LoadGrammar(new DictationGrammar());
 
@@ -41,7 +40,7 @@ namespace ktane_bomb_manual
         // Handle the SpeechRecognized event.  
         static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            var command = e.Result.Text;
+            Console.WriteLine("Recognized text: " + e.Result.Text);
         }
     }
 }
