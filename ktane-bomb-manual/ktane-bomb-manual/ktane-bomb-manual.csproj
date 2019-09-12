@@ -47,8 +47,10 @@
     <Compile Include="Bomb.cs" />
     <Compile Include="Modules\Button.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
+    <Compile Include="Modules\ForgetMeNot.cs" />
     <Compile Include="Modules\Keypads.cs" />
     <Compile Include="Modules\Knobs.cs" />
+    <Compile Include="Modules\Maze.cs" />
     <Compile Include="Modules\Module.cs" />
     <Compile Include="Modules\Wires.cs" />
     <Compile Include="Program.cs" />

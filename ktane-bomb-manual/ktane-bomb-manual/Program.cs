@@ -11,10 +11,10 @@ namespace SpeechRecognitionApp
         {
             bomb = new Bomb();
             var culture = new System.Globalization.CultureInfo("en-US", true);
-            var speechRecEngine = new SpeechRecognizer(culture:culture);
+            var speechRecEngine = new SpeechRecognitionEngine(culture: culture);
             // Create an in-process speech recognizer for the en-US locale.  
             using (
-            SpeechRecognizer recognizer = speechRecEngine)
+            SpeechRecognitionEngine recognizer = speechRecEngine)
             {
                 // Create and load a dictation grammar.  
                 recognizer.LoadGrammar(new DictationGrammar());
