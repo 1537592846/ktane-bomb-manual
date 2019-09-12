@@ -25,6 +25,11 @@ namespace ktane_bomb_manual
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
 
+        public void AddStrike()
+        {
+            Strikes += 1;
+        }
+
         public Port GetPort(string port)
         {
             return Ports.Where(x => x.Name == port).FirstOrDefault();
@@ -35,9 +40,60 @@ namespace ktane_bomb_manual
             return Indicators.Where(x => x.Tag == tag).FirstOrDefault();
         }
 
-        public void AddStrike()
+        public int GetLitIndicators()
         {
-            Strikes += 1;
+            return Indicators.Where(x => x.LitIndicator).Count();
+        }
+
+        public int GetUnlitIndicators()
+        {
+            return Indicators.Where(x => !x.LitIndicator).Count();
+        }
+
+        public List<int> GetSerialDigits()
+        {
+            var list = new List<int>();
+
+            foreach (var digit in Serial.Where(x => char.IsDigit(x)))
+            {
+                list.Add(int.Parse(digit.ToString()));
+            }
+
+            return list;
+        }
+
+        public int GetBiggestSerialDigit()
+        {
+            try
+            {
+                return GetSerialDigits().OrderBy(x => x).Last();
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public int GetSmallestOddSerialDigit()
+        {
+            try
+            {
+                return GetSerialDigits().OrderBy(x => x).Where(x => x % 2 != 0).First();
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public int GetLastSerialDigit()
+        {
+            return GetSerialDigits().Last();
+        }
+
+        public int GetManyDigitsInSerial()
+        {
+            return GetSerialDigits().Count();
         }
 
         public bool HasPort(string port)
@@ -53,6 +109,11 @@ namespace ktane_bomb_manual
         public bool HasLitIndicator(string tag)
         {
             return HasIndicator(tag) ? GetIndicator(tag).LitIndicator : false;
+        }
+
+        public bool HasUnlitIndicator(string tag)
+        {
+            return HasIndicator(tag) ? !GetIndicator(tag).LitIndicator : false;
         }
 
         public bool HasSerialChar(char character)
