@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Speech.Recognition;
 
 namespace ktane_bomb_manual.Modules
 {
