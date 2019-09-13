@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace ktane_bomb_manual.Modules
+﻿namespace ktane_bomb_manual.Modules
 {
     public class Button : Module
     {

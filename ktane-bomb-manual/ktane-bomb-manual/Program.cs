@@ -7,15 +7,16 @@ namespace SpeechRecognitionApp
     class Program
     {
         public static Bomb bomb;
-        static void Main(string[] args)
+
+        public static void Main()
         {
-            bomb = new Bomb();
-            var culture = new System.Globalization.CultureInfo("en-US", true);
-            var speechRecEngine = new SpeechRecognitionEngine(culture: culture);
             // Create an in-process speech recognizer for the en-US locale.  
             using (
-            SpeechRecognitionEngine recognizer = speechRecEngine)
+            SpeechRecognitionEngine recognizer =
+              new SpeechRecognitionEngine(
+                new System.Globalization.CultureInfo("en-US")))
             {
+
                 // Create and load a dictation grammar.  
                 recognizer.LoadGrammar(new DictationGrammar());
 
