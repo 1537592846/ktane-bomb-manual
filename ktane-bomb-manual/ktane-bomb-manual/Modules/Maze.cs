@@ -15,6 +15,7 @@
 
         public override string Solve(Bomb bomb)
         {
+            Solved = true;
             return ExitPath();
         }
 

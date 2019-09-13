@@ -52,6 +52,7 @@
     <Compile Include="Modules\Knobs.cs" />
     <Compile Include="Modules\Maze.cs" />
     <Compile Include="Modules\Module.cs" />
+    <Compile Include="Modules\MorseCode.cs" />
     <Compile Include="Modules\Wires.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

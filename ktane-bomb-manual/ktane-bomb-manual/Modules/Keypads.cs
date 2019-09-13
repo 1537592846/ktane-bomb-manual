@@ -20,6 +20,8 @@ namespace ktane_bomb_manual.Modules
                 message += WhichSymbol(symbol) + ". ";
             }
 
+            Solved = true;
+
             return message.TrimEnd();
         }
 
