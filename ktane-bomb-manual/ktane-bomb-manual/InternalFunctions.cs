@@ -2,6 +2,74 @@
 {
     public static class InternalFunctions
     {
+        public static string GetPhoneticLetterFromLetter(string letter)
+        {
+            switch (letter)
+            {
+                case "a": return "alpha";
+                case "b": return "bravo";
+                case "c": return "charlie";
+                case "d": return "delta";
+                case "e": return "echo";
+                case "f": return "foxtrot";
+                case "g": return "golf";
+                case "h": return "hotel";
+                case "i": return "india";
+                case "j": return "juliet";
+                case "k": return "kilo";
+                case "l": return "lima";
+                case "m": return "mike";
+                case "n": return "november";
+                case "o": return "oscar";
+                case "p": return "papa";
+                case "q": return "quebec";
+                case "r": return "romeo";
+                case "s": return "sierra";
+                case "t": return "tango";
+                case "u": return "uniform";
+                case "v": return "victor";
+                case "w": return "whiskey";
+                case "x": return "xray";
+                case "y": return "yankee";
+                case "z": return "zulu";
+                default: return "";
+            }
+        }
+
+        public static string GetLetterFromPhoneticLetter(string phoneticLetter)
+        {
+            switch (phoneticLetter)
+            {
+                case "alpha": return "a";
+                case "bravo": return "b";
+                case "charlie": return "c";
+                case "delta": return "d";
+                case "echo": return "e";
+                case "foxtrot": return "f";
+                case "golf": return "g";
+                case "hotel": return "h";
+                case "india": return "i";
+                case "juliet": return "j";
+                case "kilo": return "k";
+                case "lima": return "l";
+                case "mike": return "m";
+                case "november": return "n";
+                case "oscar": return "o";
+                case "papa": return "p";
+                case "quebec": return "q";
+                case "romeo": return "r";
+                case "sierra": return "s";
+                case "tango": return "t";
+                case "uniform": return "u";
+                case "victor": return "v";
+                case "whiskey": return "w";
+                case "xray": return "x";
+                case "yankee": return "y";
+                case "zulu": return "z";
+                default: return "";
+            }
+        }
+
         public static string GetLetterFromMorse(string morse)
         {
             switch (morse)

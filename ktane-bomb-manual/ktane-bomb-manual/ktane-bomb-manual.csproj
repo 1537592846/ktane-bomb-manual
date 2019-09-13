@@ -63,6 +63,7 @@
     <Compile Include="Module.cs" />
     <Compile Include="Modules\MorseCode.cs" />
     <Compile Include="Modules\Morsematics.cs" />
+    <Compile Include="Modules\Passwords.cs" />
     <Compile Include="Modules\Wires.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
