@@ -40,6 +40,11 @@ namespace ktane_bomb_manual
             return Indicators.Where(x => x.Tag == tag).FirstOrDefault();
         }
 
+        public int GetBatteries()
+        {
+            return BatteryAA + BatteryD;
+        }
+
         public int GetLitIndicators()
         {
             return Indicators.Where(x => x.LitIndicator).Count();
@@ -48,6 +53,21 @@ namespace ktane_bomb_manual
         public int GetUnlitIndicators()
         {
             return Indicators.Where(x => !x.LitIndicator).Count();
+        }
+
+        public int GetLitIndicatorsWithLetter(string letter)
+        {
+            return Indicators.Where(x => x.Tag.Contains(letter) && x.LitIndicator).Count();
+        }
+
+        public int GetUnlitIndicatorsWithLetter(string letter)
+        {
+            return Indicators.Where(x => x.Tag.Contains(letter) && !x.LitIndicator).Count();
+        }
+
+        public string GetSerialCharacterAtPosition(int position)
+        {
+            return Serial[position - 1].ToString().ToLower();
         }
 
         public List<int> GetSerialDigits()
