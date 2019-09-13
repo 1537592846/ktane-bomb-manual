@@ -21,7 +21,7 @@
 
         public string GetFrequence()
         {
-            var word = Sequence1 + Sequence2 + Sequence3 + Sequence4 + Sequence5 + Sequence6 + Sequence1 + Sequence2 + Sequence3 + Sequence4 + Sequence5;
+            var word = GetLetterFromMorse(Sequence1) + GetLetterFromMorse(Sequence2) + GetLetterFromMorse(Sequence3) + GetLetterFromMorse(Sequence4) + GetLetterFromMorse(Sequence5) + GetLetterFromMorse(Sequence6) + GetLetterFromMorse(Sequence1) + GetLetterFromMorse(Sequence2) + GetLetterFromMorse(Sequence3) + GetLetterFromMorse(Sequence4) + GetLetterFromMorse(Sequence5);
 
             if (word.Contains("shell")) return "5 0 5";
             if (word.Contains("halls")) return "5 1 5";
@@ -46,54 +46,64 @@
         {
             switch (morse)
             {
-                case "dot dash": return "A";
-                case "dash dot dot dot": return "B";
-                case "dash dot dash dot": return "C";
-                case "dash dot dot": return "D";
-                case "dot": return "E";
-                case "dot dot dash dot": return "F";
-                case "dash dash dot": return "G";
-                case "dot dot dot dot": return "H";
-                case "dot dot": return "I";
-                case "dot dash dash dash": return "J";
-                case "dash dot dash": return "K";
-                case "dot dash dot dot": return "L";
-                case "dash dash": return "M";
-                case "dash dot": return "N";
-                case "dash dash dash": return "O";
-                case "dot dash dash dot": return "P";
-                case "dash dash dot dash": return "Q";
-                case "dot dash dot": return "R";
-                case "dot dot dot": return "S";
-                case "dash": return "T";
-                case "dot dot dash": return "U";
-                case "dot dot dot dash": return "V";
-                case "dot dash dash": return "W";
-                case "dash dot dot dash": return "X";
-                case "dash dot dash dash": return "Y";
-                case "dash dash dot dot": return "Z";
-                case "dot dash dash dash dash": return "1";
-                case "dot dot dash dash dash": return "2";
-                case "dot dot dot dash dash": return "3";
-                case "dot dot dot dot dash": return "4";
-                case "dot dot dot dot dot": return "5";
-                case "dash dot dot dot dot": return "6";
-                case "dash dash dot dot dot": return "7";
-                case "dash dash dash dot dot": return "8";
-                case "dash dash dash dash dot": return "9";
-                case "dash dash dash dash dash": return "0";
+                case "dot dash next": return "a";
+                case "dash dot dot dot next": return "b";
+                case "dash dot dash dot next": return "c";
+                case "dash dot dot next": return "d";
+                case "dot next": return "e";
+                case "dot dot dash dot next": return "f";
+                case "dash dash dot next": return "g";
+                case "dot dot dot dot next": return "h";
+                case "dot dot next": return "i";
+                case "dot dash dash dash next": return "j";
+                case "dash dot dash next": return "k";
+                case "dot dash dot dot next": return "l";
+                case "dash dash next": return "m";
+                case "dash dot next": return "n";
+                case "dash dash dash next": return "o";
+                case "dot dash dash dot next": return "p";
+                case "dash dash dot dash next": return "q";
+                case "dot dash dot next": return "r";
+                case "dot dot dot next": return "s";
+                case "dash next": return "t";
+                case "dot dot dash next": return "u";
+                case "dot dot dot dash next": return "v";
+                case "dot dash dash next": return "w";
+                case "dash dot dot dash next": return "x";
+                case "dash dot dash dash next": return "y";
+                case "dash dash dot dot next": return "z";
+                case "dot dash dash dash dash next": return "1";
+                case "dot dot dash dash dash next": return "2";
+                case "dot dot dot dash dash next": return "3";
+                case "dot dot dot dot dash next": return "4";
+                case "dot dot dot dot dot next": return "5";
+                case "dash dot dot dot dot next": return "6";
+                case "dash dash dot dot dot next": return "7";
+                case "dash dash dash dot dot next": return "8";
+                case "dash dash dash dash dot next": return "9";
+                case "dash dash dash dash dash next": return "0";
                 default: return "";
             }
         }
 
         public void AddSequence(string sequence)
         {
-            if (string.IsNullOrEmpty(Sequence1)) Sequence1 = sequence;
-            if (string.IsNullOrEmpty(Sequence2)) Sequence2 = sequence;
-            if (string.IsNullOrEmpty(Sequence3)) Sequence3 = sequence;
-            if (string.IsNullOrEmpty(Sequence4)) Sequence4 = sequence;
-            if (string.IsNullOrEmpty(Sequence5)) Sequence5 = sequence;
-            if (string.IsNullOrEmpty(Sequence6)) Sequence6 = sequence;
+            if (string.IsNullOrEmpty(Sequence1)) { Sequence1 = sequence; return; }
+            if (string.IsNullOrEmpty(Sequence2)) { Sequence2 = sequence; return; }
+            if (string.IsNullOrEmpty(Sequence3)) { Sequence3 = sequence; return; }
+            if (string.IsNullOrEmpty(Sequence4)) { Sequence4 = sequence; return; }
+            if (string.IsNullOrEmpty(Sequence5)) { Sequence5 = sequence; return; }
+            if (string.IsNullOrEmpty(Sequence6)) { Sequence6 = sequence; return; }
+        }
+
+        public void ResetSequences()
+        {
+            Sequence1 = "";
+            Sequence2 = "";
+            Sequence3 = "";
+            Sequence4 = "";
+            Sequence5 = "";
+            Sequence6 = "";
         }
     }
 }
