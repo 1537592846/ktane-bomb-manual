@@ -105,5 +105,10 @@
             Sequence5 = "";
             Sequence6 = "";
         }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

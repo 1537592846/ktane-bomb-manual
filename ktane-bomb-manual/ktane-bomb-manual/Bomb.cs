@@ -15,8 +15,11 @@ namespace ktane_bomb_manual
             Ports = new List<Port>();
             Indicators = new List<Indicator>();
             Modules = new List<Module>();
+            ModulesAvaliable = new Dictionary<string, Module>();
+
         }
 
+        public Dictionary<string, Module> ModulesAvaliable { get; set; }
         public int Strikes { get; set; }
         public string Serial { get; set; }
         public int BatteryD { get; set; }
@@ -25,9 +28,71 @@ namespace ktane_bomb_manual
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
 
+        public string Command(string command)
+        {
+            if (command.Contains("serial"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.GetLetterFromPhoneticLetter(word) != "")
+                    {
+                        Serial += InternalFunctions.GetLetterFromPhoneticLetter(word).ToUpper();
+                        continue;
+                    }
+                    if (InternalFunctions.GetMorseFromLetter(word) != "")
+                    {
+                        Serial += word;
+                    }
+                }
+            }
+            if (command.Contains("battery") || command.Contains("batteries"))
+            {
+                if (command.Contains(" d "))
+                {
+                    foreach (var letter in command)
+                    {
+                        if (char.IsDigit(letter))
+                        {
+                            BatteryD = int.Parse(letter.ToString());
+                        }
+                    }
+                }
+                if (command.Contains(" aa "))
+                {
+                    foreach (var letter in command)
+                    {
+                        if (char.IsDigit(letter))
+                        {
+                            BatteryAA = int.Parse(letter.ToString());
+                        }
+                    }
+                }
+            }
+            if (command.Contains("add port"))
+            {
+                var info = command.Replace("add port ", "").Split(' ');
+                Ports.Add(new Port(command[0].ToString(), int.Parse(command[1].ToString())));
+            }
+
+            return "";
+        }
+
         public void AddStrike()
         {
             Strikes += 1;
+        }
+
+        public Module GetModule(string module)
+        {
+            try
+            {
+                return Modules.Where(x => x.ModuleName == module && !x.Solved).First();
+            }
+            catch
+            {
+                Modules.Add(new Wires());
+                return GetModule(module);
+            }
         }
 
         public Port GetPort(string port)

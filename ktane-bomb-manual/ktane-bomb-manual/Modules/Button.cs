@@ -57,5 +57,10 @@
                 return "Just press it.";
             }
         }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

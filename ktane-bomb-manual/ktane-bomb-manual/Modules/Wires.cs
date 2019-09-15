@@ -18,6 +18,41 @@ namespace ktane_bomb_manual.Modules
             return WireToCut(bomb);
         }
 
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve") || command.Contains("solution"))
+            {
+                return Solve(bomb);
+            }
+
+            if (command.Contains("colors") || command.Contains("wires"))
+            {
+                foreach (var wire in command.Split(' ').Where(x => IsWireColor(x)))
+                {
+                    AddWire(wire);
+                }
+            }
+            return "";
+        }
+
+        public void AddWire(string wire)
+        {
+            WireColors.Add(wire);
+        }
+
+        public bool IsWireColor(string wire)
+        {
+            switch (wire)
+            {
+                case "white":
+                case "black":
+                case "blue":
+                case "yellow":
+                case "red": return true;
+                default: return false;
+            }
+        }
+
         public int ColorCount(string color)
         {
             return WireColors.Where(x => x == color).Count();

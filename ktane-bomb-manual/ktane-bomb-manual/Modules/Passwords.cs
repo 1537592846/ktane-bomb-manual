@@ -150,5 +150,10 @@ namespace ktane_bomb_manual.Modules
             if ("write".StartsWith(word)) return "write";
             return "";
         }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
