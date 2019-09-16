@@ -61,9 +61,11 @@
     <Compile Include="Modules\Knobs.cs" />
     <Compile Include="Modules\Maze.cs" />
     <Compile Include="Module.cs" />
+    <Compile Include="Modules\Memory.cs" />
     <Compile Include="Modules\MorseCode.cs" />
     <Compile Include="Modules\Morsematics.cs" />
     <Compile Include="Modules\Passwords.cs" />
+    <Compile Include="Modules\Plumbing.cs" />
     <Compile Include="Modules\Wires.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -42,8 +42,8 @@ namespace ktane_bomb_manual
             {
                 foreach (var word in command.Split(' '))
                 {
-                        Serial += InternalFunctions.GetLetterFromPhoneticLetter(word).ToUpper();
-                        Serial += InternalFunctions.GetNumber(word)==-1?"":InternalFunctions.GetNumber(word).ToString();
+                    Serial += InternalFunctions.GetLetterFromPhoneticLetter(word).ToUpper();
+                    Serial += InternalFunctions.GetNumber(word) == -1 ? "" : InternalFunctions.GetNumber(word).ToString();
                 }
                 return "";
             }
@@ -111,7 +111,7 @@ namespace ktane_bomb_manual
             catch
             {
                 Type type;
-                ModulesAvaliable.TryGetValue(module,out type);
+                ModulesAvaliable.TryGetValue(module, out type);
                 Modules.Add((Module)Activator.CreateInstance(type));
                 return GetModule(module);
             }
@@ -120,6 +120,11 @@ namespace ktane_bomb_manual
         public Port GetPort(string port)
         {
             return Ports.Where(x => x.Name == port).FirstOrDefault();
+        }
+
+        public int GetPortsQuantity(string port)
+        {
+            return Ports.Where(x => x.Name == port).Count();
         }
 
         public Indicator GetIndicator(string tag)
@@ -208,6 +213,15 @@ namespace ktane_bomb_manual
             return GetPort(port) != null;
         }
 
+        public bool HasAnyDuplicatedPort()
+        {
+            foreach (var port in Ports)
+            {
+                if (Ports.Where(x => x.Name == port.Name).Count() >= 2) return true;
+            }
+            return false;
+        }
+
         public bool HasIndicator(string tag)
         {
             return GetIndicator(tag) != null;
@@ -226,6 +240,15 @@ namespace ktane_bomb_manual
         public bool HasSerialChar(char character)
         {
             return Serial.Contains(character);
+        }
+
+        public bool HasAnyDuplicatedSerialChar()
+        {
+            foreach (var letter in Serial)
+            {
+                if (Serial.Where(x => x == letter).Count() >= 2) return true;
+            }
+            return false;
         }
 
         public bool HasSerialVowel()

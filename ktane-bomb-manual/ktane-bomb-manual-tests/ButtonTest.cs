@@ -21,25 +21,33 @@ namespace Tests
             bomb.BatteryAA = 1;
 
             //Hold button, release on number 1
-            var buttonModule = new Button("red", "detonate");
+            var buttonModule = new Button();
+            buttonModule.Color = "red";
+            buttonModule.Text = "detonate";
             Assert.AreEqual("Hold the button. What is the stripe color?", buttonModule.Solve(bomb), "Error Test #1, hold/press", null);
             buttonModule.Stripe = "white";
-            Assert.AreEqual("Release when shown 1.", buttonModule.Solve(bomb), "Error Test #1, stripe", null);
+            Assert.AreEqual("Release when shown one.", buttonModule.Solve(bomb), "Error Test #1, stripe", null);
 
             //Hold button, release on number 5
-            buttonModule = new Button("white", "abort");
+            buttonModule = new Button();
+            buttonModule.Color = "white";
+            buttonModule.Text = "abort";
             Assert.AreEqual("Hold the button. What is the stripe color?", buttonModule.Solve(bomb), "Error Test #2, hold/press", null);
             buttonModule.Stripe = "yellow";
-            Assert.AreEqual("Release when shown 5.", buttonModule.Solve(bomb), "Error Test #2, stripe", null);
+            Assert.AreEqual("Release when shown five.", buttonModule.Solve(bomb), "Error Test #2, stripe", null);
 
             //Hold button, release on number 1
-            buttonModule = new Button("blue", "abort");
+            buttonModule = new Button();
+            buttonModule.Color = "blue";
+            buttonModule.Text = "abort";
             Assert.AreEqual("Hold the button. What is the stripe color?", buttonModule.Solve(bomb), "Error Test #3, hold/press", null);
             buttonModule.Stripe = "red";
-            Assert.AreEqual("Release when shown 1.", buttonModule.Solve(bomb), "Error Test #3, stripe", null);
+            Assert.AreEqual("Release when shown one.", buttonModule.Solve(bomb), "Error Test #3, stripe", null);
 
             //Press button
-            buttonModule = new Button("red", "hold");
+            buttonModule = new Button();
+            buttonModule.Color = "red";
+            buttonModule.Text = "hold";
             Assert.AreEqual("Just press it.", buttonModule.Solve(bomb), "Error Test #4, hold/press", null);
         }
 
@@ -53,14 +61,18 @@ namespace Tests
             bomb.Indicators.Add(new Indicator("frk", false));
 
             //Press button
-            var buttonModule = new Button("red", "detonate");
+            var buttonModule = new Button();
+            buttonModule.Color = "red";
+            buttonModule.Text = "detonate";
             Assert.AreEqual("Just press it.", buttonModule.Solve(bomb), "Error Test #1, hold/press", null);
 
             //Hold button, release on number 5
-            buttonModule = new Button("white", "abort");
+            buttonModule = new Button();
+            buttonModule.Color = "white";
+            buttonModule.Text = "abort";
             Assert.AreEqual("Hold the button. What is the stripe color?", buttonModule.Solve(bomb), "Error Test #2, hold/press", null);
             buttonModule.Stripe = "yellow";
-            Assert.AreEqual("Release when shown 5.", buttonModule.Solve(bomb), "Error Test #2, stripe", null);
+            Assert.AreEqual("Release when shown five.", buttonModule.Solve(bomb), "Error Test #2, stripe", null);
 
             bomb = new Bomb();
             bomb.Serial = "T5K8W4";
@@ -69,7 +81,9 @@ namespace Tests
             bomb.Indicators.Add(new Indicator("frk", true));
 
             //Press button
-            buttonModule = new Button("red", "hold");
+            buttonModule = new Button();
+            buttonModule.Color = "red";
+            buttonModule.Text = "hold";
             Assert.AreEqual("Just press it.", buttonModule.Solve(bomb), "Error Test #3, hold/press", null);
         }
 
@@ -83,7 +97,9 @@ namespace Tests
             bomb.Indicators.Add(new Indicator("frk", true));
 
             //Press button
-            var buttonModule = new Button("red", "hold");
+            var buttonModule = new Button();
+            buttonModule.Color = "red";
+            buttonModule.Text = "hold";
             Assert.AreEqual("Just press it.", buttonModule.Solve(bomb), "Error Test #1, hold/press", null);
         }
     }
