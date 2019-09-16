@@ -25,6 +25,21 @@ namespace ktane_bomb_manual.Modules
             return "The password is " + GetWord()+".";
         }
 
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            if (command.Contains("reset"))
+            {
+                Reset();
+                return "";
+            }
+            AddLetters(command);
+            return "";
+        }
+
         public void Reset()
         {
             Group1 = new List<string>();
@@ -149,11 +164,6 @@ namespace ktane_bomb_manual.Modules
             if ("would".StartsWith(word)) return "would";
             if ("write".StartsWith(word)) return "write";
             return "";
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
