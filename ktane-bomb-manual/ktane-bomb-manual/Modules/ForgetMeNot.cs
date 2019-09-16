@@ -31,8 +31,7 @@ namespace ktane_bomb_manual.Modules
             if (command.Contains("solve"))
             {
                 return Solve(bomb);
-            }
-            
+            }            
             foreach(var word in command.Split(' '))
             {
                 if (InternalFunctions.GetNumber(word) != -1)
@@ -41,7 +40,7 @@ namespace ktane_bomb_manual.Modules
                 }
             }
 
-            return "";
+            return "Number saved.";
         }
 
         public void AddNumber(Bomb bomb, string number)

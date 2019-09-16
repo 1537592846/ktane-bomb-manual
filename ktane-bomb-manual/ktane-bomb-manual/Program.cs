@@ -70,33 +70,41 @@ namespace SpeechRecognitionApp
 
         public static void Command(string command)
         {
-            if (command.Contains("new bomb"))
+            var commandReturn = "";
+            try
             {
-                bomb = bomb = new Bomb();
-                Console.WriteLine("Command computed.");
-                return;
-            }
-            if (command.Contains("bomb"))
-            {
-                bomb.Command(command);
-                Console.WriteLine("Command computed.");
-                return;
-            }
-            if (command.Contains("solve"))
-            {
-                var commandReturn = bomb.GetModule(command.Split(' ')[1]).Solve(bomb);
-                if (commandReturn == "")
+                if (command.Contains("new bomb"))
                 {
-                    Console.WriteLine("Command computed.");
+                    bomb = bomb = new Bomb();
+                    commandReturn="Bomb reseted.";
+                    return;
                 }
-                else
+                if (command.Contains("bomb"))
                 {
-                    Console.WriteLine(commandReturn);
+                    bomb.Command(command);
+                    commandReturn = "Command executed.";
+                    return;
                 }
-                return;
+                if (command.Contains("solve"))
+                {
+                    commandReturn = bomb.GetModule(command.Replace("solve", "").Trim()).Solve(bomb);
+                    if (commandReturn == "")
+                    {
+                        commandReturn="Command computed.";
+                    }
+                    return;
+                }
+                commandReturn=bomb.GetModule(command.Split(' ')[0]).Command(bomb, command);
+                if(string.IsNullOrEmpty(commandReturn)) commandReturn = "Module added";
             }
-            bomb.GetModule(command.Split(' ')[0]).Command(bomb, command);
-            Console.WriteLine("Module added");
+            catch
+            {
+                Console.WriteLine("Command not executed");
+            }
+            finally
+            {
+                Console.WriteLine(commandReturn);
+            }
         }
 
         // Handle the SpeechRecognized event.  

@@ -21,7 +21,6 @@ namespace ktane_bomb_manual.Modules
             {
                 message += ShouldICutThisWire(bomb, wire) + " wire number " + (Wires.IndexOf(wire) + 1) + ". ";
             }
-            Solved = true;
             return message.TrimEnd();
         }
 
@@ -29,7 +28,9 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
             }
             string config = "";
 
@@ -38,7 +39,7 @@ namespace ktane_bomb_manual.Modules
                 config += word + " ";
             }
             Wires.Add(new ComplicatedWire(config));
-            return "";
+            return "Complicated wire added.";
         }
 
         public string ShouldICutThisWire(Bomb bomb, ComplicatedWire wire)

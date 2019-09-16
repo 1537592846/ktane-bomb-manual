@@ -4,11 +4,6 @@ namespace ktane_bomb_manual.Modules
 {
     public class MorseCode : Module
     {
-        public MorseCode()
-        {
-
-        }
-
         public string Sequence1;
         public string Sequence2;
         public string Sequence3;
@@ -26,16 +21,18 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
             }
             if (command.Contains("reset"))
             {
                 ResetSequences();
-                return "";
+                return "Module reseted";
             }
             AddSequence(command);
 
-            return "";
+            return "Sequence added";
         }
 
         public string GetFrequence()

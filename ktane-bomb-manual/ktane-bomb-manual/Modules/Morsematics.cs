@@ -22,7 +22,9 @@
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
             }
             AddCharacter(command);
             return "";

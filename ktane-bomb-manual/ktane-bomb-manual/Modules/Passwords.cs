@@ -21,7 +21,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            if (Group1.Count == 0 || Group2.Count == 0 || Group3.Count == 0 || Group4.Count == 0 || Group5.Count == 0) return "Can't solve it yet";
+            if (Group1.Count == 0 || Group2.Count == 0 || Group3.Count == 0 || Group4.Count == 0 || Group5.Count == 0) return "Can't solve it yet.";
             return "The password is " + GetWord()+".";
         }
 
@@ -29,15 +29,17 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn= Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
             }
             if (command.Contains("reset"))
             {
                 Reset();
-                return "";
+                return "Module reseted";
             }
             AddLetters(command);
-            return "";
+            return "Letters added";
         }
 
         public void Reset()

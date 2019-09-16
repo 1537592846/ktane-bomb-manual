@@ -15,8 +15,9 @@
 
         public override string Solve(Bomb bomb)
         {
-            if (string.IsNullOrEmpty(Circle1) || string.IsNullOrEmpty(Circle2) || string.IsNullOrEmpty(ExitPosition) || string.IsNullOrEmpty(PlayerPosition)) return "Can't solve it yet.";
-            Solved = true;
+            if (string.IsNullOrEmpty(Circle1) || string.IsNullOrEmpty(Circle2)) return "Missing circle info.";
+            if (string.IsNullOrEmpty(ExitPosition)) return "Missing exit info.";
+            if (string.IsNullOrEmpty(PlayerPosition)) return "Missing player starting position.";
             return ExitPath();
         }
 
@@ -24,7 +25,9 @@
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn.StartsWith("Missing");
+                return solveReturn;
             }
             if (command.Contains("player"))
             {
@@ -34,10 +37,10 @@
                     {
                         PlayerPosition += InternalFunctions.GetNumber(word) + " ";
                     }
-                    PlayerPosition = PlayerPosition.Trim().Replace(' ', ',');
                 }
+                PlayerPosition = PlayerPosition.Trim().Replace(' ', ',');
 
-                return "";
+                return "Recorded player position.";
             }
             if (command.Contains("exit"))
             {
@@ -47,10 +50,10 @@
                     {
                         ExitPosition += InternalFunctions.GetNumber(word) + " ";
                     }
-                    ExitPosition = ExitPosition.Trim().Replace(' ', ',');
                 }
+                ExitPosition = ExitPosition.Trim().Replace(' ', ',');
 
-                return "";
+                return "Recorded exit position.";
             }
             if (command.Contains("circle"))
             {
@@ -60,8 +63,8 @@
                     {
                         Circle2 += InternalFunctions.GetNumber(word) + " ";
                     }
-                    Circle2 = Circle2.Trim().Replace(' ', ',');
                 }
+                Circle2 = Circle2.Trim().Replace(' ', ',');
 
                 if (string.IsNullOrEmpty(Circle1))
                 {
@@ -69,7 +72,7 @@
                     Circle2 = "";
                 }
 
-                return "";
+                return "Recorded circle position";
             }
 
             return "";
@@ -482,11 +485,6 @@
 
         public string ExitPath()
         {
-            if (string.IsNullOrEmpty(Circle1)) return "Still need the first red circle.";
-            if (string.IsNullOrEmpty(Circle2)) return "Still need the second red circle.";
-            if (string.IsNullOrEmpty(ExitPosition)) return "Still need the exit position.";
-            if (string.IsNullOrEmpty(PlayerPosition)) return "Still need the player position.";
-
             if ((Circle1 == "1,0" && Circle2 == "2,5") || (Circle1 == "2,5" && Circle2 == "1,0")) CreateConfig1();
             if ((Circle1 == "3,1" && Circle2 == "1,4") || (Circle1 == "1,4" && Circle2 == "3,1")) CreateConfig2();
             if ((Circle1 == "3,3" && Circle2 == "3,5") || (Circle1 == "3,5" && Circle2 == "3,3")) CreateConfig3();

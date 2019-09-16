@@ -22,8 +22,6 @@ namespace ktane_bomb_manual.Modules
                 message += WhichSymbol(symbol) + ". ";
             }
 
-            Solved = true;
-
             return message.TrimEnd();
         }
 
@@ -31,10 +29,11 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
             }
-            
-            foreach(var word in command.Split(' '))
+            foreach (var word in command.Split(' '))
             {
                 AddSymbol(word);
             }
@@ -61,32 +60,75 @@ namespace ktane_bomb_manual.Modules
 
         public void AddSymbol(string description)
         {
-            if (description.Contains("omega")&&!description.Contains("broad")) { Symbols.Add((int)SymbolList.Omega); return; }
-            if (description.Contains("white star")) { Symbols.Add((int)SymbolList.WhiteStar); return; }
-            if (description.Contains("copyright")) { Symbols.Add((int)SymbolList.CopyrightSign); return; }
-            if (description.Contains("question mark")) { Symbols.Add((int)SymbolList.InvertedQuestionMark); return; }
-            if (description.Contains("lambda")) { Symbols.Add((int)SymbolList.Lambda); return; }
-            if (description.Contains("archaic koppa") || description.Contains("ballon")) { Symbols.Add((int)SymbolList.ArchaicKoppa); return; }
-            if (description.Contains("small b") || description.Contains("six") || description.Contains("6")) { Symbols.Add((int)SymbolList.Be); return; }
-            if (description.Contains("big yus") || description.Contains("spider") || description.Contains("three legs")) { Symbols.Add((int)SymbolList.BigYus); return; }
-            if (description.Contains("kai") || description.Contains("stylish")) { Symbols.Add((int)SymbolList.Kai); return; }
-            if (description.Contains("komi dzje") || description.Contains("broken three")) { Symbols.Add((int)SymbolList.KomiDzje); return; }
-            if (description.Contains("koppa") || description.Contains("resistance")) { Symbols.Add((int)SymbolList.Koppa); return; }
-            if (description.Contains("ksi") || description.Contains("alien three")) { Symbols.Add((int)SymbolList.Ksi); return; }
-            if (description.Contains("lunate sigma") || description.Contains("c with a dot")) { Symbols.Add((int)SymbolList.LunateSigma); return; }
-            if (description.Contains("psi") || description.Contains("trident")) { Symbols.Add((int)SymbolList.Psi); return; }
-            if (description.Contains("teh") || description.Contains("smiley face")) { Symbols.Add((int)SymbolList.Teh); return; }
-            if (description.Contains("thousand") || description.Contains("not equal")) { Symbols.Add((int)SymbolList.Thousand); return; }
-            if (description.Contains("short i") || description.Contains("lightning") || description.Contains("backwards n")) { Symbols.Add((int)SymbolList.ShortI); return; }
-            if (description.Contains("pilcrow") || description.Contains("paragraph")||description.Contains("backwards p")) { Symbols.Add((int)SymbolList.Pilcrow); return; }
-            if (description.Contains("lunate anti sigma") || description.Contains("backwards c")) { Symbols.Add((int)SymbolList.LunateAntiSigma); return; }
-            if (description.Contains("capital e") || description.Contains("backwards e")) { Symbols.Add((int)SymbolList.E); return; }
-            if (description.Contains("zhe") || description.Contains("x with") || description.Contains("mirroed k")) { Symbols.Add((int)SymbolList.Zhe); return; }
-            if (description.Contains("aesc") || description.Contains("a e")) { Symbols.Add((int)SymbolList.Aesc); return; }
-            if (description.Contains("little yus") || description.Contains("a t")) { Symbols.Add((int)SymbolList.LittleYus); return; }
-            if (description.Contains("yat") || description.Contains("b t")) { Symbols.Add((int)SymbolList.Yat); return; }
-            if (description.Contains("o hook") || description.Contains("c l")) { Symbols.Add((int)SymbolList.OHook); return; }
-            if (description.Contains("broad omega") || description.Contains("w") || description.Contains("double u")) { Symbols.Add((int)SymbolList.BroadOmega); return; }
+            description += " ";
+            //Symbol names
+            if (description.Contains("broad omega")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
+            if (description.Contains("omega")) { AddSymbolToList((int)SymbolList.Omega); return; }
+            if (description.Contains("white star")) { AddSymbolToList((int)SymbolList.WhiteStar); return; }
+            if (description.Contains("copyright")) { AddSymbolToList((int)SymbolList.CopyrightSign); return; }
+            if (description.Contains("question mark")) { AddSymbolToList((int)SymbolList.InvertedQuestionMark); return; }
+            if (description.Contains("archaic koppa")) { AddSymbolToList((int)SymbolList.ArchaicKoppa); return; }
+            if (description.Contains("small b ")) { AddSymbolToList((int)SymbolList.Be); return; }
+            if (description.Contains("small be")) { AddSymbolToList((int)SymbolList.Be); return; }
+            if (description.Contains("big yus")) { AddSymbolToList((int)SymbolList.BigYus); return; }
+            if (description.Contains("kai")) { AddSymbolToList((int)SymbolList.Kai); return; }
+            if (description.Contains("komi dzje")) { AddSymbolToList((int)SymbolList.KomiDzje); return; }
+            if (description.Contains("koppa")) { AddSymbolToList((int)SymbolList.Koppa); return; }
+            if (description.Contains("ksi")) { AddSymbolToList((int)SymbolList.Ksi); return; }
+            if (description.Contains("lambda")) { AddSymbolToList((int)SymbolList.Lambda); return; }
+            if (description.Contains("psi")) { AddSymbolToList((int)SymbolList.Psi); return; }
+            if (description.Contains("teh")) { AddSymbolToList((int)SymbolList.Teh); return; }
+            if (description.Contains("thousand")) { AddSymbolToList((int)SymbolList.Thousand); return; }
+            if (description.Contains("short i ")) { AddSymbolToList((int)SymbolList.ShortI); return; }
+            if (description.Contains("pilcrow")) { AddSymbolToList((int)SymbolList.Pilcrow); return; }
+            if (description.Contains("lunate anti sigma")) { AddSymbolToList((int)SymbolList.LunateAntiSigma); return; }
+            if (description.Contains("anti sigma")) { AddSymbolToList((int)SymbolList.LunateAntiSigma); return; }
+            if (description.Contains("lunate sigma")) { AddSymbolToList((int)SymbolList.LunateSigma); return; }
+            if (description.Contains("sigma")) { AddSymbolToList((int)SymbolList.LunateSigma); return; }
+            if (description.Contains("capital e ")) { AddSymbolToList((int)SymbolList.E); return; }
+            if (description.Contains("zhe")) { AddSymbolToList((int)SymbolList.Zhe); return; }
+            if (description.Contains("aesc")) { AddSymbolToList((int)SymbolList.Aesc); return; }
+            if (description.Contains("little yus")) { AddSymbolToList((int)SymbolList.LittleYus); return; }
+            if (description.Contains("yat")) { AddSymbolToList((int)SymbolList.Yat); return; }
+            if (description.Contains(" o hook")) { AddSymbolToList((int)SymbolList.OHook); return; }
+            if (description.Contains("ohook")) { AddSymbolToList((int)SymbolList.OHook); return; }
+
+            //Symbols descriptions
+            if (description.Contains("ballon")) { AddSymbolToList((int)SymbolList.ArchaicKoppa); return; }
+            if (description.Contains("six")) { AddSymbolToList((int)SymbolList.Be); return; }
+            if (description.Contains("6")) { AddSymbolToList((int)SymbolList.Be); return; }
+            if (description.Contains("spider")) { AddSymbolToList((int)SymbolList.BigYus); return; }
+            if (description.Contains("three legs")) { AddSymbolToList((int)SymbolList.BigYus); return; }
+            if (description.Contains("stylish")) { AddSymbolToList((int)SymbolList.Kai); return; }
+            if (description.Contains("broken three")) { AddSymbolToList((int)SymbolList.KomiDzje); return; }
+            if (description.Contains("resistance")) { AddSymbolToList((int)SymbolList.Koppa); return; }
+            if (description.Contains("alien three")) { AddSymbolToList((int)SymbolList.Ksi); return; }
+            if (description.Contains("trident")) { AddSymbolToList((int)SymbolList.Psi); return; }
+            if (description.Contains("smiley face")) { AddSymbolToList((int)SymbolList.Teh); return; }
+            if (description.Contains("not equal")) { AddSymbolToList((int)SymbolList.Thousand); return; }
+            if (description.Contains("lightning")) { AddSymbolToList((int)SymbolList.ShortI); return; }
+            if (description.Contains("paragraph")) { AddSymbolToList((int)SymbolList.Pilcrow); return; }
+            if (description.Contains("backwards c ")) { AddSymbolToList((int)SymbolList.LunateAntiSigma); return; }
+            if (description.Contains("backwards e ")) { AddSymbolToList((int)SymbolList.E); return; }
+            if (description.Contains("backwards n ")) { AddSymbolToList((int)SymbolList.ShortI); return; }
+            if (description.Contains("backwards p ")) { AddSymbolToList((int)SymbolList.Pilcrow); return; }
+            if (description.Contains("anti sigma")) { AddSymbolToList((int)SymbolList.LunateAntiSigma); return; }
+            if (description.Contains(" c with a dot")) { AddSymbolToList((int)SymbolList.LunateSigma); return; }
+            if (description.Contains("sigma")) { AddSymbolToList((int)SymbolList.E); return; }
+            if (description.Contains(" x with")) { AddSymbolToList((int)SymbolList.Zhe); return; }
+            if (description.Contains("mirroed k ")) { AddSymbolToList((int)SymbolList.Zhe); return; }
+            if (description.Contains(" a e ")) { AddSymbolToList((int)SymbolList.Aesc); return; }
+            if (description.Contains(" a t ")) { AddSymbolToList((int)SymbolList.LittleYus); return; }
+            if (description.Contains(" b t ")) { AddSymbolToList((int)SymbolList.Yat); return; }
+            if (description.Contains(" c l ")) { AddSymbolToList((int)SymbolList.OHook); return; }
+            if (description.Contains(" w ")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
+            if (description.Contains("double u ")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
+        }
+
+        private void AddSymbolToList(int symbolNumber)
+        {
+            if (!Symbols.Contains(symbolNumber))
+                Symbols.Add(symbolNumber);
         }
 
         public string WhichSymbol(int symbol)
@@ -153,7 +195,7 @@ namespace ktane_bomb_manual.Modules
 
         public enum SymbolList
         {
-            Aesc=1,
+            Aesc = 1,
             ArchaicKoppa,
             Be,
             BigYus,

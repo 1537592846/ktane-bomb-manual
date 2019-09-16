@@ -4,32 +4,29 @@ namespace ktane_bomb_manual.Modules
 {
     public class Knobs : Module
     {
-        public Knobs(string sequence)
-        {
-            Sequence = sequence;
-        }
-
         public string Sequence { get; set; }
+
+        public override string Solve(Bomb bomb)
+        {
+            return GetKnobFinalPosition();
+        }
 
         public override string Command(Bomb bomb, string command)
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't tell yet.";
+                return solveReturn;
             }
-
+            Sequence = "";
             foreach (var word in command.Split(' ').Where(x => x == "both" || x == "up" || x == "down" || x == "none"))
             {
-                Sequence += word;
+                Sequence += word+" ";
             }
             Sequence = Sequence.Trim();
 
-            return "";
-        }
-
-        public override string Solve(Bomb bomb)
-        {
-            return GetKnobFinalPosition();
+            return "Sequence added";
         }
 
         public string GetKnobFinalPosition()

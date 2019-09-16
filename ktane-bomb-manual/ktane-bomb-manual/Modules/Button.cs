@@ -4,12 +4,6 @@ namespace ktane_bomb_manual.Modules
 {
     public class Button : Module
     {
-        public Button(string color, string text)
-        {
-            Color = color;
-            Text = text;
-        }
-
         public string Color { get; set; }
         public string Text { get; set; }
         public string Stripe { get; set; }
@@ -22,7 +16,6 @@ namespace ktane_bomb_manual.Modules
             }
             else
             {
-                Solved = true;
                 return WhatToDoWithTheStripe(bomb);
             }
         }
@@ -31,7 +24,9 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                return Solve(bomb);
+                var solveReturn = Solve(bomb);
+                Solved = !solveReturn.Contains("stripe");
+                return solveReturn;
             }
             if (command.Contains("stripe"))
             {
@@ -46,11 +41,11 @@ namespace ktane_bomb_manual.Modules
             {
                 if (word == "hold" || word == "detonate" || word == "abort")
                 {
-                    Color = word;
+                    Text = word;
                 }
                 else
                 {
-                    Text = word;
+                   Color  = word;
                 }
             }
             return "";
@@ -71,10 +66,10 @@ namespace ktane_bomb_manual.Modules
         {
             switch (Stripe)
             {
-                case "blue": return "Release when shown 4.";
-                case "white": return "Release when shown 1.";
-                case "yellow": return "Release when shown 5.";
-                default: return "Release when shown 1.";
+                case "blue": return "Release when shown four.";
+                case "white": return "Release when shown one.";
+                case "yellow": return "Release when shown five.";
+                default: return "Release when shown one.";
             }
         }
 
@@ -84,7 +79,6 @@ namespace ktane_bomb_manual.Modules
                 return "Hold the button. What is the stripe color?";
             else
             {
-                Solved = true;
                 return "Just press it.";
             }
         }
