@@ -1,4 +1,6 @@
-﻿namespace ktane_bomb_manual.Modules
+﻿using System.Linq;
+
+namespace ktane_bomb_manual.Modules
 {
     public class Button : Module
     {
@@ -23,6 +25,35 @@
                 Solved = true;
                 return WhatToDoWithTheStripe(bomb);
             }
+        }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            if (command.Contains("stripe"))
+            {
+                if (command.Contains("blue")) Stripe = "blue";
+                if (command.Contains("white")) Stripe = "white";
+                if (command.Contains("yellow")) Stripe = "yellow";
+                if (string.IsNullOrEmpty(Stripe)) Stripe = "red";
+                return Solve(bomb);
+            }
+
+            foreach (var word in command.Split(' ').Where(x => x == "blue" || x == "white" || x == "red" || x == "yellow" || x == "hold" || x == "detonate" || x == "abort"))
+            {
+                if (word == "hold" || word == "detonate" || word == "abort")
+                {
+                    Color = word;
+                }
+                else
+                {
+                    Text = word;
+                }
+            }
+            return "";
         }
 
         public string WhatToDoWithTheButton(Bomb bomb)
@@ -56,11 +87,6 @@
                 Solved = true;
                 return "Just press it.";
             }
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

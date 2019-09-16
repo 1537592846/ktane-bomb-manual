@@ -1,4 +1,6 @@
-﻿namespace ktane_bomb_manual.Modules
+﻿using System.Linq;
+
+namespace ktane_bomb_manual.Modules
 {
     public class MorseCode : Module
     {
@@ -18,6 +20,22 @@
         {
             if (string.IsNullOrEmpty(Sequence1) || string.IsNullOrEmpty(Sequence2) || string.IsNullOrEmpty(Sequence3) || string.IsNullOrEmpty(Sequence4) || string.IsNullOrEmpty(Sequence5)) return "Can't solve it yet.";
             return "Frequence is 3 dot " + GetFrequence() + " megahertz.";
+        }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            if (command.Contains("reset"))
+            {
+                ResetSequences();
+                return "";
+            }
+            AddSequence(command);
+
+            return "";
         }
 
         public string GetFrequence()
@@ -45,12 +63,18 @@
 
         public void AddSequence(string sequence)
         {
-            if (string.IsNullOrEmpty(Sequence1)) { Sequence1 = sequence; return; }
-            if (string.IsNullOrEmpty(Sequence2)) { Sequence2 = sequence; return; }
-            if (string.IsNullOrEmpty(Sequence3)) { Sequence3 = sequence; return; }
-            if (string.IsNullOrEmpty(Sequence4)) { Sequence4 = sequence; return; }
-            if (string.IsNullOrEmpty(Sequence5)) { Sequence5 = sequence; return; }
-            if (string.IsNullOrEmpty(Sequence6)) { Sequence6 = sequence; return; }
+            var sequenceList = sequence.Split(' ').Where(x => x == "dash" || x == "dot" || x == "next");
+            var morse = "";
+            foreach(var dashDot in sequenceList)
+            {
+                morse += dashDot + " ";
+            }
+            if (string.IsNullOrEmpty(Sequence1)) { Sequence1 = morse.Trim(); return; }
+            if (string.IsNullOrEmpty(Sequence2)) { Sequence2 = morse.Trim(); return; }
+            if (string.IsNullOrEmpty(Sequence3)) { Sequence3 = morse.Trim(); return; }
+            if (string.IsNullOrEmpty(Sequence4)) { Sequence4 = morse.Trim(); return; }
+            if (string.IsNullOrEmpty(Sequence5)) { Sequence5 = morse.Trim(); return; }
+            if (string.IsNullOrEmpty(Sequence6)) { Sequence6 = morse.Trim(); return; }
         }
 
         public void ResetSequences()
@@ -61,11 +85,6 @@
             Sequence4 = "";
             Sequence5 = "";
             Sequence6 = "";
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -20,6 +20,61 @@
             return ExitPath();
         }
 
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            if (command.Contains("player"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.GetNumber(word) != -1)
+                    {
+                        PlayerPosition += InternalFunctions.GetNumber(word) + " ";
+                    }
+                    PlayerPosition = PlayerPosition.Trim().Replace(' ', ',');
+                }
+
+                return "";
+            }
+            if (command.Contains("exit"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.GetNumber(word) != -1)
+                    {
+                        ExitPosition += InternalFunctions.GetNumber(word) + " ";
+                    }
+                    ExitPosition = ExitPosition.Trim().Replace(' ', ',');
+                }
+
+                return "";
+            }
+            if (command.Contains("circle"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.GetNumber(word) != -1)
+                    {
+                        Circle2 += InternalFunctions.GetNumber(word) + " ";
+                    }
+                    Circle2 = Circle2.Trim().Replace(' ', ',');
+                }
+
+                if (string.IsNullOrEmpty(Circle1))
+                {
+                    Circle1 = Circle2;
+                    Circle2 = "";
+                }
+
+                return "";
+            }
+
+            return "";
+        }
+
         public void CreateConfig1()
         {
             MazeConfiguration[0, 0] = new MazeCell("left top");
@@ -488,11 +543,6 @@
             if (!message.EndsWith(".")) return "and you can't move anymore.";
 
             return message;
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 

@@ -2,11 +2,6 @@
 {
     public class Morsematics : Module
     {
-        public Morsematics()
-        {
-
-        }
-
         public int RecievedCharacterValue1;
         public int RecievedCharacterValue2;
         public int RecievedCharacterValue3;
@@ -21,6 +16,16 @@
         {
             if (string.IsNullOrEmpty(bomb.Serial) || string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Can't solve it yet.";
             return "Send " + Solution(bomb) + " done.";
+        }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            AddCharacter(command);
+            return "";
         }
 
         public void AddCharacter(string input)
@@ -62,42 +67,42 @@
             PairCharacterValue1 = InternalFunctions.GetNumberFromLetter(bomb.GetSerialCharacterAtPosition(4));
             PairCharacterValue2 = InternalFunctions.GetNumberFromLetter(bomb.GetSerialCharacterAtPosition(5));
 
-            AddCharacter(bomb.GetLitIndicatorsWithLetter(RecievedCharacter1), 1);
-            AddCharacter(bomb.GetLitIndicatorsWithLetter(RecievedCharacter2), 1);
-            AddCharacter(bomb.GetLitIndicatorsWithLetter(RecievedCharacter3), 1);
-            AddCharacter(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter1), 2);
-            AddCharacter(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter2), 2);
-            AddCharacter(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter3), 2);
+            ChangeCharacterValue(bomb.GetLitIndicatorsWithLetter(RecievedCharacter1), 1);
+            ChangeCharacterValue(bomb.GetLitIndicatorsWithLetter(RecievedCharacter2), 1);
+            ChangeCharacterValue(bomb.GetLitIndicatorsWithLetter(RecievedCharacter3), 1);
+            ChangeCharacterValue(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter1), 2);
+            ChangeCharacterValue(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter2), 2);
+            ChangeCharacterValue(bomb.GetUnlitIndicatorsWithLetter(RecievedCharacter3), 2);
 
             if (InternalFunctions.IsSquare(PairCharacterValue1 + PairCharacterValue2))
-                AddCharacter(4, 1);
+                ChangeCharacterValue(4, 1);
             else
-                AddCharacter(-4, 2);
+                ChangeCharacterValue(-4, 2);
 
             if (RecievedCharacterValue1 > RecievedCharacterValue2)
                 if (RecievedCharacterValue1 > RecievedCharacterValue3)
-                    AddCharacter(RecievedCharacterValue1, 1);
+                    ChangeCharacterValue(RecievedCharacterValue1, 1);
                 else
-                    AddCharacter(RecievedCharacterValue3, 1);
+                    ChangeCharacterValue(RecievedCharacterValue3, 1);
             else
                 if (RecievedCharacterValue2 > RecievedCharacterValue3)
-                AddCharacter(RecievedCharacterValue2, 1);
+                ChangeCharacterValue(RecievedCharacterValue2, 1);
             else
-                AddCharacter(RecievedCharacterValue3, 1);
+                ChangeCharacterValue(RecievedCharacterValue3, 1);
 
-            if (InternalFunctions.IsPrime(RecievedCharacterValue1)) AddCharacter(-RecievedCharacterValue1, 1);
-            if (InternalFunctions.IsPrime(RecievedCharacterValue2)) AddCharacter(-RecievedCharacterValue2, 1);
-            if (InternalFunctions.IsPrime(RecievedCharacterValue3)) AddCharacter(-RecievedCharacterValue3, 1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue1)) ChangeCharacterValue(-RecievedCharacterValue1, 1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue2)) ChangeCharacterValue(-RecievedCharacterValue2, 1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue3)) ChangeCharacterValue(-RecievedCharacterValue3, 1);
 
-            if (InternalFunctions.IsSquare(RecievedCharacterValue1)) AddCharacter(-RecievedCharacterValue1, 2);
-            if (InternalFunctions.IsSquare(RecievedCharacterValue2)) AddCharacter(-RecievedCharacterValue2, 2);
-            if (InternalFunctions.IsSquare(RecievedCharacterValue3)) AddCharacter(-RecievedCharacterValue3, 2);
+            if (InternalFunctions.IsSquare(RecievedCharacterValue1)) ChangeCharacterValue(-RecievedCharacterValue1, 2);
+            if (InternalFunctions.IsSquare(RecievedCharacterValue2)) ChangeCharacterValue(-RecievedCharacterValue2, 2);
+            if (InternalFunctions.IsSquare(RecievedCharacterValue3)) ChangeCharacterValue(-RecievedCharacterValue3, 2);
 
             if (bomb.HasManyBatteries(1))
             {
-                if (RecievedCharacterValue1 % bomb.GetBatteries() == 0) { AddCharacter(-RecievedCharacterValue1, 1); AddCharacter(-RecievedCharacterValue1, 2); }
-                if (RecievedCharacterValue2 % bomb.GetBatteries() == 0) { AddCharacter(-RecievedCharacterValue2, 1); AddCharacter(-RecievedCharacterValue2, 2); }
-                if (RecievedCharacterValue3 % bomb.GetBatteries() == 0) { AddCharacter(-RecievedCharacterValue3, 1); AddCharacter(-RecievedCharacterValue3, 2); }
+                if (RecievedCharacterValue1 % bomb.GetBatteries() == 0) { ChangeCharacterValue(-RecievedCharacterValue1, 1); ChangeCharacterValue(-RecievedCharacterValue1, 2); }
+                if (RecievedCharacterValue2 % bomb.GetBatteries() == 0) { ChangeCharacterValue(-RecievedCharacterValue2, 1); ChangeCharacterValue(-RecievedCharacterValue2, 2); }
+                if (RecievedCharacterValue3 % bomb.GetBatteries() == 0) { ChangeCharacterValue(-RecievedCharacterValue3, 1); ChangeCharacterValue(-RecievedCharacterValue3, 2); }
             }
 
             if (PairCharacterValue1 == PairCharacterValue2)
@@ -109,7 +114,7 @@
                 return InternalFunctions.GetMorseFromLetter(InternalFunctions.GetLetterFromNumber(PairCharacterValue1 + PairCharacterValue2));
         }
 
-        public void AddCharacter(int value, int numberPair)
+        public void ChangeCharacterValue(int value, int numberPair)
         {
             switch (numberPair)
             {
@@ -136,11 +141,6 @@
                         break;
                     }
             }
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

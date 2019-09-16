@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ktane_bomb_manual.Modules
 {
@@ -22,6 +23,22 @@ namespace ktane_bomb_manual.Modules
             }
             Solved = true;
             return message.TrimEnd();
+        }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            string config = "";
+
+            foreach (var word in command.Split(' ').Where(x => x=="none"||x == "white" || x == "blue" || x == "red" || x == "star" || x == "led"))
+            {
+                config += word + " ";
+            }
+            Wires.Add(new ComplicatedWire(config));
+            return "";
         }
 
         public string ShouldICutThisWire(Bomb bomb, ComplicatedWire wire)
@@ -134,11 +151,6 @@ namespace ktane_bomb_manual.Modules
                     }
                 }
             }
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 

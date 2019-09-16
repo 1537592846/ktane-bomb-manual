@@ -22,10 +22,26 @@ namespace ktane_bomb_manual.Modules
                 message += i % 3 == 2 ? " next. " : ", ";
             }
             while (!char.IsDigit(message.Last())) { message = message.Substring(0, message.Count() - 1); }
-
-            Solved = true;
-
+            
             return message+" done.";
+        }
+
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            
+            foreach(var word in command.Split(' '))
+            {
+                if (InternalFunctions.GetNumber(word) != -1)
+                {
+                    AddNumber(bomb, InternalFunctions.GetNumber(word).ToString());
+                }
+            }
+
+            return "";
         }
 
         public void AddNumber(Bomb bomb, string number)
@@ -50,11 +66,6 @@ namespace ktane_bomb_manual.Modules
             if (EndNumbers[EndNumbers.Count - 1] == "0" || EndNumbers[EndNumbers.Count - 2] == "0") { EndNumbers.Add((bomb.GetBiggestSerialDigit() + int.Parse(number)).ToString().Last().ToString()); return; }
             if (int.Parse(EndNumbers[EndNumbers.Count - 1]) % 2 == 0 && int.Parse(EndNumbers[EndNumbers.Count - 2]) % 2 == 0) { EndNumbers.Add(bomb.GetSmallestOddSerialDigit() != -1 ? (bomb.GetSmallestOddSerialDigit() + int.Parse(number)).ToString().Last().ToString() : (9 + int.Parse(number)).ToString().Last().ToString()); return; }
             EndNumbers.Add((int.Parse((int.Parse(EndNumbers[EndNumbers.Count - 1]) + int.Parse(EndNumbers[EndNumbers.Count - 2])).ToString().Substring(0, 1)) + int.Parse(number)).ToString().Last().ToString());
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

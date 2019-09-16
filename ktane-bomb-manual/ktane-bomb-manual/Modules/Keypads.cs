@@ -27,6 +27,21 @@ namespace ktane_bomb_manual.Modules
             return message.TrimEnd();
         }
 
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+            
+            foreach(var word in command.Split(' '))
+            {
+                AddSymbol(word);
+            }
+
+            return "";
+        }
+
         public List<int> SymbolOrder()
         {
             var Order1 = new List<int>() { (int)SymbolList.ArchaicKoppa, (int)SymbolList.LittleYus, (int)SymbolList.Lambda, (int)SymbolList.Koppa, (int)SymbolList.BigYus, (int)SymbolList.Kai, (int)SymbolList.LunateAntiSigma };
@@ -134,11 +149,6 @@ namespace ktane_bomb_manual.Modules
                 case 27: return "Zhe";
                 default: return "";
             }
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
 
         public enum SymbolList

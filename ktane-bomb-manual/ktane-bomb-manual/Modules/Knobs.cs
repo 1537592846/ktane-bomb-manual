@@ -11,6 +11,22 @@ namespace ktane_bomb_manual.Modules
 
         public string Sequence { get; set; }
 
+        public override string Command(Bomb bomb, string command)
+        {
+            if (command.Contains("solve"))
+            {
+                return Solve(bomb);
+            }
+
+            foreach (var word in command.Split(' ').Where(x => x == "both" || x == "up" || x == "down" || x == "none"))
+            {
+                Sequence += word;
+            }
+            Sequence = Sequence.Trim();
+
+            return "";
+        }
+
         public override string Solve(Bomb bomb)
         {
             return GetKnobFinalPosition();
@@ -44,7 +60,7 @@ namespace ktane_bomb_manual.Modules
             right1 = CompareConfigurationWithLeds(leds, "110111101110");
             right2 = CompareConfigurationWithLeds(leds, "110111100100");
 
-            if (up1||up2)
+            if (up1 || up2)
             {
                 if (message == "")
                     message = "Final position is up.";
@@ -99,11 +115,6 @@ namespace ktane_bomb_manual.Modules
                 if (leds[i] != config[i]) return false;
             }
             return true;
-        }
-
-        public override string Command(Bomb bomb, string command)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
