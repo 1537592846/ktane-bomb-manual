@@ -15,6 +15,7 @@
 
         public override string Solve(Bomb bomb)
         {
+            if (string.IsNullOrEmpty(Circle1) || string.IsNullOrEmpty(Circle2) || string.IsNullOrEmpty(ExitPosition) || string.IsNullOrEmpty(PlayerPosition)) return "Can't solve it yet.";
             Solved = true;
             return ExitPath();
         }

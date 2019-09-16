@@ -16,12 +16,13 @@
 
         public override string Solve(Bomb bomb)
         {
+            if (string.IsNullOrEmpty(Sequence1) || string.IsNullOrEmpty(Sequence2) || string.IsNullOrEmpty(Sequence3) || string.IsNullOrEmpty(Sequence4) || string.IsNullOrEmpty(Sequence5)) return "Can't solve it yet.";
             return "Frequence is 3 dot " + GetFrequence() + " megahertz.";
         }
 
         public string GetFrequence()
         {
-            var word = GetLetterFromMorse(Sequence1) + GetLetterFromMorse(Sequence2) + GetLetterFromMorse(Sequence3) + GetLetterFromMorse(Sequence4) + GetLetterFromMorse(Sequence5) + GetLetterFromMorse(Sequence6) + GetLetterFromMorse(Sequence1) + GetLetterFromMorse(Sequence2) + GetLetterFromMorse(Sequence3) + GetLetterFromMorse(Sequence4) + GetLetterFromMorse(Sequence5);
+            var word = InternalFunctions.GetLetterFromMorse(Sequence1) + InternalFunctions.GetLetterFromMorse(Sequence2) + InternalFunctions.GetLetterFromMorse(Sequence3) + InternalFunctions.GetLetterFromMorse(Sequence4) + InternalFunctions.GetLetterFromMorse(Sequence5) + InternalFunctions.GetLetterFromMorse(Sequence6) + InternalFunctions.GetLetterFromMorse(Sequence1) + InternalFunctions.GetLetterFromMorse(Sequence2) + InternalFunctions.GetLetterFromMorse(Sequence3) + InternalFunctions.GetLetterFromMorse(Sequence4) + InternalFunctions.GetLetterFromMorse(Sequence5);
 
             if (word.Contains("shell")) return "5 0 5";
             if (word.Contains("halls")) return "5 1 5";
@@ -40,50 +41,6 @@
             if (word.Contains("vector")) return "5 9 5";
             if (word.Contains("beats")) return "6 0 0";
             return "";
-        }
-
-        public string GetLetterFromMorse(string morse)
-        {
-            switch (morse)
-            {
-                case "dot dash next": return "a";
-                case "dash dot dot dot next": return "b";
-                case "dash dot dash dot next": return "c";
-                case "dash dot dot next": return "d";
-                case "dot next": return "e";
-                case "dot dot dash dot next": return "f";
-                case "dash dash dot next": return "g";
-                case "dot dot dot dot next": return "h";
-                case "dot dot next": return "i";
-                case "dot dash dash dash next": return "j";
-                case "dash dot dash next": return "k";
-                case "dot dash dot dot next": return "l";
-                case "dash dash next": return "m";
-                case "dash dot next": return "n";
-                case "dash dash dash next": return "o";
-                case "dot dash dash dot next": return "p";
-                case "dash dash dot dash next": return "q";
-                case "dot dash dot next": return "r";
-                case "dot dot dot next": return "s";
-                case "dash next": return "t";
-                case "dot dot dash next": return "u";
-                case "dot dot dot dash next": return "v";
-                case "dot dash dash next": return "w";
-                case "dash dot dot dash next": return "x";
-                case "dash dot dash dash next": return "y";
-                case "dash dash dot dot next": return "z";
-                case "dot dash dash dash dash next": return "1";
-                case "dot dot dash dash dash next": return "2";
-                case "dot dot dot dash dash next": return "3";
-                case "dot dot dot dot dash next": return "4";
-                case "dot dot dot dot dot next": return "5";
-                case "dash dot dot dot dot next": return "6";
-                case "dash dash dot dot dot next": return "7";
-                case "dash dash dash dot dot next": return "8";
-                case "dash dash dash dash dot next": return "9";
-                case "dash dash dash dash dash next": return "0";
-                default: return "";
-            }
         }
 
         public void AddSequence(string sequence)

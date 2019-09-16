@@ -1,4 +1,5 @@
 ﻿using ktane_bomb_manual.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,11 +16,17 @@ namespace ktane_bomb_manual
             Ports = new List<Port>();
             Indicators = new List<Indicator>();
             Modules = new List<Module>();
-            ModulesAvaliable = new Dictionary<string, Module>();
+            ModulesAvaliable = new Dictionary<string, Type>();
+            var classList = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+                 .Where(t => t.Namespace == "ktane_bomb_manual.Modules")
+                 .ToList();
 
+            foreach (var classType in classList)
+            {
+                if (!ModulesAvaliable.ContainsKey(classType.Name.ToLower())) ModulesAvaliable.Add(classType.Name.ToLower(), classType);
+            }
         }
 
-        public Dictionary<string, Module> ModulesAvaliable { get; set; }
         public int Strikes { get; set; }
         public string Serial { get; set; }
         public int BatteryD { get; set; }
@@ -27,6 +34,7 @@ namespace ktane_bomb_manual
         public List<Port> Ports { get; set; }
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
+        public Dictionary<string, Type> ModulesAvaliable { get; set; }
 
         public string Command(string command)
         {
@@ -34,16 +42,10 @@ namespace ktane_bomb_manual
             {
                 foreach (var word in command.Split(' '))
                 {
-                    if (InternalFunctions.GetLetterFromPhoneticLetter(word) != "")
-                    {
                         Serial += InternalFunctions.GetLetterFromPhoneticLetter(word).ToUpper();
-                        continue;
-                    }
-                    if (InternalFunctions.GetMorseFromLetter(word) != "")
-                    {
-                        Serial += word;
-                    }
+                        Serial += InternalFunctions.GetNumber(word)==-1?"":InternalFunctions.GetNumber(word).ToString();
                 }
+                return "";
             }
             if (command.Contains("battery") || command.Contains("batteries"))
             {
@@ -54,6 +56,7 @@ namespace ktane_bomb_manual
                         if (char.IsDigit(letter))
                         {
                             BatteryD = int.Parse(letter.ToString());
+                            break;
                         }
                     }
                 }
@@ -64,17 +67,34 @@ namespace ktane_bomb_manual
                         if (char.IsDigit(letter))
                         {
                             BatteryAA = int.Parse(letter.ToString());
+                            break;
                         }
                     }
                 }
+                return "";
             }
-            if (command.Contains("add port"))
+            if (command.Contains("port"))
             {
-                var info = command.Replace("add port ", "").Split(' ');
-                Ports.Add(new Port(command[0].ToString(), int.Parse(command[1].ToString())));
+                var info = command.Replace("bomb", "").Replace("has", "").Replace("ports", "").Replace("port", "").Trim().Split(' ');
+                Ports.Add(new Port(info[1], InternalFunctions.GetNumber(info[0])));
+                return "";
+            }
+            if (command.Contains("indicator"))
+            {
+                var info = command.Replace("bomb", "").Replace("has", "").Replace("indicator", "").Trim().Split(' ');
+                var light = !info.Contains("unlit");
+                info = info.Where(x => !x.Contains("lit")).ToArray();
+
+                Indicators.Add(new Indicator(InternalFunctions.GetLetterFromPhoneticLetter(info[0]) + InternalFunctions.GetLetterFromPhoneticLetter(info[1]) + InternalFunctions.GetLetterFromPhoneticLetter(info[2]), light));
+                return "";
+            }
+            if (command.Contains("strike"))
+            {
+                AddStrike();
+                return "";
             }
 
-            return "";
+            return "Command not found.";
         }
 
         public void AddStrike()
@@ -90,7 +110,9 @@ namespace ktane_bomb_manual
             }
             catch
             {
-                Modules.Add(new Wires());
+                Type type;
+                ModulesAvaliable.TryGetValue(module,out type);
+                Modules.Add((Module)Activator.CreateInstance(type));
                 return GetModule(module);
             }
         }

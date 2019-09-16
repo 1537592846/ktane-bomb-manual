@@ -13,7 +13,6 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            Solved = true;
             return GetKnobFinalPosition();
         }
 

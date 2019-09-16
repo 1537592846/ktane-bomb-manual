@@ -192,6 +192,34 @@
             }
         }
 
+        public static int GetNumber(string word)
+        {
+            switch (word)
+            {
+                case "1":
+                case "one": return 1;
+                case "2":
+                case "two": return 2;
+                case "3":
+                case "three": return 3;
+                case "4":
+                case "four": return 4;
+                case "5":
+                case "five": return 5;
+                case "6":
+                case "six": return 6;
+                case "7":
+                case "seven": return 7;
+                case "8":
+                case "eight": return 8;
+                case "9":
+                case "nine": return 9;
+                case "0":
+                case "zero": return 0;
+                default: return -1;
+            }
+        }
+
         public static string GetLetterFromNumber(int value)
         {
             value += 52;

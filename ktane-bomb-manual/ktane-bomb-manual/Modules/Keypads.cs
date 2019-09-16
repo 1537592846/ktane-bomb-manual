@@ -14,6 +14,8 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
+            if (Symbols.Count < 4) return "Can't solve it yet.";
+
             var message = "Order as follow: ";
             foreach (var symbol in SymbolOrder())
             {

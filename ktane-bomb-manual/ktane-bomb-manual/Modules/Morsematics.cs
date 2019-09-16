@@ -19,7 +19,7 @@
 
         public override string Solve(Bomb bomb)
         {
-            if (string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Can't solve it yet.";
+            if (string.IsNullOrEmpty(bomb.Serial) || string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Can't solve it yet.";
             return "Send " + Solution(bomb) + " done.";
         }
 
@@ -81,13 +81,13 @@
                     AddCharacter(RecievedCharacterValue3, 1);
             else
                 if (RecievedCharacterValue2 > RecievedCharacterValue3)
-                 AddCharacter(RecievedCharacterValue2, 1);
+                AddCharacter(RecievedCharacterValue2, 1);
             else
                 AddCharacter(RecievedCharacterValue3, 1);
 
-            if (InternalFunctions.IsPrime(RecievedCharacterValue1)) AddCharacter(-RecievedCharacterValue1,1);
-            if (InternalFunctions.IsPrime(RecievedCharacterValue2)) AddCharacter(-RecievedCharacterValue2,1);
-            if (InternalFunctions.IsPrime(RecievedCharacterValue3)) AddCharacter(-RecievedCharacterValue3,1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue1)) AddCharacter(-RecievedCharacterValue1, 1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue2)) AddCharacter(-RecievedCharacterValue2, 1);
+            if (InternalFunctions.IsPrime(RecievedCharacterValue3)) AddCharacter(-RecievedCharacterValue3, 1);
 
             if (InternalFunctions.IsSquare(RecievedCharacterValue1)) AddCharacter(-RecievedCharacterValue1, 2);
             if (InternalFunctions.IsSquare(RecievedCharacterValue2)) AddCharacter(-RecievedCharacterValue2, 2);

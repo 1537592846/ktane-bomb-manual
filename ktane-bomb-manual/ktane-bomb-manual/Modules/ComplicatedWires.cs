@@ -13,6 +13,8 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
+            if (string.IsNullOrEmpty(bomb.Serial)) return "Can't solve it yet.";
+
             var message = "";
             foreach (var wire in Wires)
             {

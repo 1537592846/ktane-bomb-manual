@@ -4,7 +4,7 @@
     {
         public bool Solved { get; set; }
 
-        public string ModuleName { get { return GetType().Name; } }
+        public string ModuleName { get { return GetType().Name.ToLower(); } }
 
         public abstract string Solve(Bomb bomb);
 
