@@ -15,23 +15,19 @@ namespace ktane_bomb_manual.Modules
         public override string Solve(Bomb bomb)
         {
             if (string.IsNullOrEmpty(bomb.Serial)) return "Can't solve it yet.";
+            Solved = true;
             return WireToCut(bomb);
         }
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
             if (command.Contains("colors") || command.Contains("wires"))
             {
                 foreach (var wire in command.Split(' ').Where(x => IsWireColor(x)))
                 {
                     AddWire(wire);
                 }
+                return Solve(bomb);
             }
             return "";
         }

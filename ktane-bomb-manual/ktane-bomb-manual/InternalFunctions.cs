@@ -216,6 +216,12 @@
                 case "nine": return 9;
                 case "0":
                 case "zero": return 0;
+                case "10":
+                case "ten": return 10;
+                case "11":
+                case "eleven": return 11;
+                case "12":
+                case "twelve": return 12;
                 default: return -1;
             }
         }

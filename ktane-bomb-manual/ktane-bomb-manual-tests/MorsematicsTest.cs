@@ -23,10 +23,10 @@ namespace Tests
         public void Test()
         {
             var morsematicsModule = new Morsematics();
-            morsematicsModule.AddCharacter("the first one is dot dot dash dot next");
-            morsematicsModule.AddCharacter("the second is dash dot dash dot next");
-            morsematicsModule.AddCharacter("and the third is dash dot dash next");
-            Assert.AreEqual("Send dot dash dash dot done.", morsematicsModule.Solve(bomb),"Error Test #1",null);
+            morsematicsModule.Command(bomb,"the first one is dot dot dash dot next");
+            morsematicsModule.Command(bomb, "the second is dash dot dash dot next");
+            morsematicsModule.Command(bomb, "and the third is dash dot dash next");
+            Assert.AreEqual("Send dot dash dash dot done.", morsematicsModule.Command(bomb,"solve morsematics"),"Error Test #1",null);
         }
     }
 }

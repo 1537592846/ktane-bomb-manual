@@ -76,7 +76,10 @@ namespace ktane_bomb_manual
             if (command.Contains("port"))
             {
                 var info = command.Replace("bomb", "").Replace("has", "").Replace("ports", "").Replace("port", "").Trim().Split(' ');
-                Ports.Add(new Port(info[1], InternalFunctions.GetNumber(info[0])));
+                if (Ports.Where(x => x.Name == info[1]).Count() == 1)
+                    Ports.Where(x => x.Name == info[1]).First().Quantity += InternalFunctions.GetNumber(info[0]);
+                else
+                    Ports.Add(new Port(info[1], InternalFunctions.GetNumber(info[0])));
                 return "";
             }
             if (command.Contains("indicator"))
@@ -122,14 +125,46 @@ namespace ktane_bomb_manual
             return Ports.Where(x => x.Name == port).FirstOrDefault();
         }
 
-        public int GetPortsQuantity(string port)
+        public int GetPortsQuantity(string portName = "")
         {
-            return Ports.Where(x => x.Name == port).Count();
+            var count = 0;
+            if (string.IsNullOrEmpty(portName))
+                foreach (var port in Ports)
+                {
+                    count += port.Quantity;
+                }
+            else
+                count = Ports.Where(x => x.Name == portName).First().Quantity;
+            return count;
         }
 
         public Indicator GetIndicator(string tag)
         {
             return Indicators.Where(x => x.Tag == tag).FirstOrDefault();
+        }
+
+        public int GetLitIndicatorsInSerialQuantity()
+        {
+            int count = 0;
+
+            foreach (var indicator in Indicators.Where(x => x.LitIndicator))
+            {
+                count += HasSerialChar(indicator.Tag[0]) || HasSerialChar(indicator.Tag[1]) || HasSerialChar(indicator.Tag[2]) ? 1 : 0;
+            }
+
+            return count;
+        }
+
+        public int GetUnlitIndicatorsInSerialQuantity()
+        {
+            int count = 0;
+
+            foreach (var indicator in Indicators.Where(x => !x.LitIndicator))
+            {
+                count += HasSerialChar(indicator.Tag[0]) || HasSerialChar(indicator.Tag[1]) || HasSerialChar(indicator.Tag[2]) ? 1 : 0;
+            }
+
+            return count;
         }
 
         public int GetBatteries()
@@ -217,7 +252,7 @@ namespace ktane_bomb_manual
         {
             foreach (var port in Ports)
             {
-                if (Ports.Where(x => x.Name == port.Name).Count() >= 2) return true;
+                if (port.Quantity >= 2) return true;
             }
             return false;
         }
@@ -239,7 +274,7 @@ namespace ktane_bomb_manual
 
         public bool HasSerialChar(char character)
         {
-            return Serial.Contains(character);
+            return Serial.Contains(character.ToString().ToUpper());
         }
 
         public bool HasAnyDuplicatedSerialChar()

@@ -13,12 +13,6 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't tell yet.";
-                return solveReturn;
-            }
             Sequence = "";
             foreach (var word in command.Split(' ').Where(x => x == "both" || x == "up" || x == "down" || x == "none"))
             {
@@ -26,7 +20,7 @@ namespace ktane_bomb_manual.Modules
             }
             Sequence = Sequence.Trim();
 
-            return "Sequence added";
+            return Solve(bomb);
         }
 
         public string GetKnobFinalPosition()

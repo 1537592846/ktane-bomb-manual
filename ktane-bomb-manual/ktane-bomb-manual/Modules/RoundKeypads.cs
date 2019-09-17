@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace ktane_bomb_manual.Modules
 {
-    public class Keypads : Module
+    public class RoundKeypads : Module
     {
-        public Keypads()
+        public RoundKeypads()
         {
             Symbols = new List<int>();
         }
@@ -14,12 +14,13 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            if (Symbols.Count != 4) return "Can't solve it yet.";
-
-            var message = "Order as follow: ";
-            foreach (var symbol in SymbolOrder())
+            if (Symbols.Count != 8) return "Can't solve it yet.";
+            var list = SymbolOrder();
+            var message = "Press this ones: ";
+            foreach (var symbol in Symbols)
             {
-                message += WhichSymbol(symbol) + ". ";
+                if (!list.Contains(symbol))
+                    message += WhichSymbol(symbol) + ". ";
             }
 
             return message.TrimEnd();
@@ -50,12 +51,28 @@ namespace ktane_bomb_manual.Modules
             var order5 = new List<int>() { (int)SymbolList.Psi, (int)SymbolList.Teh, (int)SymbolList.Yat, (int)SymbolList.LunateSigma, (int)SymbolList.Pilcrow, (int)SymbolList.Ksi, (int)SymbolList.BlackStar };
             var order6 = new List<int>() { (int)SymbolList.Be, (int)SymbolList.E, (int)SymbolList.Thousand, (int)SymbolList.Aesc, (int)SymbolList.Psi, (int)SymbolList.ShortI, (int)SymbolList.Omega };
 
-            if (Symbols.Where(x => order1.Contains(x)).Count() == 4) return order1;
-            if (Symbols.Where(x => order2.Contains(x)).Count() == 4) return order2;
-            if (Symbols.Where(x => order3.Contains(x)).Count() == 4) return order3;
-            if (Symbols.Where(x => order4.Contains(x)).Count() == 4) return order4;
-            if (Symbols.Where(x => order5.Contains(x)).Count() == 4) return order5;
-            return order6;
+            var count1 = Symbols.Where(x => order1.Contains(x)).Count();
+            var count2 = Symbols.Where(x => order2.Contains(x)).Count();
+            var count3 = Symbols.Where(x => order3.Contains(x)).Count();
+            var count4 = Symbols.Where(x => order4.Contains(x)).Count();
+            var count5 = Symbols.Where(x => order5.Contains(x)).Count();
+            var count6 = Symbols.Where(x => order6.Contains(x)).Count();
+
+            int max = count1 > count2 ? 1 : 2;
+            max = max > count3 ? max : 3;
+            max = max > count4 ? max : 4;
+            max = max > count5 ? max : 5;
+            max = max > count6 ? max : 6;
+
+            switch (max)
+            {
+                case 1: return order1;
+                case 2: return order2;
+                case 3: return order3;
+                case 4: return order4;
+                case 5: return order5;
+                default: return order6;
+            }
         }
 
         public void AddSymbol(string description)

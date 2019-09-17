@@ -19,12 +19,12 @@ namespace Tests
         public void Passwords()
         {
             var passwordsModule = new Passwords();
-            passwordsModule.AddLetters("first slot is alpha tango charlie lima kilo romeo");
-            passwordsModule.AddLetters("second has kilo mike sierra echo delta");
-            passwordsModule.AddLetters("third one is alpha tango sierra hotel xray");
-            passwordsModule.AddLetters("fourth is mike november uniform whiskey romeo");
-            passwordsModule.AddLetters("last one is november foxtrot lima delta alpha");
-            Assert.AreEqual("The password is learn.", passwordsModule.Solve(bomb), "Error Test #1", null);
+            passwordsModule.Command(bomb, "passwords first slot is alpha tango charlie lima kilo romeo");
+            passwordsModule.Command(bomb, "passwords second has kilo mike sierra echo delta");
+            passwordsModule.Command(bomb, "passwords third one is alpha tango sierra hotel xray");
+            passwordsModule.Command(bomb, "passwords fourth is mike november uniform whiskey romeo");
+            passwordsModule.Command(bomb, "passwords last one is november foxtrot lima delta alpha");
+            Assert.AreEqual("The password is learn.", passwordsModule.Command(bomb,"solve passwords"), "Error Test #1", null);
         }
     }
 }

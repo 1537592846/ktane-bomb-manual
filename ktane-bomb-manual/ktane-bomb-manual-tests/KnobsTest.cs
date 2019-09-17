@@ -20,55 +20,31 @@ namespace Tests
         {
             //Can't tell yet
             var knobsModule = new Knobs();
-            knobsModule.Sequence = "none none none none none none";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #1", null);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs none none none none none none"), "Error test #1", null);
 
             //Up first config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "down down both down up both";
-            Assert.AreEqual("Final position is up.", knobsModule.Solve(bomb), "Error test #2", null);
+            Assert.AreEqual("Final position is up.", knobsModule.Command(bomb, "knobs down down both down up both"), "Error test #2", null);
 
             //Up second config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "up down both none both down";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is up.", knobsModule.Solve(bomb), "Error test #3", null);
+            Assert.AreEqual("Final position is up.", knobsModule.Command(bomb, "knobs up down both none both down"), "Error test #3", null);
 
             //Down first config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "down both both down none both";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is down.", knobsModule.Solve(bomb), "Error test #4", null);
+            Assert.AreEqual("Final position is down.", knobsModule.Command(bomb, "knobs down both both down none both"), "Error test #4", null);
 
             //Down second config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "up down up none up down";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is down.", knobsModule.Solve(bomb), "Error test #5", null);
+            Assert.AreEqual("Final position is down.", knobsModule.Command(bomb, "knobs up down up none up down"), "Error test #5", null);
 
             //Left first config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "down none none down both down";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is left.", knobsModule.Solve(bomb), "Error test #6", null);
+            Assert.AreEqual("Final position is left.", knobsModule.Command(bomb, "knobs down none none down both down"), "Error test #6", null);
 
             //Left second config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "none none none down both none";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is left.", knobsModule.Solve(bomb), "Error test #7", null);
+            Assert.AreEqual("Final position is left.", knobsModule.Command(bomb, "knobs none none none down both none"), "Error test #7", null);
 
             //Right first config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "both down both up both up";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is right.", knobsModule.Solve(bomb), "Error test #8", null);
+            Assert.AreEqual("Final position is right.", knobsModule.Command(bomb, "knobs both down both up both up"), "Error test #8", null);
 
             //Right second config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "both down both up down none";
-            knobsModule.Solve(bomb);
-            Assert.AreEqual("Final position is right.", knobsModule.Solve(bomb), "Error test #9", null);
+            Assert.AreEqual("Final position is right.", knobsModule.Command(bomb, "knobs both down both up down none"), "Error test #9", null);
         }
 
         [Test]
@@ -76,50 +52,35 @@ namespace Tests
         {
             //Up first half config
             var knobsModule = new Knobs();
-            knobsModule.Sequence = "down none both none up both";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #1", null);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs down none both none up both"), "Error test #1", null);
 
             //Up second half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "none none none none both down";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #2", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs none none none none both down"), "Error test #2", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Down first half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "none up both down none down";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #3", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs none up both down none down"), "Error test #3", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Down second half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "up none up none none down";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #4", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs up none up none none down"), "Error test #4", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Left first half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "down none none none down down";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #5", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs down none none none up none"), "Error test #5", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Left second half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "none none none down up none";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #6", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs none none none down up none"), "Error test #6", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Right first half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "down none both up both up";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #7", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs down none both up both up"), "Error test #7", null);
+            knobsModule.Command(bomb, "both down both up down none");
 
             //Right second half config
-            knobsModule = new Knobs();
-            knobsModule.Sequence = "none down both up none none";
-            Assert.AreEqual("Can't tell yet.", knobsModule.Solve(bomb), "Error test #8", null);
-            knobsModule.Solve(bomb);
+            Assert.AreEqual("Can't tell yet.", knobsModule.Command(bomb, "knobs none down both up none none"), "Error test #8", null);
+            knobsModule.Command(bomb, "both down both up down none");
         }
     }
 }

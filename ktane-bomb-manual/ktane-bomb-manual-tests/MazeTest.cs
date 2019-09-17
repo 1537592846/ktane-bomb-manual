@@ -18,17 +18,17 @@ namespace Tests
         public void Maze1()
         {
             var mazeModule = new Maze();
-            mazeModule.Circle1 = "1,0";
-            mazeModule.Circle2 = "2,5";
-            mazeModule.ExitPosition = "2,3";
-            mazeModule.PlayerPosition = "1,3";
+            mazeModule.Command(bomb, "maze circle at 1,0");
+            mazeModule.Command(bomb, "maze circle at 2,5");
+            mazeModule.Command(bomb, "maze exit at 2,3");
+            mazeModule.Command(bomb, "maze player at 1,3");
 
-            Assert.AreEqual("Take a right, right, down, left, left, and you are there.", mazeModule.Solve(bomb), "Error Text #1", null);
+            Assert.AreEqual("Take a right, right, down, left, left, and you are there.", mazeModule.Command(bomb, "solve maze"), "Error Text #1", null);
 
-            mazeModule.ExitPosition = "5,1";
-            mazeModule.PlayerPosition = "5,4";
+            mazeModule.Command(bomb, "maze exit at 5,1");
+            mazeModule.Command(bomb, "maze player at 5,4");
 
-            Assert.AreEqual("Take a right, up, up, up, left, left, down, left, up, left, up, right, up, left, left, down, down, down, down, down, right, and you are there.", mazeModule.Solve(bomb), "Error Text #2", null);
+            Assert.AreEqual("Take a right, up, up, up, left, left, down, left, up, left, up, right, up, left, left, down, down, down, down, down, right, and you are there.", mazeModule.Command(bomb,"solve maze"), "Error Text #2", null);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace Tests
             mazeModule.ExitPosition = "3,1";
             mazeModule.PlayerPosition = "3,2";
 
-            Assert.AreEqual("Take a right, up, right, right, up, left, up, left, down, left, down, left, down, and you are there.", mazeModule.Solve(bomb), "Error Text #1", null);
+            Assert.AreEqual("Take a right, up, right, right, up, left, up, left, down, left, down, left, down, and you are there.", mazeModule.Command(bomb, "maze solve"), "Error Text #1", null);
 
             mazeModule.ExitPosition = "5,1";
             mazeModule.PlayerPosition = "3,2";
