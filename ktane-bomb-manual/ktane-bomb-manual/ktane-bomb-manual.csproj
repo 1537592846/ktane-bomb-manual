@@ -82,6 +82,7 @@
     <Compile Include="Modules\SimonSays.cs" />
     <Compile Include="Modules\SquareButton.cs" />
     <Compile Include="Modules\Wires.cs" />
+    <Compile Include="Modules\WireSequence.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

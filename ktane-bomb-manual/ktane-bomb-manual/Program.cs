@@ -76,7 +76,7 @@ namespace SpeechRecognitionApp
                 if (command.Contains("new bomb"))
                 {
                     bomb = bomb = new Bomb();
-                    commandReturn="Bomb reseted.";
+                    commandReturn = "Bomb reseted.";
                     return;
                 }
                 if (command.Contains("bomb"))
@@ -90,12 +90,30 @@ namespace SpeechRecognitionApp
                     commandReturn = bomb.GetModule(command.Replace("solve", "").Trim()).Solve(bomb);
                     if (commandReturn == "")
                     {
-                        commandReturn="Command computed.";
+                        commandReturn = "Command computed.";
                     }
                     return;
                 }
-                commandReturn=bomb.GetModule(command.Split(' ')[0]).Command(bomb, command);
-                if(string.IsNullOrEmpty(commandReturn)) commandReturn = "Module added";
+                try
+                {
+                    commandReturn = bomb.GetModule(command.Split(' ')[0] + command.Split(' ')[1] + command.Split(' ')[2]).Command(bomb, command);
+                }
+                catch
+                {
+                    try
+                    {
+                        commandReturn = bomb.GetModule(command.Split(' ')[0] + command.Split(' ')[1]).Command(bomb, command);
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            commandReturn = bomb.GetModule(command.Split(' ')[0]).Command(bomb, command);
+                        }
+                        catch { commandReturn = "Module not found."; }
+                    }
+                }
+                if (string.IsNullOrEmpty(commandReturn)) commandReturn = "Module added";
             }
             catch
             {

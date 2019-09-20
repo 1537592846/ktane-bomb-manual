@@ -109,7 +109,7 @@ namespace ktane_bomb_manual
         {
             try
             {
-                return Modules.Where(x => x.ModuleName == module && !x.Solved).First();
+                return Modules.Where(x => x.ModuleName.ToLower() == module && !x.Solved).First();
             }
             catch
             {
