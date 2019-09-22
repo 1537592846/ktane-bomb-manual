@@ -3,6 +3,7 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Speech.Recognition;
+using System.Speech.Synthesis;
 
 namespace SpeechRecognitionApp
 {
@@ -15,7 +16,6 @@ namespace SpeechRecognitionApp
             while (true)
             {
                 bomb = new Bomb();
-                MainText();
                 Console.Write("Input mode: ");
                 var op = Console.ReadLine();
                 if (op.Contains("text"))
@@ -31,8 +31,7 @@ namespace SpeechRecognitionApp
             {
                 Console.Write("Command:");
                 var command = Console.ReadLine();
-                Command(command);
-                Console.WriteLine();
+                Console.WriteLine(Command(command));
             }
         }
 
@@ -68,7 +67,7 @@ namespace SpeechRecognitionApp
             }
         }
 
-        public static void Command(string command)
+        public static string Command(string command)
         {
             var commandReturn = "";
             try
@@ -76,14 +75,12 @@ namespace SpeechRecognitionApp
                 if (command.Contains("new bomb"))
                 {
                     bomb = bomb = new Bomb();
-                    commandReturn = "Bomb reseted.";
-                    return;
+                    return "Bomb reseted.";
                 }
                 if (command.Contains("bomb"))
                 {
                     bomb.Command(command);
-                    commandReturn = "Command executed.";
-                    return;
+                    return "Command executed.";
                 }
                 if (command.Contains("solve"))
                 {
@@ -92,7 +89,7 @@ namespace SpeechRecognitionApp
                     {
                         commandReturn = "Command computed.";
                     }
-                    return;
+                    return commandReturn;
                 }
                 try
                 {
@@ -117,12 +114,10 @@ namespace SpeechRecognitionApp
             }
             catch
             {
-                Console.WriteLine("Command not executed");
+                commandReturn = "Command not executed";
             }
-            finally
-            {
-                Console.WriteLine(commandReturn);
-            }
+
+            return commandReturn;
         }
 
         // Handle the SpeechRecognized event.  
@@ -130,8 +125,22 @@ namespace SpeechRecognitionApp
         {
             var command = e.Result.Text;
 
-            Command(command);
-            Console.WriteLine();
+            Console.WriteLine(command);
+            synthesizer_SpeechSynthesize(Command(command));
+        }
+
+        static void synthesizer_SpeechSynthesize(string message)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+
+            // Configure the speech voice
+            synth.SelectVoice("Microsoft Zira Desktop");
+
+            // Configure the audio output.   
+            synth.SetOutputToDefaultAudioDevice();
+
+            // Speak a string.  
+            synth.Speak(message);
         }
     }
 }
