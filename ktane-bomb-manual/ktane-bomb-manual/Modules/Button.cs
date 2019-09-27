@@ -22,18 +22,13 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = !solveReturn.Contains("stripe");
-                return solveReturn;
-            }
             if (command.Contains("stripe"))
             {
                 if (command.Contains("blue")) Stripe = "blue";
                 if (command.Contains("white")) Stripe = "white";
                 if (command.Contains("yellow")) Stripe = "yellow";
                 if (string.IsNullOrEmpty(Stripe)) Stripe = "red";
+                Solved = true;
                 return Solve(bomb);
             }
 
@@ -48,7 +43,7 @@ namespace ktane_bomb_manual.Modules
                    Color  = word;
                 }
             }
-            return "";
+            return Solve(bomb);
         }
 
         public string WhatToDoWithTheButton(Bomb bomb)
@@ -79,6 +74,7 @@ namespace ktane_bomb_manual.Modules
                 return "Hold the button. What is the stripe color?";
             else
             {
+                Solved = true;
                 return "Just press it.";
             }
         }

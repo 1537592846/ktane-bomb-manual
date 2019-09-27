@@ -17,34 +17,35 @@
                 return "Module solved.";
             }
 
-            while (command.Split(' ')[0] != "is") command = command.Replace(command.Split(' ')[0], "").Trim();
-
-            return FirstEntry ? WhichPosition(command.Replace("is ", "")) : WhichWords(command.Replace("is ", ""));
+            command = command.Replace("whos on first", "").Trim();
+            FirstEntry = !FirstEntry;
+            return FirstEntry ? WhichPosition(command.Replace("is ", "")) : "Press the first one to appear: "+WhichWords(command.Replace("is ", ""));
         }
 
         public string WhichPosition(string word)
         {
             switch (word)
             {
-                case "ur": return "Top left.";
+                case "ur": return "Top left tile.";
                 case "first":
                 case "okay":
-                case "c": return "Top right.";
+                case "c": return "Top right tile.";
                 case "yes":
                 case "nothing":
                 case "led":
-                case "they are": return "Middle left.";
+                case "they are": return "Middle left tile.";
                 case "blank":
                 case "read":
                 case "red":
                 case "you":
                 case "your":
                 case "you're":
-                case "their": return "Middle right.";
+                case "their": return "Middle right tile.";
                 case "":
+                case "empty":
                 case "reed":
                 case "leed":
-                case "they're": return "Bottom left.";
+                case "they're": return "Bottom left tile.";
                 case "display":
                 case "says":
                 case "no":
@@ -53,7 +54,7 @@
                 case "you are":
                 case "there":
                 case "see":
-                case "cee": return "Bottom right.";
+                case "cee": return "Bottom right tile.";
                 default: return "";
             }
         }
@@ -62,55 +63,34 @@
         {
             switch (word)
             {
-                case "READY": return "YES, OKAY, WHAT, MIDDLE, LEFT, PRESS, RIGHT, BLANK, READY, NO, FIRST, UHHH, NOTHING, WAIT";
-                case "FIRST": return "LEFT, OKAY, YES, MIDDLE, NO, RIGHT, NOTHING, UHHH, WAIT, READY, BLANK, WHAT, PRESS, FIRST";
-                case "NO": return "BLANK, UHHH, WAIT, FIRST, WHAT, READY, RIGHT, YES, NOTHING, LEFT, PRESS, OKAY, NO, MIDDLE";
-                case "BLANK": return "WAIT, RIGHT, OKAY, MIDDLE, BLANK, PRESS, READY, NOTHING, NO, WHAT, LEFT, UHHH, YES, FIRST";
-                case "NOTHING": return "UHHH, RIGHT, OKAY, MIDDLE, YES, BLANK, NO, PRESS, LEFT, WHAT, WAIT, FIRST, NOTHING, READY";
-                case "YES": return "OKAY, RIGHT, UHHH, MIDDLE, FIRST, WHAT, PRESS, READY, NOTHING, YES, LEFT, BLANK, NO, WAIT";
-                case "WHAT": return "UHHH, WHAT, LEFT, NOTHING, READY, BLANK, MIDDLE, NO, OKAY, FIRST, WAIT, YES, PRESS, RIGHT";
-                case "UHHH": return "READY, NOTHING, LEFT, WHAT, OKAY, YES, RIGHT, NO, PRESS, BLANK, UHHH, MIDDLE, WAIT, FIRST";
-                case "LEFT": return "RIGHT, LEFT, FIRST, NO, MIDDLE, YES, BLANK, WHAT, UHHH, WAIT, PRESS, READY, OKAY, NOTHING";
-                case "RIGHT": return "YES, NOTHING, READY, PRESS, NO, WAIT, WHAT, RIGHT, MIDDLE, LEFT, UHHH, BLANK, OKAY, FIRST";
-                case "MIDDLE": return "BLANK, READY, OKAY, WHAT, NOTHING, PRESS, NO, WAIT, LEFT, MIDDLE, RIGHT, FIRST, UHHH, YES";
-                case "OKAY": return "MIDDLE, NO, FIRST, YES, UHHH, NOTHING, WAIT, OKAY, LEFT, READY, BLANK, PRESS, WHAT, RIGHT";
-                case "WAIT": return "UHHH, NO, BLANK, OKAY, YES, LEFT, FIRST, PRESS, WHAT, WAIT, NOTHING, READY, RIGHT, MIDDLE";
-                case "PRESS": return "RIGHT, MIDDLE, YES, READY, PRESS, OKAY, NOTHING, UHHH, BLANK, LEFT, FIRST, WHAT, NO, WAIT";
-                case "YOU": return "SURE, YOU ARE, YOUR, YOU'RE, NEXT, UH HUH, UR, HOLD, WHAT?, YOU, UH UH, LIKE, DONE, U";
-                case "YOU ARE": return "YOUR, NEXT, LIKE, UH HUH, WHAT?, DONE, UH UN, HOLD, YOU, U, YOU'RE, SURE, UR, YOU ARE";
-                case "YOUR": return "UH UH, YOU ARE, UH HUH, YOUR, NEXT, UR, SURE, U, YOU'RE, YOU, WHAT?, HOLD, LIKE, DONE";
-                case "YOU'RE": return "YOU, YOU'RE, UR, NEXT, UH UH, YOU ARE, U, YOUR, WHAT?, UH HUH, SURE, DONE, LIKE, HOLD";
-                case "UR": return "DONE, U, UR, UH HUH, WHAT?, SURE, YOUR, HOLD, YOU'RE, LIKE, NEXT, UH UH, YOU ARE, YOU";
-                case "U": return "UH HUH, SURE, NEXT, WHAT?, YOU'RE, UR, UH UH, DONE, U, YOU, LIKE, HOLD, YOU ARE, YOUR";
-                case "UH HUH": return "UH HUH, YOUR, YOU ARE, YOU, DONE, HOLD, UH UH, NEXT, SURE, LIKE, YOU'RE, UR, U, WHAT?";
-                case "UH UH": return "UR, U, YOU ARE, YOU'RE, NEXT, UH UH, DONE, YOU, UH HUH, LIKE, YOUR, SURE, HOLD, WHAT?";
-                case "WHAT?": return "YOU, HOLD, YOU'RE, YOUR, U, DONE, UH UH, LIKE, YOU ARE, UH HUH, UR, NEXT, WHAT?, SURE";
-                case "DONE": return "SURE, UH HUH, NEXT, WHAT?, YOUR, UR, YOU'RE, HOLD, LIKE, YOU, U, YOU ARE, UH UH, DONE";
-                case "NEXT": return "WHAT?, UH HUH, UH UH, YOUR, HOLD, SURE, NEXT, LIKE, DONE, YOU ARE, UR, YOU'RE, U, YOU";
-                case "HOLD": return "YOU ARE, U, DONE, UH UH, YOU, UR, SURE, WHAT?, YOU'RE, NEXT, HOLD, UH HUH, YOUR, LIKE 0";
-                case "SURE": return "YOU ARE, DONE, LIKE, YOU'RE, YOU, HOLD, UH HUH, UR, SURE, U, WHAT?, NEXT, YOUR, UH UH";
-                case "LIKE": return "YOU'RE, NEXT, U, UR, HOLD, DONE, UH UH, WHAT?, UH HUH, YOU, LIKE, SURE, YOU ARE, YOUR ";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                case "ready": return "Yes. Okay. What. Middle. Left. Press. Right. Blank. Ready. No. First. Uhhh. Nothing. Wait.";
+                case "first": return "Left. Okay. Yes. Middle. No. Right. Nothing. Uhhh. Wait. Ready. Blank. What. Press. First.";
+                case "no": return "Blank. Uhhh. Wait. First. What. Ready. Right. Yes. Nothing. Left. Press. Okay. No. Middle.";
+                case "blank": return "Wait. Right. Okay. Middle. Blank. Press. Ready. Nothing. No. What. Left. Uhhh. Yes. First.";
+                case "nothing": return "Uhhh. Right. Okay. Middle. Yes. Blank. No. Press. Left. What. Wait. First. Nothing. Ready.";
+                case "yes": return "Okay. Right. Uhhh. Middle. First. What. Press. Ready. Nothing. Yes. Left. Blank. No. Wait.";
+                case "what": return "Uhhh. What. Left. Nothing. Ready. Blank. Middle. No. Okay. First. Wait. Yes. Press. Right.";
+                case "uhhh": return "Ready. Nothing. Left. What. Okay. Yes. Right. No. Press. Blank. Uhhh. Middle. Wait. First.";
+                case "left": return "Right. Left. First. No. Middle. Yes. Blank. What. Uhhh. Wait. Press. Ready. Okay. Nothing.";
+                case "right": return "Yes. Nothing. Ready. Press. No. Wait. What. Right. Middle. Left. Uhhh. Blank. Okay. First.";
+                case "middle": return "Blank. Ready. Okay. What. Nothing. Press. No. Wait. Left. Middle. Right. First. Uhhh. Yes.";
+                case "okay": return "Middle. No. First. Yes. Uhhh. Nothing. Wait. Okay. Left. Ready. Blank. Press. What. Right.";
+                case "wait": return "Uhhh. No. Blank. Okay. Yes. Left. First. Press. What. Wait. Nothing. Ready. Right. Middle.";
+                case "press": return "Right. Middle. Yes. Ready. Press. Okay. Nothing. Uhhh. Blank. Left. First. What. No. Wait.";
+                case "you": return "Sure. You are. Your. You're. Next. Uh huh. Ur. Hold. What?. You. Uh uh. Like. Done. U.";
+                case "you are": return "Your. Next. Like. Uh huh. What?. Done. Uh uh. Hold. You. U. You're. Sure. Ur. You are.";
+                case "your": return "Uh uh. You are. Uh huh. Your. Next. Ur. Sure. U. You're. You. What?. Hold. Like. Done.";
+                case "you're": return "You. You're. Ur. Next. Uh uh. You are. U. Your. What?. Uh huh. Sure. Done. Like. Hold.";
+                case "ur": return "Done. U. Ur. Uh huh. What?. Sure. Your. Hold. You're. Like. Next. Uh uh. You are. You.";
+                case "u": return "Uh huh. Sure. Next. What?. You're. Ur. Uh uh. Done. U. You. Like. Hold. You are. Your.";
+                case "uh huh": return "Uh huh. Your. You are. You. Done. Hold. Uh uh. Next. Sure. Like. You're. Ur. U. What?.";
+                case "uh uh": return "Ur. U. You are. You're. Next. Uh uh. Done. You. Uh huh. Like. Your. Sure. Hold. What?.";
+                case "what?": return "You. Hold. You're. Your. U. Done. Uh uh. Like. You are. Uh huh. Ur. Next. What?. Sure.";
+                case "done": return "Sure. Uh huh. Next. What?. Your. Ur. You're. Hold. Like. You. U. You are. Uh uh. Done.";
+                case "next": return "What?. Uh huh. Uh uh. Your. Hold. Sure. Next. Like. Done. You are. Ur. You're. U. You.";
+                case "hold": return "You are. U. Done. Uh uh. You. Ur. Sure. What?. You're. Next. Hold. Uh huh. Your. Like.";
+                case "sure": return "You are. Done. Like. You're. You. Hold. Uh huh. Ur. Sure. U. What?. Next. Your. Uh uh.";
+                case "like": return "You're. Next. U. Ur. Hold. Done. Uh uh. What?. Uh huh. You. Like. Sure. You are. Your.";
                 default: return "";
             }
         }

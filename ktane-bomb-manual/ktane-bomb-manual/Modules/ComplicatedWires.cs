@@ -1,45 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace ktane_bomb_manual.Modules
 {
     public class ComplicatedWires : Module
     {
-        public ComplicatedWires()
-        {
-            Wires = new List<ComplicatedWire>();
-        }
-
-        public List<ComplicatedWire> Wires;
+        public ComplicatedWire wire;
 
         public override string Solve(Bomb bomb)
         {
-            if (string.IsNullOrEmpty(bomb.Serial)) return "Can't solve it yet.";
+            if (string.IsNullOrEmpty(bomb.Serial)) return "Can't solve it. Bomb has no serial number.";
 
-            var message = "";
-            foreach (var wire in Wires)
-            {
-                message += ShouldICutThisWire(bomb, wire) + " wire number " + (Wires.IndexOf(wire) + 1) + ". ";
-            }
-            return message.TrimEnd();
+            return ShouldICutThisWire(bomb, wire);
         }
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
             string config = "";
 
-            foreach (var word in command.Split(' ').Where(x => x=="none"||x == "white" || x == "blue" || x == "red" || x == "star" || x == "led"))
+            foreach (var word in command.Split(' ').Where(x => x == "none" || x == "white" || x == "blue" || x == "red" || x == "star" || x == "led"))
             {
                 config += word + " ";
             }
-            Wires.Add(new ComplicatedWire(config));
-            return "Complicated wire added.";
+            wire = new ComplicatedWire(config);
+            Solved = true;
+            return Solve(bomb);
         }
 
         public string ShouldICutThisWire(Bomb bomb, ComplicatedWire wire)
@@ -48,7 +32,7 @@ namespace ktane_bomb_manual.Modules
             wire.HasParallelPort = bomb.HasPort("parallel");
             wire.HasBatteries = bomb.HasManyBatteries(2);
 
-            return CutThisWire(wire) ? "Cut" : "Don't cut";
+            return CutThisWire(wire) ? "Cut it." : "Don't cut it.";
         }
 
         public bool CutThisWire(ComplicatedWire wire)

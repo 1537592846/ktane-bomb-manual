@@ -14,7 +14,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            if (Symbols.Count != 4) return "Can't solve it yet.";
+            if (Symbols.Count != 4) return "Can't solve it yet. Not enought symbols.";
 
             var message = "Order as follow: ";
             foreach (var symbol in SymbolOrder())
@@ -22,23 +22,29 @@ namespace ktane_bomb_manual.Modules
                 message += WhichSymbol(symbol) + ". ";
             }
 
+            Solved = true;
+
             return message.TrimEnd();
         }
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
+            var wordListToAdd = new List<string>();
+
+            for (int i = 0; i < command.Split(' ').Count(); i++)
             {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
-            foreach (var word in command.Split(' '))
-            {
-                AddSymbol(word);
+                var oneWord = command.Split(' ')[i];
+                var twoWord = command.Split(' ')[i];
+                try { twoWord += command.Split(' ')[i + 1]; } catch { };
+                var threeWord = command.Split(' ')[i];
+                try { threeWord += command.Split(' ')[i + 1]; } catch { };
+                try { threeWord += command.Split(' ')[i + 2]; } catch { };
+                wordListToAdd.Add(threeWord);
+                wordListToAdd.Add(twoWord);
+                wordListToAdd.Add(oneWord);
             }
 
-            return "";
+            return Solve(bomb);
         }
 
         public List<int> SymbolOrder()
