@@ -23,6 +23,15 @@
 
         public override string Command(Bomb bomb, string command)
         {
+            if (command.Contains("reset"))
+            {
+                Circle1 = "";
+                Circle2 = "";
+                ExitPosition = "";
+                PlayerPosition = "";
+                return "Module reseted";
+            }
+
             if (command.Contains("solve"))
             {
                 var solveReturn = Solve(bomb);

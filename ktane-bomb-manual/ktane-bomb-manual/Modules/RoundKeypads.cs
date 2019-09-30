@@ -77,11 +77,12 @@ namespace ktane_bomb_manual.Modules
 
         public void AddSymbol(string description)
         {
-            description += " ";
+            description = " " + description + " ";
             //Symbol names
             if (description.Contains("broad omega")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
             if (description.Contains("omega")) { AddSymbolToList((int)SymbolList.Omega); return; }
             if (description.Contains("white star")) { AddSymbolToList((int)SymbolList.WhiteStar); return; }
+            if (description.Contains("black star")) { AddSymbolToList((int)SymbolList.WhiteStar); return; }
             if (description.Contains("copyright")) { AddSymbolToList((int)SymbolList.CopyrightSign); return; }
             if (description.Contains("question mark")) { AddSymbolToList((int)SymbolList.InvertedQuestionMark); return; }
             if (description.Contains("archaic koppa")) { AddSymbolToList((int)SymbolList.ArchaicKoppa); return; }
@@ -107,8 +108,7 @@ namespace ktane_bomb_manual.Modules
             if (description.Contains("aesc")) { AddSymbolToList((int)SymbolList.Aesc); return; }
             if (description.Contains("little yus")) { AddSymbolToList((int)SymbolList.LittleYus); return; }
             if (description.Contains("yat")) { AddSymbolToList((int)SymbolList.Yat); return; }
-            if (description.Contains(" o hook")) { AddSymbolToList((int)SymbolList.OHook); return; }
-            if (description.Contains("ohook")) { AddSymbolToList((int)SymbolList.OHook); return; }
+            if (description.Contains(" ha ")) { AddSymbolToList((int)SymbolList.Ha); return; }
 
             //Symbols descriptions
             if (description.Contains("ballon")) { AddSymbolToList((int)SymbolList.ArchaicKoppa); return; }
@@ -137,7 +137,7 @@ namespace ktane_bomb_manual.Modules
             if (description.Contains(" a e ")) { AddSymbolToList((int)SymbolList.Aesc); return; }
             if (description.Contains(" a t ")) { AddSymbolToList((int)SymbolList.LittleYus); return; }
             if (description.Contains(" b t ")) { AddSymbolToList((int)SymbolList.Yat); return; }
-            if (description.Contains(" c l ")) { AddSymbolToList((int)SymbolList.OHook); return; }
+            if (description.Contains(" c l ")) { AddSymbolToList((int)SymbolList.Ha); return; }
             if (description.Contains(" w ")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
             if (description.Contains("double u ")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
         }
@@ -187,7 +187,7 @@ namespace ktane_bomb_manual.Modules
                 //Greek dotted lunate sigma
                 case 17: return "Lunate Sigma";
                 //Cyrillic O-hook
-                case 18: return "O Hook";
+                case 18: return "Ha";
                 //Greek capital omega
                 case 19: return "Omega";
                 //Pilcrow sign
@@ -229,7 +229,7 @@ namespace ktane_bomb_manual.Modules
             LittleYus,
             LunateAntiSigma,
             LunateSigma,
-            OHook,
+            Ha,
             Omega,
             Pilcrow,
             Psi,

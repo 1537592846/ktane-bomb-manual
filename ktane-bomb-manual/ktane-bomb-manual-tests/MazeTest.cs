@@ -25,7 +25,7 @@ namespace Tests
 
             Assert.AreEqual("Take a right, right, down, left, left, and you are there.", mazeModule.Command(bomb, "solve maze"), "Error Text #1", null);
 
-            mazeModule = new Maze();
+            mazeModule.Command(bomb, "reset");
             mazeModule.Command(bomb, "maze circle at 1 0");
             mazeModule.Command(bomb, "maze circle at 2 5");
             mazeModule.Command(bomb, "maze exit at 5 1");

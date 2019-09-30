@@ -18,6 +18,11 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
+            if (command.Contains("reset"))
+            {
+                Stages.Clear(); return "Moduled reseted";
+            }
+
             var op = 0;
             var numberDisplayed = 0;
             var value1 = "";

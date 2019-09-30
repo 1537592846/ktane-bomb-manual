@@ -46,9 +46,8 @@ namespace ktane_bomb_manual.Modules
 
             if (command.Contains("color"))
             {
-                Color = command.Replace("square button", "").Replace("color", "").Replace(" is ", "").Trim();
-                if (string.IsNullOrWhiteSpace(Color)) return "Color added.";
-                if (!Colors.Contains(Color)) return "Color not added.";
+                Color = command.Replace("square button", "").Replace("color", "").Replace("is", "").Trim();
+                if (!Colors.Contains(Color)) return "Color not found.";
                 return "Color added.";
             }
 

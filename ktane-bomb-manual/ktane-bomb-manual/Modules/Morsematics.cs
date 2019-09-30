@@ -14,7 +14,8 @@
 
         public override string Solve(Bomb bomb)
         {
-            if (string.IsNullOrEmpty(bomb.Serial) || string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Can't solve it yet.";
+            if (string.IsNullOrEmpty(bomb.Serial)) return "Missing bomb serial.";
+            if (string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Missing recieved characters.";
             return "Send " + Solution(bomb) + " done.";
         }
 
@@ -23,7 +24,7 @@
             if (command.Contains("solve"))
             {
                 var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
+                Solved = solveReturn.Contains("Send");
                 return solveReturn;
             }
             AddCharacter(command);
@@ -57,6 +58,12 @@
                 return;
             }
             if (input.Contains("third"))
+            {
+                RecievedCharacter3 = InternalFunctions.GetLetterFromMorse(morse);
+                RecievedCharacterValue3 = InternalFunctions.GetNumberFromLetter(RecievedCharacter3);
+                return;
+            }
+            if (input.Contains("last"))
             {
                 RecievedCharacter3 = InternalFunctions.GetLetterFromMorse(morse);
                 RecievedCharacterValue3 = InternalFunctions.GetNumberFromLetter(RecievedCharacter3);

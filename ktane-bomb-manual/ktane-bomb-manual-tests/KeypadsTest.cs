@@ -41,15 +41,15 @@ namespace Tests
             keypadsModule.AddSymbol("white star");
             keypadsModule.AddSymbol("backwards e ");
             keypadsModule.AddSymbol("stylish x ");
-            Assert.AreEqual("Order as follow: E. Archaic Koppa. Lunate Anti Sigma. O Hook. White Star. Kai. Inverted Question Mark.", keypadsModule.Solve(bomb), "Error Test #1", null);
+            Assert.AreEqual("Order as follow: E. Archaic Koppa. Lunate Anti Sigma. Ha. White Star. Kai. Inverted Question Mark.", keypadsModule.Solve(bomb), "Error Test #1", null);
 
 
             keypadsModule = new Keypads();
-            keypadsModule.AddSymbol(" o hook");
+            keypadsModule.AddSymbol(" ha ");
             keypadsModule.AddSymbol("ballon");
             keypadsModule.AddSymbol("lunate anti sigma");
             keypadsModule.AddSymbol("stylish h ");
-            Assert.AreEqual("Order as follow: E. Archaic Koppa. Lunate Anti Sigma. O Hook. White Star. Kai. Inverted Question Mark.", keypadsModule.Solve(bomb), "Error Test #2", null);
+            Assert.AreEqual("Order as follow: E. Archaic Koppa. Lunate Anti Sigma. Ha. White Star. Kai. Inverted Question Mark.", keypadsModule.Solve(bomb), "Error Test #2", null);
         }
 
         [Test]
@@ -60,14 +60,14 @@ namespace Tests
             keypadsModule.AddSymbol("white star");
             keypadsModule.AddSymbol("broken three");
             keypadsModule.AddSymbol(" c l ");
-            Assert.AreEqual("Order as follow: Copyright Sign. Broad Omega. O Hook. Zhe. Komi Dzje. Lambda. White Star.", keypadsModule.Solve(bomb), "Error Test #1", null);
+            Assert.AreEqual("Order as follow: Copyright Sign. Broad Omega. Ha. Zhe. Komi Dzje. Lambda. White Star.", keypadsModule.Solve(bomb), "Error Test #1", null);
 
             keypadsModule = new Keypads();
             keypadsModule.AddSymbol("lambda");
             keypadsModule.AddSymbol("mirroed k ");
-            keypadsModule.AddSymbol(" o hook");
+            keypadsModule.AddSymbol(" ha ");
             keypadsModule.AddSymbol("broad omega");
-            Assert.AreEqual("Order as follow: Copyright Sign. Broad Omega. O Hook. Zhe. Komi Dzje. Lambda. White Star.", keypadsModule.Solve(bomb), "Error Test #2", null);
+            Assert.AreEqual("Order as follow: Copyright Sign. Broad Omega. Ha. Zhe. Komi Dzje. Lambda. White Star.", keypadsModule.Solve(bomb), "Error Test #2", null);
         }
 
         [Test]

@@ -60,18 +60,20 @@ namespace ktane_bomb_manual.Modules
 
         public void AddSequence(string sequence)
         {
-            var sequenceList = sequence.Split(' ').Where(x => x == "dash" || x == "dot" || x == "next");
+            var sequenceList = sequence.Split(' ').Where(x => x == "dash" || x == "dot");
             var morse = "";
             foreach(var dashDot in sequenceList)
             {
                 morse += dashDot + " ";
             }
-            if (string.IsNullOrEmpty(Sequence1)) { Sequence1 = morse.Trim(); return; }
-            if (string.IsNullOrEmpty(Sequence2)) { Sequence2 = morse.Trim(); return; }
-            if (string.IsNullOrEmpty(Sequence3)) { Sequence3 = morse.Trim(); return; }
-            if (string.IsNullOrEmpty(Sequence4)) { Sequence4 = morse.Trim(); return; }
-            if (string.IsNullOrEmpty(Sequence5)) { Sequence5 = morse.Trim(); return; }
-            if (string.IsNullOrEmpty(Sequence6)) { Sequence6 = morse.Trim(); return; }
+
+            morse += "next";
+            if (string.IsNullOrEmpty(Sequence1)) { Sequence1 = morse; return; }
+            if (string.IsNullOrEmpty(Sequence2)) { Sequence2 = morse; return; }
+            if (string.IsNullOrEmpty(Sequence3)) { Sequence3 = morse; return; }
+            if (string.IsNullOrEmpty(Sequence4)) { Sequence4 = morse; return; }
+            if (string.IsNullOrEmpty(Sequence5)) { Sequence5 = morse; return; }
+            if (string.IsNullOrEmpty(Sequence6)) { Sequence6 = morse; return; }
         }
 
         public void ResetSequences()

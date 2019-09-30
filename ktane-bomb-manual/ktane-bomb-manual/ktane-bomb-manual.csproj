@@ -91,7 +91,34 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Modules\Manuals\Button.jpg" />
+    <Content Include="Modules\Manuals\Complicated Wires.jpg" />
+    <Content Include="Modules\Manuals\Forget Me Not.jpg" />
+    <Content Include="Modules\Manuals\Guide Page.jpg" />
+    <Content Include="Modules\Manuals\Keypads.jpg" />
+    <Content Include="Modules\Manuals\Knobs.jpg" />
+    <Content Include="Modules\Manuals\Mazes.jpg" />
+    <Content Include="Modules\Manuals\Memory.jpg" />
+    <Content Include="Modules\Manuals\Morse Code.jpg" />
+    <Content Include="Modules\Manuals\Morsematics-1.jpg" />
+    <Content Include="Modules\Manuals\Morsematics-2.jpg" />
+    <Content Include="Modules\Manuals\Passwords.jpg" />
+    <Content Include="Modules\Manuals\Plumbing-1.jpg" />
+    <Content Include="Modules\Manuals\Plumbing-2.jpg" />
+    <Content Include="Modules\Manuals\Rotary Phones.jpg" />
+    <Content Include="Modules\Manuals\Round Keypads.jpg" />
+    <Content Include="Modules\Manuals\Safety Safe-1.jpg" />
+    <Content Include="Modules\Manuals\Safety Safe-2.jpg" />
+    <Content Include="Modules\Manuals\Simon Says.jpg" />
+    <Content Include="Modules\Manuals\Simon States-1.jpg" />
+    <Content Include="Modules\Manuals\Simon States-2.jpg" />
+    <Content Include="Modules\Manuals\Square Button.jpg" />
+    <Content Include="Modules\Manuals\Who_s on First-1.jpg" />
+    <Content Include="Modules\Manuals\Who_s on First-2.jpg" />
+    <Content Include="Modules\Manuals\Wire Sequences.jpg" />
+    <Content Include="Modules\Manuals\Wires.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.CognitiveServices.Speech.1.6.0\build\net461\Microsoft.CognitiveServices.Speech.targets" Condition="Exists('..\packages\Microsoft.CognitiveServices.Speech.1.6.0\build\net461\Microsoft.CognitiveServices.Speech.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

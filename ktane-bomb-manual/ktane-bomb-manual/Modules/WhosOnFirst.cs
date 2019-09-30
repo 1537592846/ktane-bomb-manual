@@ -3,6 +3,7 @@
     public class WhosOnFirst : Module
     {
         public bool FirstEntry;
+        public int StageCount;
 
         public override string Solve(Bomb bomb)
         {
@@ -11,15 +12,11 @@
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solved"))
-            {
-                Solved = true;
-                return "Module solved.";
-            }
-
             command = command.Replace("whos on first", "").Trim();
             FirstEntry = !FirstEntry;
-            return FirstEntry ? WhichPosition(command.Replace("is ", "")) : "Press the first one to appear: "+WhichWords(command.Replace("is ", ""));
+            StageCount += FirstEntry ? 0 : 1;
+            Solved = StageCount == 3;
+            return FirstEntry ? WhichPosition(command.Replace("is ", "")) : "Press the first one to appear: " + WhichWords(command.Replace("is ", ""));
         }
 
         public string WhichPosition(string word)
