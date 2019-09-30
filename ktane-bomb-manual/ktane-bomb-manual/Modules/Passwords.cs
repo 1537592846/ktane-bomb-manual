@@ -21,8 +21,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            if (Group1.Count == 0 || Group2.Count == 0 || Group3.Count == 0 || Group4.Count == 0 || Group5.Count == 0) return "Can't solve it yet.";
-            return "The password is " + GetWord() + ".";
+            return GetWord();
         }
 
         public override string Command(Bomb bomb, string command)
@@ -62,6 +61,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("first"))
             {
                 Group1.Clear();
+                Group1.Add("");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -73,6 +73,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("second"))
             {
                 Group2.Clear();
+                Group2.Add("");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -84,6 +85,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("third"))
             {
                 Group3.Clear();
+                Group3.Add("");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -95,6 +97,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("fourth"))
             {
                 Group4.Clear();
+                Group4.Add("");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -106,6 +109,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("fifth") || input.Contains("last"))
             {
                 Group5.Clear();
+                Group5.Add("");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -117,6 +121,8 @@ namespace ktane_bomb_manual.Modules
 
         public string GetWord()
         {
+            var wordList = new List<string>();
+
             foreach (var letter1 in Group1)
             {
                 foreach (var letter2 in Group2)
@@ -129,14 +135,16 @@ namespace ktane_bomb_manual.Modules
                             {
                                 if (HasWordStartingWith(letter1 + letter2 + letter3 + letter4 + letter5))
                                 {
-                                    return Word(letter1 + letter2 + letter3 + letter4 + letter5);
+                                    wordList.Add(Word(letter1 + letter2 + letter3 + letter4 + letter5).Trim());
                                 }
                             }
                         }
                     }
                 }
             }
-            return "";
+
+            if (wordList.Count > 1) return "Can't solve it yet.";
+            return "The password is "+wordList[0]+".";
         }
 
         public bool HasWordStartingWith(string word)

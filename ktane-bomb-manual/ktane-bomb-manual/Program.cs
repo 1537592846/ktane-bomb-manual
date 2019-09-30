@@ -1,15 +1,14 @@
-﻿using ktane_bomb_manual;
-using System;
+﻿using System;
 using System.Globalization;
-using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 
-namespace SpeechRecognitionApp
+namespace ktane_bomb_manual
 {
-    class Program
+    public class Program
     {
         public static Bomb bomb;
+        public Bomb mockBomb;
 
         public static void Main()
         {
@@ -106,6 +105,59 @@ namespace SpeechRecognitionApp
                         try
                         {
                             commandReturn = bomb.GetModule(command.Split(' ')[0]).Command(bomb, command);
+                        }
+                        catch { commandReturn = "Module not found."; }
+                    }
+                }
+                if (string.IsNullOrEmpty(commandReturn)) commandReturn = "Module added";
+            }
+            catch
+            {
+                commandReturn = "Command not executed";
+            }
+
+            return commandReturn;
+        }
+
+        public string MockCommand(string command)
+        {
+            var commandReturn = "";
+            try
+            {
+                if (command.Contains("new bomb"))
+                {
+                    mockBomb = mockBomb = new Bomb();
+                    return "Bomb reseted.";
+                }
+                if (command.Contains("bomb"))
+                {
+                    mockBomb.Command(command);
+                    return "Command executed.";
+                }
+                if (command.Contains("solve"))
+                {
+                    commandReturn = mockBomb.GetModule(command.Replace("solve", "").Trim()).Solve(mockBomb);
+                    if (commandReturn == "")
+                    {
+                        commandReturn = "Command computed.";
+                    }
+                    return commandReturn;
+                }
+                try
+                {
+                    commandReturn = mockBomb.GetModule(command.Split(' ')[0] + command.Split(' ')[1] + command.Split(' ')[2]).Command(mockBomb, command);
+                }
+                catch
+                {
+                    try
+                    {
+                        commandReturn = mockBomb.GetModule(command.Split(' ')[0] + command.Split(' ')[1]).Command(mockBomb, command);
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            commandReturn = mockBomb.GetModule(command.Split(' ')[0]).Command(mockBomb, command);
                         }
                         catch { commandReturn = "Module not found."; }
                     }
