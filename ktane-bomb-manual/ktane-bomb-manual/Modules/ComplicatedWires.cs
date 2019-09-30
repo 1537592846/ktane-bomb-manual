@@ -21,7 +21,7 @@ namespace ktane_bomb_manual.Modules
             {
                 config += word + " ";
             }
-            wire = new ComplicatedWire(config);
+            wire = new ComplicatedWire(config.Trim());
             Solved = true;
             return Solve(bomb);
         }

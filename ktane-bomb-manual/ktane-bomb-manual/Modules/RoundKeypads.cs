@@ -28,25 +28,21 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
             foreach (var word in command.Split(' '))
             {
                 AddSymbol(word);
             }
 
-            return "";
+            var solveReturn = Solve(bomb);
+            Solved = solveReturn != "Can't solve it yet.";
+            return solveReturn;
         }
 
         public List<int> SymbolOrder()
         {
             var order1 = new List<int>() { (int)SymbolList.ArchaicKoppa, (int)SymbolList.LittleYus, (int)SymbolList.Lambda, (int)SymbolList.Koppa, (int)SymbolList.BigYus, (int)SymbolList.Kai, (int)SymbolList.LunateAntiSigma };
-            var order2 = new List<int>() { (int)SymbolList.E, (int)SymbolList.ArchaicKoppa, (int)SymbolList.LunateAntiSigma, (int)SymbolList.OHook, (int)SymbolList.WhiteStar, (int)SymbolList.Kai, (int)SymbolList.InvertedQuestionMark };
-            var order3 = new List<int>() { (int)SymbolList.CopyrightSign, (int)SymbolList.BroadOmega, (int)SymbolList.OHook, (int)SymbolList.Zhe, (int)SymbolList.KomiDzje, (int)SymbolList.Lambda, (int)SymbolList.WhiteStar };
+            var order2 = new List<int>() { (int)SymbolList.E, (int)SymbolList.ArchaicKoppa, (int)SymbolList.LunateAntiSigma, (int)SymbolList.Ha, (int)SymbolList.WhiteStar, (int)SymbolList.Kai, (int)SymbolList.InvertedQuestionMark };
+            var order3 = new List<int>() { (int)SymbolList.CopyrightSign, (int)SymbolList.BroadOmega, (int)SymbolList.Ha, (int)SymbolList.Zhe, (int)SymbolList.KomiDzje, (int)SymbolList.Lambda, (int)SymbolList.WhiteStar };
             var order4 = new List<int>() { (int)SymbolList.Be, (int)SymbolList.Pilcrow, (int)SymbolList.Yat, (int)SymbolList.BigYus, (int)SymbolList.Zhe, (int)SymbolList.InvertedQuestionMark, (int)SymbolList.Teh };
             var order5 = new List<int>() { (int)SymbolList.Psi, (int)SymbolList.Teh, (int)SymbolList.Yat, (int)SymbolList.LunateSigma, (int)SymbolList.Pilcrow, (int)SymbolList.Ksi, (int)SymbolList.BlackStar };
             var order6 = new List<int>() { (int)SymbolList.Be, (int)SymbolList.E, (int)SymbolList.Thousand, (int)SymbolList.Aesc, (int)SymbolList.Psi, (int)SymbolList.ShortI, (int)SymbolList.Omega };

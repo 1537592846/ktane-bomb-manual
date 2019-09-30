@@ -18,13 +18,14 @@
             message += IsPipeActive(bomb, "yellow", "input");
             message += IsPipeActive(bomb, "green", "input");
             message += IsPipeActive(bomb, "blue", "input");
-            if (message == "Input: ") message += "blue ";
+            if (message.EndsWith("Input: ")) message += "blue ";
             message = message.Trim() + ". Output: ";
 
             message += IsPipeActive(bomb, "red", "output");
             message += IsPipeActive(bomb, "blue", "output");
             message += IsPipeActive(bomb, "yellow", "output");
             message += IsPipeActive(bomb, "green", "output");
+            if (message.EndsWith("Output: ")) message += "blue ";
             message = message.Trim() + ".";
 
             return message;

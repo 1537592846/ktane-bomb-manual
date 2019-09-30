@@ -83,7 +83,7 @@
     <Compile Include="Modules\SquareButton.cs" />
     <Compile Include="Modules\WhosOnFirst.cs" />
     <Compile Include="Modules\Wires.cs" />
-    <Compile Include="Modules\WireSequence.cs" />
+    <Compile Include="Modules\WireSequences.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -114,8 +114,8 @@
     <Content Include="Modules\Manuals\Simon States-1.jpg" />
     <Content Include="Modules\Manuals\Simon States-2.jpg" />
     <Content Include="Modules\Manuals\Square Button.jpg" />
-    <Content Include="Modules\Manuals\Who_s on First-1.jpg" />
-    <Content Include="Modules\Manuals\Who_s on First-2.jpg" />
+    <Content Include="Modules\Manuals\Who%27s on First-1.jpg" />
+    <Content Include="Modules\Manuals\Who%27s on First-2.jpg" />
     <Content Include="Modules\Manuals\Wire Sequences.jpg" />
     <Content Include="Modules\Manuals\Wires.jpg" />
   </ItemGroup>

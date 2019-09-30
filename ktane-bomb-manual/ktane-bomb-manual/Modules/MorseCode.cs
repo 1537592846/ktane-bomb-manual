@@ -14,23 +14,20 @@ namespace ktane_bomb_manual.Modules
         public override string Solve(Bomb bomb)
         {
             if (string.IsNullOrEmpty(Sequence1) || string.IsNullOrEmpty(Sequence2) || string.IsNullOrEmpty(Sequence3) || string.IsNullOrEmpty(Sequence4) || string.IsNullOrEmpty(Sequence5)) return "Can't solve it yet.";
+            Solved = true;
             return "Frequence is 3 dot " + GetFrequence() + " megahertz.";
         }
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
             if (command.Contains("reset"))
             {
                 ResetSequences();
                 return "Module reseted";
             }
             AddSequence(command);
+
+            if (GetFrequence() != "") return Solve(bomb);
 
             return "Sequence added";
         }

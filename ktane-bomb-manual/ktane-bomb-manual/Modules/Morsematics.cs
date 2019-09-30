@@ -28,7 +28,7 @@
                 return solveReturn;
             }
             AddCharacter(command);
-            return "";
+            return "Character added.";
         }
 
         public void AddCharacter(string input)

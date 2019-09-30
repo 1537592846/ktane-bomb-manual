@@ -22,14 +22,14 @@ namespace ktane_bomb_manual.Modules
         public override string Solve(Bomb bomb)
         {
             if (Group1.Count == 0 || Group2.Count == 0 || Group3.Count == 0 || Group4.Count == 0 || Group5.Count == 0) return "Can't solve it yet.";
-            return "The password is " + GetWord()+".";
+            return "The password is " + GetWord() + ".";
         }
 
         public override string Command(Bomb bomb, string command)
         {
             if (command.Contains("solve"))
             {
-                var solveReturn= Solve(bomb);
+                var solveReturn = Solve(bomb);
                 Solved = solveReturn != "Can't solve it yet.";
                 return solveReturn;
             }
@@ -39,6 +39,12 @@ namespace ktane_bomb_manual.Modules
                 return "Module reseted";
             }
             AddLetters(command);
+            if (Group1.Count > 0 && Group2.Count > 0 && Group3.Count > 0 && Group4.Count > 0 && Group5.Count > 0)
+            {
+                var solveReturn = Solve(bomb);
+                Solved = solveReturn != "Can't solve it yet.";
+                return solveReturn;
+            }
             return "Letters added";
         }
 
@@ -55,47 +61,57 @@ namespace ktane_bomb_manual.Modules
         {
             if (input.Contains("first"))
             {
+                Group1.Clear();
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group1.Add(letter);
                 }
+                return;
             }
 
             if (input.Contains("second"))
             {
+                Group2.Clear();
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group2.Add(letter);
                 }
+                return;
             }
 
             if (input.Contains("third"))
             {
+                Group3.Clear();
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group3.Add(letter);
                 }
+                return;
             }
 
             if (input.Contains("fourth"))
             {
+                Group4.Clear();
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group4.Add(letter);
                 }
+                return;
             }
 
-            if (input.Contains("fifth")||input.Contains("last"))
+            if (input.Contains("fifth") || input.Contains("last"))
             {
+                Group5.Clear();
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group5.Add(letter);
                 }
+                return;
             }
         }
 
@@ -111,7 +127,7 @@ namespace ktane_bomb_manual.Modules
                         {
                             foreach (var letter5 in Group5)
                             {
-                                if (HasWordStartingWith(letter1 + letter2 + letter3+letter4+letter5))
+                                if (HasWordStartingWith(letter1 + letter2 + letter3 + letter4 + letter5))
                                 {
                                     return Word(letter1 + letter2 + letter3 + letter4 + letter5);
                                 }

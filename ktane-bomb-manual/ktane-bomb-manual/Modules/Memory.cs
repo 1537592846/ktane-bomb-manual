@@ -13,7 +13,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            return "";
+            return "Use normal commands for this module";
         }
 
         public override string Command(Bomb bomb, string command)

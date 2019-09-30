@@ -14,7 +14,7 @@ namespace ktane_bomb_manual.Modules
         public override string Command(Bomb bomb, string command)
         {
             Sequence = "";
-            foreach (var word in command.Split(' ').Where(x => x == "both" || x == "up" || x == "down" || x == "none"))
+            foreach (var word in command.Split(' ').Where(x => x == "both" || x == "top" || x == "bottom" || x == "none"))
             {
                 Sequence += word+" ";
             }
@@ -25,33 +25,33 @@ namespace ktane_bomb_manual.Modules
 
         public string GetKnobFinalPosition()
         {
-            var SplitedSequence = Sequence.Split(' ').Where(x => x == "up" || x == "down" || x == "both" || x == "none");
+            var SplitedSequence = Sequence.Split(' ').Where(x => x == "top" || x == "bottom" || x == "both" || x == "none");
             string leds = "";
             string message = "";
-            bool up1;
-            bool up2;
+            bool top1;
+            bool top2;
             bool left1;
             bool left2;
-            bool down1;
-            bool down2;
+            bool bottom1;
+            bool bottom2;
             bool right1;
             bool right2;
 
             foreach (var config in SplitedSequence)
             {
-                leds += config.Replace("up", "10").Replace("down", "01").Replace("both", "11").Replace("none", "00");
+                leds += config.Replace("top", "10").Replace("bottom", "01").Replace("both", "11").Replace("none", "00");
             }
 
-            up1 = CompareConfigurationWithLeds(leds, "010111011011");
-            up2 = CompareConfigurationWithLeds(leds, "100111001101");
-            down1 = CompareConfigurationWithLeds(leds, "011111010011");
-            down2 = CompareConfigurationWithLeds(leds, "100110001001");
+            top1 = CompareConfigurationWithLeds(leds, "010111011011");
+            top2 = CompareConfigurationWithLeds(leds, "100111001101");
+            bottom1 = CompareConfigurationWithLeds(leds, "011111010011");
+            bottom2 = CompareConfigurationWithLeds(leds, "100110001001");
             left1 = CompareConfigurationWithLeds(leds, "010000011101");
             left2 = CompareConfigurationWithLeds(leds, "000000011100");
             right1 = CompareConfigurationWithLeds(leds, "110111101110");
             right2 = CompareConfigurationWithLeds(leds, "110111100100");
 
-            if (up1 || up2)
+            if (top1 || top2)
             {
                 if (message == "")
                     message = "Final position is up.";
@@ -61,7 +61,7 @@ namespace ktane_bomb_manual.Modules
                 }
             }
 
-            if (down1 || down2)
+            if (bottom1 || bottom2)
             {
                 if (message == "")
                     message = "Final position is down.";

@@ -23,21 +23,17 @@
 
         public override string Command(Bomb bomb, string command)
         {
+            var result = "";
+
             if (command.Contains("reset"))
             {
                 Circle1 = "";
                 Circle2 = "";
                 ExitPosition = "";
                 PlayerPosition = "";
-                return "Module reseted";
+                result= "Module reseted";
             }
 
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn.StartsWith("Missing");
-                return solveReturn;
-            }
             if (command.Contains("player"))
             {
                 foreach (var word in command.Split(' '))
@@ -49,7 +45,7 @@
                 }
                 PlayerPosition = PlayerPosition.Trim().Replace(' ', ',');
 
-                return "Recorded player position.";
+                result = "Recorded player position.";
             }
             if (command.Contains("exit"))
             {
@@ -62,7 +58,7 @@
                 }
                 ExitPosition = ExitPosition.Trim().Replace(' ', ',');
 
-                return "Recorded exit position.";
+                result = "Recorded exit position.";
             }
             if (command.Contains("circle"))
             {
@@ -81,10 +77,16 @@
                     Circle2 = "";
                 }
 
-                return "Recorded circle position";
+                result = "Recorded circle position";
             }
 
-            return "";
+            if (!(string.IsNullOrWhiteSpace(Circle1) || string.IsNullOrWhiteSpace(Circle2) || string.IsNullOrWhiteSpace(ExitPosition) || string.IsNullOrWhiteSpace(PlayerPosition)))
+            {
+                result = Solve(bomb);
+                Solved = result.StartsWith("Missing");
+            }
+
+            return result;
         }
 
         public void CreateConfig1()

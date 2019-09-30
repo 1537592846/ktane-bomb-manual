@@ -25,33 +25,35 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
-            if (command.Contains("solve"))
-            {
-                var solveReturn = Solve(bomb);
-                Solved = !solveReturn.Contains("led");
-                return solveReturn;
-            }
+            var result = "";
             if (command.Contains("led"))
             {
                 LED = command.Replace("square button", "").Replace("led", "").Replace(" is ", "").Trim();
                 BlinkingLED = command.Contains("blink") || command.Contains("flick");
+                Solved = true;
                 return Solve(bomb);
             }
 
             if (command.Contains("text"))
             {
                 Text = command.Replace("square button", "").Replace("text", "").Replace(" is ", "").Trim();
-                return "Text added.";
+                result = "Text added.";
             }
 
             if (command.Contains("color"))
             {
-                Color = command.Replace("square button", "").Replace("color", "").Replace("is", "").Trim();
+                Color = command.Replace("square button", "").Replace("color", "").Replace(" is ", "").Trim();
                 if (!Colors.Contains(Color)) return "Color not found.";
-                return "Color added.";
+                result = "Color added.";
             }
 
-            return "";
+            if (result != "") return result;
+
+            if (string.IsNullOrWhiteSpace(Text) || string.IsNullOrWhiteSpace(Color)) result= "Can't solve it yet.";
+
+            result = Solve(bomb);
+            Solved = !result.Contains("LED");
+            return result;
         }
 
         public string WhatToDoWithTheButton(Bomb bomb)
