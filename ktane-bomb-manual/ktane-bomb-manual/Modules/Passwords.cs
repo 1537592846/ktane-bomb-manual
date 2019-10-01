@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ktane_bomb_manual.Modules
 {
@@ -61,7 +62,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("first"))
             {
                 Group1.Clear();
-                Group1.Add("");
+                Group1.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -73,7 +74,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("second"))
             {
                 Group2.Clear();
-                Group2.Add("");
+                Group2.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -85,7 +86,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("third"))
             {
                 Group3.Clear();
-                Group3.Add("");
+                Group3.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -97,7 +98,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("fourth"))
             {
                 Group4.Clear();
-                Group4.Add("");
+                Group4.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -109,7 +110,7 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("fifth") || input.Contains("last"))
             {
                 Group5.Clear();
-                Group5.Add("");
+                Group5.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -123,15 +124,15 @@ namespace ktane_bomb_manual.Modules
         {
             var wordList = new List<string>();
 
-            foreach (var letter1 in Group1)
+            foreach (var letter1 in Group1.OrderBy(x=>x))
             {
-                foreach (var letter2 in Group2)
+                foreach (var letter2 in Group2.OrderBy(x => x))
                 {
-                    foreach (var letter3 in Group3)
+                    foreach (var letter3 in Group3.OrderBy(x => x))
                     {
-                        foreach (var letter4 in Group4)
+                        foreach (var letter4 in Group4.OrderBy(x => x))
                         {
-                            foreach (var letter5 in Group5)
+                            foreach (var letter5 in Group5.OrderBy(x => x))
                             {
                                 if (HasWordStartingWith(letter1 + letter2 + letter3 + letter4 + letter5))
                                 {
@@ -141,10 +142,10 @@ namespace ktane_bomb_manual.Modules
                         }
                     }
                 }
+                if (wordList.Count == 1) return "The password is " + wordList[0] + ".";
+                wordList.Clear();
             }
-
-            if (wordList.Count > 1) return "Can't solve it yet.";
-            return "The password is "+wordList[0]+".";
+            return "Can't solve it yet.";
         }
 
         public bool HasWordStartingWith(string word)

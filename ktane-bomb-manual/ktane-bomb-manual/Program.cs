@@ -121,18 +121,21 @@ namespace ktane_bomb_manual
 
         public string MockCommand(string command)
         {
+            if (mockBomb == null)
+            {
+                mockBomb = new Bomb();
+            }
             var commandReturn = "";
             try
             {
                 if (command.Contains("new bomb"))
                 {
-                    mockBomb = mockBomb = new Bomb();
+                    mockBomb =  new Bomb();
                     return "Bomb reseted.";
                 }
                 if (command.Contains("bomb"))
                 {
-                    mockBomb.Command(command);
-                    return "Command executed.";
+                    return mockBomb.Command(command);
                 }
                 if (command.Contains("solve"))
                 {

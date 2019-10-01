@@ -10,49 +10,66 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            //Preparação da bomba para teste
-            program.mockBomb = new Bomb();
-            program.mockBomb.Serial = "TH8ZK9";
-            program.mockBomb.BatteryAA = 4;
-            program.mockBomb.BatteryD = 1;
-            program.mockBomb.Indicators.Add(new Indicator("msa", true));
-            program.mockBomb.Ports.Add(new Port("parallel", 1));
+            //Instanciando a classe do programa
+            program = new Program();
         }
 
         [Test]
         public void Test()
         {
-            //Instanciando a classe do programa
-            var program = new Program();
+            //Preparação da bomba para teste
+            AssertCommand("Serial added.", ValidateCommand("bomb serial is tango hotel 8 zulu kilo 9"), "Serial configuration");
+            AssertCommand("AA batteries added.", ValidateCommand("bomb has 4 aa batteries"), "AA batteries configuration");
+            AssertCommand("D batteries added.", ValidateCommand("bomb has 1 d battery"), "D batteries configuration");
+            AssertCommand("Lit MSA indicator added.", ValidateCommand("bomb has indicator mike sierra alpha lit"), "Indicator configuration");
+            AssertCommand("Parallel port added.", ValidateCommand("bomb has 1 parallel port"), "Port configuration");
 
-            //Executado na ordem do video
-            ValidateCommand("forget me not is 3");
-            ValidateCommand("crazy talk 'empty space'");
-            ValidateCommand("bitwise n");
-            ValidateCommand("rubiks cube white yellow green red orange");
-            ValidateCommand("screw white magenta blue yellow red green");
-            ValidateCommand("solve same word different colors");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
-            ValidateCommand("");
+            //Complicate wires
+            AssertCommand("Leave it.", ValidateCommand("complicated wires blue led"), "Complicated wires");
+            AssertCommand("Cut it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");
+            AssertCommand("Leave it.", ValidateCommand("complicated wires red blue star led"), "Complicated wires");
+            AssertCommand("Cut it.", ValidateCommand("complicated wires red star"), "Complicated wires");
+            AssertCommand("Leave it.", ValidateCommand("complicated wires red"), "Complicated wires");
+            AssertCommand("Cut it.", ValidateCommand("complicated wires "), "Complicated wires");
 
+            //Morsematics
+            AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");
+            AssertCommand("Character added.", ValidateCommand("morsematics second dash dot dash dot next"), "Morsematics");
+            AssertCommand("Send dot dash dash dot done.", ValidateCommand("morsematics third dash dotdash next"), "Morsematics");
+
+            //Passwords
+            AssertCommand("Letters added.", ValidateCommand("passwords first golf bravo quebec yankee oscar charlie"), "Passwords");
+            AssertCommand("The password is could.", ValidateCommand("passwords second whisley oscar sierra tango xray alpha "), "Passwords");
+
+            //Plumbing
+            AssertCommand("Input: blue. Output: put.", ValidateCommand("solve plumbing"),"Plumbing");
+
+            //Round keypads
+            AssertCommand("Press this ones: Little Yus, Lunate Sigma, Omega, Aesc, Lambda.", ValidateCommand("round keypads big yus yat little yus sigma omega question mark aesc lambda"), "Round keypads");
+
+            //Safety safe
+            AssertCommand("First dial: 2 turns. Second dial: 10 turns. Third dial: 4 turns. Fourth dial: 5 turns. Fifth dial: 7 turns. Sixth dial: 3 turns.", ValidateCommand("safety safe 66 3 4 6 10 1"), "Safety safe");
+
+            //Simon states
+            AssertCommand("Top left color added.", ValidateCommand("simon states top left blue"), "Simon states");
+            AssertCommand("Press yellow.", ValidateCommand("simon states yellow"), "Simon states");
+            AssertCommand("Press yellow blue.", ValidateCommand("simon states red green"), "Simon states");
+            AssertCommand("Press yellow blue yellow.", ValidateCommand("simon states red yellow"), "Simon states");
+            AssertCommand("Press yellow blue yellow red.", ValidateCommand("simon states all"), "Simon states");
+
+            //Square button
+            AssertCommand("Hold the button. What is the LED color?", ValidateCommand("square button blue run"), "Square button");
+            AssertCommand("Release when the seconds are a multiple of seven.", ValidateCommand("square button led flick cyan"), "Square button");
         }
 
         public string ValidateCommand(string command)
         {
             return program.MockCommand(command);
+        }
+
+        public void AssertCommand(string expected, string obtained, string message)
+        {
+            Assert.AreEqual(expected, obtained, message, null);
         }
     }
 }

@@ -34,22 +34,10 @@ namespace ktane_bomb_manual.Modules
                 return Solve(bomb);
             }
 
-            if (command.Contains("text"))
-            {
-                Text = command.Replace("square button", "").Replace("text", "").Replace(" is ", "").Trim();
-                result = "Text added.";
-            }
+            Color = command.Replace("square button ", "").Split(' ')[0];
+            Text = command.Replace("square button ", "").Split(' ')[1];
 
-            if (command.Contains("color"))
-            {
-                Color = command.Replace("square button", "").Replace("color", "").Replace(" is ", "").Trim();
-                if (!Colors.Contains(Color)) return "Color not found.";
-                result = "Color added.";
-            }
-
-            if (result != "") return result;
-
-            if (string.IsNullOrWhiteSpace(Text) || string.IsNullOrWhiteSpace(Color)) result= "Can't solve it yet.";
+            if (string.IsNullOrWhiteSpace(Text) || string.IsNullOrWhiteSpace(Color)) return "Can't solve it yet.";
 
             result = Solve(bomb);
             Solved = !result.Contains("LED");

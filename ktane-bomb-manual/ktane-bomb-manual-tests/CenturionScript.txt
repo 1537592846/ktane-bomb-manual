@@ -1,184 +1,288 @@
-
-	3d maze bravo charlie hotel |
-	astrology fire urnus virgo |
-	color flashing is green |
-	led encryptions orange foxtrot papa bravo delta | 
-	light cycle magenta yellow white red blue green |
-	neutral green magenta yellow red blue |
-	point of order 2 clubs 10 hearts 2 diamons 10 diamons 1 diamons | 	
-	screw white magenta blue yellow red green |
-adjacent letter romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor | november yankee charlie foxtrot
-adventuring golem 6 8 3 5"3 41º 9.0 m/s 107 kpa weapon broadsword caber grimoire lamp throphy symbol | symbol caber
-against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
-battleship ? echo 3 charlie 4 alpha 1
-bitwise is n | 00000001
+	3d maze bravo charlie hotel east charlie empty bravo empty | go to charlie, left front front hotel, right front left front charlie right front till the end
+	adjacent letter romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor | november yankee charlie foxtrot
+	adventure game golem 6 8 3 5"3 41º 9.0 m/s 107 kpa weapon broadsword caber grimoire lamp throphy symbol | symbol caber
+	against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
+	alphabet zulu yankee november lima | zulu november yankee lima
+	astrology fire urnus aries | poor omen on 1
+	battleship ? echo 3 charlie 4 alpha 1
+	binary led 1,3 2,3,4,5 5 1,2,5 2 1,2,5 5 | green on 1,2,5
+	bitmaps 5 12 8 8 |4
+	bitwise is n | 00000001
+	broken button | three six burst other rca 'right submit'
+	bulb blue off opaque | unscrew 1 1 1 screw
+	cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
+	chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
+	chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
+	clock no number gold spades yellow black present | 5 hours backwards 23 minutes
+	clockwise ! left left set
+	color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
+	color squares 1 green | red
+	color squares 10 blue | column
+	color squares 12 column | green
+	color squares 14 green | magenta
+	color squares 5 red | yellow
+	color squares 8 yellow | blue
+	combo lock | 14 1 15
+	complex button blue hold purple detonate purple press | botton button
+	connect check 51 38 17 25 | all red
+	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
+	crazy talk is 'empty space' | one six
+	creation day 2 clear 
+	creation day 3 fire
+	creation day 4 clear | egg life earth
+	creation day 5 water | turtle egg fire
+	creation water to right
+	crypto 4 3 4 3 3 4 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
+	double up? 10 65 | 65 then 44 glitch
+	double up? 11 74 47 up down single| 47
+	double up? 81 26 | 81
+	emoji )=:)-:|:( | -54
+	fast math alpha november
+	fast math bravo delta
+	fast math golf charlie
+	fast math november delta
+	fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
+	foreign exchange charlie november yankee | middle middle
+	friendship top down tiara throphy "two flower" "five notes" "ordinary sun" "grape strawberry" left right tiara "five notes" "white flower" "grape strawberry" | autenticity, helpfullness
+	gamepad 4 6 0 8 | alpha bravo left right down right bravo up
+	german button red abbreghen | hold
+	german button stripe yellow | time 42:25
+	german morse code dash dot dash dot next |C
+	german morse code dash dot dash next |K
+	german morse code dash dot dot dot next | B
+	german morse code dot dash dot next | R
+	german morse code dot dot dash dash next |U
+	german morse code dot next |E 3.595
+	german password first hotel lima tango romeo
+	german password second alpha romeo charlie uniform november victor | ruhig 
+	german whos on first c | upper right
+	german whos on first cee | bottom right
+	german whos on first coup | kuh, ok,nicht,litterary blank
+	german whos on first coup | middle right
+	german whos on first moment | ogoht, so ein, charlie, zein, ten, so', moment
+	german whos on first warte | so'
+	hexagon left triangle at 3,3 down triangle at 4,6 green at 2,1 | southwest southeast northeast south south 	south southeast out of there
+	ice cream ashely double strawberry cookies and cream double chocolate neapolitan | cookies and cream
+	ice cream dave double chocolate tutti frutti neapolitan the classic | neapolitan
+	ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
+	laundry | wash leave dry alone, 110ºc wet clean
+	leader blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
+	led encryptions blue xray golf india yankee | india
+	led encryptions orange foxtrot papa bravo delta | no idea
+	led encryptions orange foxtrot papa bravo delta | papa
+	led encryptions yellow mike tango oscar sierra | sierra
+	led encryptionsblue uniform tango alpha sierra | sierra
+	light cycle magenta yellow white red blue green | red magenta green blue white yellow
+	listening | $ & $ $ *
+	logic uniform OR NOT xray right arrow oscar || romeo NAND november down arrow NOT foxtrot | true false
+	micro circuits 10 pins start at 1 | blue
+	micro circuits 10 pins start at 10 | white
+	micro circuits 10 pins start at 2 | magenta
+	micro circuits 10 pins start at 3 | green
+	micro circuits 10 pins start at 4 | white
+	micro circuits 10 pins start at 5 | white
+	micro circuits 10 pins start at 6 | white
+	micro circuits 10 pins start at 7 | white
+	micro circuits 10 pins start at 8 | yellow
+	micro circuits 10 pins start at 9 | red
+	minefield blue green orange red black yellow | orange
+	monster board magmy shock fountain heavy rain tangle | fountain
+	mouse maze yellow torus in corner green sphere corredor 1 step t junction | yellow going to white
+	murder peacock green white scarlet rope spanner candle dagger hall | scarlet dagger library
+	mystic square center 4 no 9 | 4 3 1 5 8 2 6 7
+	neutral 5 blue | green
+	neutral see green magenta yellow | top left bottom right top
+	neutralization | laoh filter off 12 drops 
+	numberpad red red red white red green white green green green | 1 7 9 3
+	only connect acute charlie oscar uniform india reverse charlie umlat alpha bar delta standard romeo sierra | bar delta reverse charlie acute charlie then acute oscar uniform india
+	only connect corn viper twister flex two reed water eye of horus the lion team wonderes | lion
+	piano vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
+	point of order 2 clubs 10 hearts 2 diamons 10 diamons 1 diamons | any five or ten
+	probing 26 12 empty 25 empty | red to 5 blue to 1
+	resistors orange purple green , green brown green | alpha to delta series, bravo to charlie direct
+	rithms blue light 4 notes half quarter | hold quarter down for 1 press the bar sixteenth
+	rock paper scissors | scissors lizard
+	rubiks cube white yellow green red orange | down up, down prime left prime, up ,front twice, back right, down prime
+	same word different colors | no on the fifth
+	screw white magenta blue yellow red green | red alpha yelow second red alpha 
+	seashell echo echo echo hotel shitzu | shoe she shoe she sushi shoe she
+	seashell echo hotel echo echo shitzu | sit shitzu sushi shoe she 
+	seashell hotel echo echo echo shitzu | sushi shoe she repeat
+	semaphore west southwest, southesat east, north northeast, west southwest, north east, southwest north, north northeast, south northeast | south northeast
+	shapeshift flat round | ticket point
+	silly slots sally blue cherry red grapes red grapes | pull
+	sily slots sausages blue grapes green grapes green grapes | keep
+	simon screams yellow purple red green purple | green red blue
+	simon screams yellow purple red green | blue purple red
+	simon screams yellow purple red | green red blue
+	skewed slots 6 5 9 | 0 4 2
+	souvenir "listening" | $ & $ $ *
+	souvenir 3d maze marking | bravo charlie hotel
+	souvenir advantage game first | symbol
+	souvenir binary leds numeric value | 25
+	souvenir bitmaps white pixes in top right | 4
+	souvenir bulb order | 1 1 1
+	souvenir cheap checkout | 22 dollars
+	souvenir chord qualities notes | G#
+	souvenir color player | green
+	souvenir coordinates solution | 1 down from top right
+	souvenir first color square | 1 green
+	souvenir first day creation | rain
+	souvenir gamepad number | 46 8
+	souvenir ice cream first client | ashely
+	souvenir middle center button tic tac toe | x
+	souvenir morsematics third | kilo
+	souvenir murder suspect | peacock
+	souvenir only connect bottom left | water
+	souvenir perspective pegs third | top	
+	souvenir seashell end second phrase | sea shore
+	souvenir shapeshift inicial right half | round
+	souvenir silly slots first slot first stage | blue cherry
+	souvenir simon scream fourth color final sequence | green
+	souvenir simon states second stage | red green
+	souvenir skewed slots original number? | 6 5 9
+	souvenir third broken button | burst
+	souvenir third chess coordinate | bravo 5
+	souvenir third query in two bits | 0 0
+	stage 01 is 3
+	stage 02 is 6
+	stage 03 is 2
+	stage 04 is 1 
+	stage 06 is 1
+	stage 07 is 5
+	stage 08 is 5
+	stage 09 is 3
+	stage 10 is 1
+	stage 11 is 3
+	stage 12 is 0
+	stage 13 is 0
+	stage 14 is 2
+	stage 15 is 7
+	stage 16 is 7
+	stage 17 is 9
+	stage 19 is 6
+	stage 20 is 9
+	stage 21 is 5
+	stage 22 is 7
+	stage 23 is 1
+	stage 24 is 2
+	stage 25 is 2
+	stage 26 is 6
+	stage 27 is 1
+	stage 28 is 6
+	stage 29 is 1
+	stage 30 is 6
+	stage 31 is 7
+	stage 32 is 5
+	stage 33 is 5
+	stage 34 is 3
+	stage 35 is 6
+	stage 36 is 4
+	stage 37 is 7
+	stage 38 is 6
+	stage 39 is 8
+	stage 40 is 0
+	stage 41 is 4
+	stage 42 is 0
+	stage 43 is 8
+	stage 44 is 6
+	stage 45 is 7
+	stage 46 is 4
+	stage 47 is 0
+	stage 48 is 3
+	stage 49 is 1
+	stage 50 is 9
+	stage 51 is 3
+	stage 52 is 5
+	stage 53 is 0
+	stage 54 is 4
+	stage 55 is 7
+	stage 57 is 6
+	stage 58 is 1
+	stage 59 is 8
+	stage 60 is 5
+	stage 61 is 9
+	stage 62 is 8
+	stage 63 is 7
+	stage 64 is 4
+	stage 65 is 5
+	stage 66 is 6
+	stage 67 is 8
+	stage 68 is 5
+	stage 69 is 7
+	stage 70 is 8
+	stage 71 is 5
+	stage 72 is 2
+	stage 73 is 1
+	stage 74 is 8
+	stage 75 is 0
+	stage 76 is 0
+	stage 77 is 3
+	stage 78 is 8
+	stage 79 is 8
+	stage 80 is 4
+	stage 81 is 8
+	stage 82 is 2
+	stage 83 is 1
+	stage 84 is 4
+	stage 86 is 5
+	stage 87 is 6
+	stage 88 is 8
+	stage 89 is 7
+	stage 90 is 7
+	stage 91 is 6
+	stage 92 is 3
+	stage 92 is 9
+	stage 94 is 0
+	stage 95 is 9
+	stage 96 is 5
+	stage 97 is 9
+	switches down down up up down | 3 4 5 2 1 4 3
+	symbolic passwords black star question mark teh omega short i ksi | question mark ksi short i teh black star omega
+	text field charlie | alpha 1 delta 2
+	third base 6 6 india 8 | hotel 6 sierra india
+	third base 6 oscar 8 india | zulu 8 - xray india - india 8 oscar 9
+	third base india 8 oscar 9 | upper right
+	third base sierra 8 9 hotel | sierra november - 8 november - india sierra - sierra india - hotel zulu november 9
+	third base sierra november zulu xray | lower right
+	third base zulu hotel oscar xray | middle right
+	tic tac toe next o | bottom right
+	tic tac toe next x | pass middle
+	tic tac toe next x | top right
+	tic tac toe x 3 6 o x x 5 x 2 next o | bottom left
+	two bits ! bravo bravo
+	two bits 00 ! submit kilo bravo
+	two bits 01 ! delta kilo
+	two bits 99 ! delta charlie
+	web desing img#fullview background yellow, color purple, text-shadow white | allow
+	wire placement blue alpha bravo yellow charlie delta red alpha bravo red charlie delta blue 3 4 yellow bravo charlie red bravo charlie red 3 4 | yellow delta 1 alpha 3 alpha 4 blue delta 4 bravo 1 red bravo 3 charlie 2
+	word search whiskey delta hotel victor | timer word done
+	yatzee full blue yellow| what full house switch purle and white
+	yatzee full house 3 on 5| keep 5
+	yatzee | all fives
+	zoo killer whale blue whale | camel lobster canguro wolf monkey
 bomb 4 aa 1 d
-bomb memory "listening" | $ & $ $ *
-bomb memory cheap checkout | 22 dollars
-bomb memory first color square | 1 green
-bomb memory first day creation | rain
-bomb memory gamepad number | 46 8
-bomb memory middle center button tic tac toe | x
-bomb memory murder suspect | peacock
-bomb memory perspective pegs third | top	
-bomb memory silly slots first slot first stage | blue cherry
-bomb memory skewed slots original number? | 6 5 9
-bomb memory third broken button | burst
-bomb memory third chess coordinate | bravo 5
-bomb memory third query in two bits | 0 0
 bomb msa lit
-bomb parallel 1 plate
+bomb parallel 1 port
 bomb serial th8zk9
-broken button | three six burst other rca 'right submit'
-cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
-chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
-clockwise ! left left set
-color squares 1 green | red
-color squares 10 blue | column
-color squares 12 column | green
-color squares 14 green | magenta
-color squares 5 red | yellow
-color squares 8 yellow | blue
-combo lock | 14 1 15
-complex button blue holde purple detonate purple press | botton button
 complicated wires blue led | dont
 complicated wires red blue led | cut
 complicated wires red blue star led |dont
 complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
-crazy talk is 'empty space'
-crazy talk | one six
-creation day 2 clear 
-creation day 3 fire
-creation day 4 clear | egg life earth
-creation day 5 water | turtle egg fire
-creation water to right
-double up? 10 65 | 65 then 44 glitch
-double up? 11 74 47 up down single| 47
-double up? 81 26 | 81
-fast math alpha november
-fast math bravo delta
-fast math golf charlie
-fast math november delta
-fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
-friendship top down tiara throphy "two flower" "five notes" "ordinary sun" "grape strawberry" left right tiara "five notes" "white flower" "grape strawberry" | autenticity, helpfullness
-gamepad 4 6 0 8 | alpha bravo left right down right bravo up
-german morse code dash dot dash dot next |C
-german morse code dash dot dash next |K
-german morse code dash dot dot dot next | B
-german morse code dot dash dot next | R
-german morse code dot dot dash dash next |U
-german morse code dot next |E 3.595
-german password first hotel lima tango romeo
-german password second alpha romeo charlie uniform november victor | ruhig 
-german whos on first c | upper right
-german whos on first cee | bottom right
-german whos on first coup | kuh, ok,nicht,litterary blank
-german whos on first coup | middle right
-german whos on first moment | ogoht, so ein, charlie, zein, ten, so', moment
-german whos on first warte | so'
-laundry | wash leave dry alone, 110ºc wet clean
-leader blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
-led encryptions orange foxtrot papa bravo delta | papa
-listening | $ & $ $ *
-minefield blue green orange red black yellow | orange
-monster board magmy shock fountain heavy rain tangle | fountain
-mouse maze yellow torus in corner green sphere corredor 1 step t junction | yellow going to white
-murder peacock green white scarlet rope spanner candle dagger hall | scarlet dagger library
-mystic square center 4 no 9 | 4 3 1 5 8 2 6 7
-neutra l see green magenta yellow | top left bottom right top
-neutral 5 blue | green
-neutralization | laoh filter off 12 drops 
-numberpad red red red white red green white green green green | 1 7 9 3
-only connect acute charlie oscar uniform india reverse charlie umlat alpha bar delta standard romeo sierra | bar delta reverse charlie acute charlie then acute oscar uniform india
-only connect corn viper twister flex two reed water eye of horus the lion team wonderes | lion
+morsematics first dot dot dash dot next
+morsematics second dahs dot dash dot next
+morsematics third dash dot dash next |send dot dash dash dot done
 passwords first golf bravo quebec yankee oscar charlie
 passwords second whiskey oscar sierra tango xray alpha ! password is 'could'
-piano vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
 plumbing | blue to blue
-probing 26 12 empty 25 empty | red to 5 blue to 1
-ritms blue light 4 notes half quarter | hold quarter down for 1 press the bar sixteenth
-round keypad big yus yat little yus sigma omega question mark aesc lambda | little yus sigma omega aesc lambda
-rubiks cube white yellow green red orange | down up, down prime left prime, up ,front twice, back right, down prime
+round keypads big yus yat little yus sigma omega question mark aesc lambda | little yus sigma omega aesc lambda
 safety safe 6 3 4 6 10 1 | 2 10 4 5 7 3
-same word different colors | no on the fifth
-seashell echo echo echo hotel shitzu | shoe she shoe she sushi shoe she
-seashell echo hotel echo echo shitzu | sit shitzu sushi shoe she 
-seashell hotel echo echo echo shitzu | sushi shoe she repeat
-silly slots sally blue cherry red grapes red grapes | pull
-sily slots sausages blue grapes green grapes green grapes | keep
-skewed slots 6 5 9 | 0 4 2
+simon states all | yellow blue yellow red
+simon states red green | yellow blue 
+simon states red yellow | yellow blue yellow
+simon states top right blue 
+simon states yellow | yellow
 square button blue run | hold
-stage 01 is 3
-stage 02 is 6
-stage 03 is 2
-stage 04 is 1 
-stage 06 is 1
-stage 07 is 5
-stage 08 is 5
-stage 09 is 3
-stage 10 is 1
-stage 11 is 3
-stage 12 is 0
-stage 13 is 0
-stage 14 is 2
-stage 15 is 7
-stage 16 is 7
-stage 17 is 9
-stage 19 is 6
-stage 20 is 9
-stage 21 is 5
-stage 22 is 7
-stage 23 is 1
-stage 24 is 2
-stage 25 is 2
-stage 26 is 6
-stage 27 is 1
-stage 28 is 6
-stage 29 is 1
-stage 30 is 6
-stage 31 is 7
-stage 32 is 5
-stage 33 is 5
-stage 34 is 3
-stage 35 is 6
-stage 36 is 4
-stage 37 is 7
-stage 38 is 6
-stage 39 is 8
-stage 40 is 0
-stage 41 is 4
-stage 42 is 0
-stage 43 is 8
-stage 44 is 6
-stage 45 7
-stage 46 is 4
-stage 47 is 0
-stage 48 is 3
-stage 49 is 1
-stage 50 is 9
-stage 51 is 3
-stage 52 is 5
-stage 53 is 0
-stage 54 is 4
-stage 55 is 7
-stage 57 is 6
-stage 58 is 1
-stage 59 is 8
-stage 60 is 5
-stage 61 is 9
-symbolic passwords black star question mark teh omega short i ksi | question mark ksi short i teh black star omega
-tic tac toe next o | bottom right
-tic tac toe next x | pass middle
-tic tac toe next x | top right
-tic tac toe x 3 6 o x x 5 x 2 next o | bottom left
-two bits ! bravo bravo
-two bits 00 ! submit kilo bravo
-two bits 01 ! delta kilo
-two bits 99 ! delta charlie
-wire placement blue alpha bravo yellow charlie delta red alpha bravo red charlie delta blue 3 4 yellow bravo charlie red bravo charlie red 3 4 | yellow delta 1 alpha 3 alpha 4 blue delta 4 bravo 1 red bravo 3 charlie 2
-word search whiskey delta hotel victor | timer word done
-yatzee full blue yellow| what full house switch purle and white
-yatzee full house 3 on 5| keep 5
-yatzee | all fives
+square button led flick cyan | multiple of seven on minutes and seconds

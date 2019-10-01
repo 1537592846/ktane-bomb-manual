@@ -45,7 +45,7 @@ namespace ktane_bomb_manual
                     Serial += InternalFunctions.GetLetterFromPhoneticLetter(word).ToUpper();
                     Serial += InternalFunctions.GetNumber(word) == -1 ? "" : InternalFunctions.GetNumber(word).ToString();
                 }
-                return "";
+                return "Serial added.";
             }
             if (command.Contains("battery") || command.Contains("batteries"))
             {
@@ -56,7 +56,7 @@ namespace ktane_bomb_manual
                         if (char.IsDigit(letter))
                         {
                             BatteryD = int.Parse(letter.ToString());
-                            break;
+                            return "D batteries added.";
                         }
                     }
                 }
@@ -67,11 +67,10 @@ namespace ktane_bomb_manual
                         if (char.IsDigit(letter))
                         {
                             BatteryAA = int.Parse(letter.ToString());
-                            break;
+                            return "AA batteries added.";
                         }
                     }
                 }
-                return "";
             }
             if (command.Contains("port"))
             {
@@ -80,21 +79,21 @@ namespace ktane_bomb_manual
                     Ports.Where(x => x.Name == info[1]).First().Quantity += InternalFunctions.GetNumber(info[0]);
                 else
                     Ports.Add(new Port(info[1], InternalFunctions.GetNumber(info[0])));
-                return "";
+                return info[1][0].ToString().ToUpper() + info[1].Substring(1).ToLower() + " port added.";
             }
             if (command.Contains("indicator"))
             {
                 var info = command.Replace("bomb", "").Replace("has", "").Replace("indicator", "").Trim().Split(' ');
                 var light = !info.Contains("unlit");
                 info = info.Where(x => !x.Contains("lit")).ToArray();
-
-                Indicators.Add(new Indicator(InternalFunctions.GetLetterFromPhoneticLetter(info[0]) + InternalFunctions.GetLetterFromPhoneticLetter(info[1]) + InternalFunctions.GetLetterFromPhoneticLetter(info[2]), light));
-                return "";
+                var text = InternalFunctions.GetLetterFromPhoneticLetter(info[0]) + InternalFunctions.GetLetterFromPhoneticLetter(info[1]) + InternalFunctions.GetLetterFromPhoneticLetter(info[2]);
+                Indicators.Add(new Indicator(text, light));
+                return (light ? "Lit " : "Unlit ") + text.ToUpper() + " indicator added.";
             }
             if (command.Contains("strike"))
             {
                 AddStrike();
-                return "";
+                return "Strike added.";
             }
 
             return "Command not found.";

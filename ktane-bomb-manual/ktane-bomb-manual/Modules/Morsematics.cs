@@ -16,6 +16,7 @@
         {
             if (string.IsNullOrEmpty(bomb.Serial)) return "Missing bomb serial.";
             if (string.IsNullOrEmpty(RecievedCharacter1) || string.IsNullOrEmpty(RecievedCharacter2) || string.IsNullOrEmpty(RecievedCharacter3)) return "Missing recieved characters.";
+            Solved = true;
             return "Send " + Solution(bomb) + " done.";
         }
 
@@ -23,11 +24,13 @@
         {
             if (command.Contains("solve"))
             {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn.Contains("Send");
-                return solveReturn;
+                return Solve(bomb);
             }
             AddCharacter(command);
+            if ((!string.IsNullOrWhiteSpace(RecievedCharacter1) && string.IsNullOrWhiteSpace(RecievedCharacter2) && string.IsNullOrWhiteSpace(RecievedCharacter3)))
+            {
+                return Solve(bomb);
+            }
             return "Character added.";
         }
 
