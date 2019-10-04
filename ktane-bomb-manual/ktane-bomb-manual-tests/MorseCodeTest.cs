@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void MorseCode_Test()
         {
             var morseCodeModule = new MorseCode();
             morseCodeModule.Command(bomb, "morse dash next");

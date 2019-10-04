@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void Morsematics_Test()
         {
             var morsematicsModule = new Morsematics();
             morsematicsModule.Command(bomb,"the first one is dot dot dash dot next");

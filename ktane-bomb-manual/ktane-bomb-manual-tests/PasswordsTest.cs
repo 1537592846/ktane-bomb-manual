@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void Passwords()
+        public void Passwords_Test()
         {
             var passwordsModule = new Passwords();
             passwordsModule.Command(bomb, "passwords first slot is alpha tango charlie lima kilo romeo");

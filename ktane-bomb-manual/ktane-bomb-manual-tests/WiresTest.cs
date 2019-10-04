@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void ThreeWiresTest()
+        public void Wires_ThreeWiresTest()
         {
             var wiresModule = new Wires();
 
@@ -37,7 +37,7 @@ namespace Tests
         }
 
         [Test]
-        public void FourWiresTest()
+        public void Wires_FourWiresTest()
         {
             var wiresModule = new Wires();
 
@@ -66,7 +66,7 @@ namespace Tests
         }
         
         [Test]
-        public void FiveWiresTest()
+        public void Wires_FiveWiresTest()
         {
             var wiresModule = new Wires();
 
@@ -95,7 +95,7 @@ namespace Tests
         }
 
         [Test]
-        public void SixWiresTest()
+        public void Wires_SixWiresTest()
         {
             var wiresModule = new Wires();
 

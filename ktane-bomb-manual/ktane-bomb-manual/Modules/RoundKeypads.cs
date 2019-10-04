@@ -17,7 +17,7 @@ namespace ktane_bomb_manual.Modules
             if (Symbols.Count != 8) return "Can't solve it yet.";
             var list = SymbolOrder();
             var message = "Press this ones: ";
-            foreach (var symbol in Symbols)
+            foreach (var symbol in Symbols.OrderBy(x=>x))
             {
                 if (!list.Contains(symbol))
                     message += WhichSymbol(symbol) + ". ";
@@ -28,14 +28,27 @@ namespace ktane_bomb_manual.Modules
 
         public override string Command(Bomb bomb, string command)
         {
-            foreach (var word in command.Split(' '))
+            var wordListToAdd = new List<string>();
+
+            for (int i = 0; i < command.Split(' ').Count(); i++)
             {
-                AddSymbol(word);
+                var oneWord = command.Split(' ')[i];
+                var twoWord = command.Split(' ')[i];
+                try { twoWord += " "+command.Split(' ')[i + 1]; } catch { };
+                var threeWord = command.Split(' ')[i];
+                try { threeWord += " " + command.Split(' ')[i + 1]; } catch { };
+                try { threeWord += " " + command.Split(' ')[i + 2]; } catch { };
+                wordListToAdd.Add(threeWord);
+                wordListToAdd.Add(twoWord);
+                wordListToAdd.Add(oneWord);
             }
 
-            var solveReturn = Solve(bomb);
-            Solved = solveReturn != "Can't solve it yet.";
-            return solveReturn;
+            foreach (var words in wordListToAdd)
+            {
+                AddSymbol(words);
+            }
+
+            return Solve(bomb);
         }
 
         public List<int> SymbolOrder()

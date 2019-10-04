@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void FullConfigTest()
+        public void Knobs_FullConfigTest()
         {
             //Can't tell yet
             var knobsModule = new Knobs();
@@ -48,7 +48,7 @@ namespace Tests
         }
 
         [Test]
-        public void HalfConfigTest()
+        public void Knobs_HalfConfigTest()
         {
             //top first half config
             var knobsModule = new Knobs();

@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestFirstColumn()
+        public void Keypads_TestFirstColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol("a ballon");
@@ -34,7 +34,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestSecondColumn()
+        public void Keypads_TestSecondColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol(" c l ");
@@ -53,7 +53,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestThirdColumn()
+        public void Keypads_TestThirdColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol("copyright");
@@ -71,7 +71,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestFourthColumn()
+        public void Keypads_TestFourthColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol("six");
@@ -89,7 +89,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestFifthColumn()
+        public void Keypads_TestFifthColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol("psi");
@@ -107,7 +107,7 @@ namespace Tests
         }
 
         [Test]
-        public void KeypadsTestSixthColumn()
+        public void Keypads_TestSixthColumn()
         {
             var keypadsModule = new Keypads();
             keypadsModule.AddSymbol("small b ");

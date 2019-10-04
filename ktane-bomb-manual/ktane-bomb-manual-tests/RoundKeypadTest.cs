@@ -16,7 +16,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void RoundKeypads_Test()
         {
             var roundKeypadsModule = new RoundKeypads();
             roundKeypadsModule.AddSymbol("big yus");
@@ -27,7 +27,7 @@ namespace Tests
             roundKeypadsModule.AddSymbol("question mark");
             roundKeypadsModule.AddSymbol("aesc");
             roundKeypadsModule.AddSymbol("lambda");
-            Assert.AreEqual("Press this ones: Little Yus. Lunate Sigma. Omega. Aesc. Lambda.", roundKeypadsModule.Solve(bomb), "Error Test #1", null);
+            Assert.AreEqual("Press this ones: Aesc. Lambda. Little Yus. Lunate Sigma. Omega.", roundKeypadsModule.Solve(bomb), "Error Test #1", null);
         }
     }
 }

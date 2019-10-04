@@ -14,7 +14,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void SafetySafe_Test()
         {
             var safetySafeModule = new SafetySafe();
 

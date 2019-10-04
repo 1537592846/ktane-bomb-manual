@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void WhosOnFirst_Test()
         {
             var whosOnFirstModule = new WhosOnFirst();
             Assert.AreEqual("Bottom left tile.", whosOnFirstModule.Command(bomb, "whos on first empty"), "Error test #1", null);

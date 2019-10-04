@@ -28,7 +28,7 @@ namespace ktane_bomb_manual.Modules
             var result = "";
             if (command.Contains("led"))
             {
-                LED = command.Replace("square button", "").Replace("led", "").Replace(" is ", "").Trim();
+                LED = command.Replace("square button", "").Replace("led", "").Replace(" is ", "").Replace(" flick ", "").Replace(" blinking ", "").Replace(" flicking ", "").Replace(" blink ", "").Trim();
                 BlinkingLED = command.Contains("blink") || command.Contains("flick");
                 Solved = true;
                 return Solve(bomb);

@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void SimonStates_Test()
         {
             var simonStatesModule = new SimonStates();
             simonStatesModule.Command(bomb, "simon states top left blue");

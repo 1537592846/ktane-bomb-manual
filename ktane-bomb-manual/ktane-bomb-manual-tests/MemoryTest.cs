@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void Memory_Test()
         {
             var memoryModule = new Memory();
             Assert.AreEqual("Press 3.", memoryModule.Command(bomb,"memory display 3 numbers 4 1 3 2"),"Error Test #1",null);

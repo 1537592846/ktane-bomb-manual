@@ -21,7 +21,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void Plumbing_Test()
         {
             var plumbingModule = new Plumbing();
             Assert.AreEqual("Input: blue. Output: yellow.",plumbingModule.Command(bomb,"solve plumbing"),"Error test #1",null);

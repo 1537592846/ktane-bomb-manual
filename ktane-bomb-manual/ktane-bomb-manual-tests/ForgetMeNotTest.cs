@@ -14,7 +14,7 @@ namespace Tests
         }
 
         [Test]
-        public void SerialOnlyOddBombTest()
+        public void ForgetMeNot_SerialOnlyOddBombTest()
         {
             bomb = new Bomb();
             bomb.Serial = "QS1LN4";

@@ -133,7 +133,11 @@ namespace ktane_bomb_manual
                     count += port.Quantity;
                 }
             else
-                count = Ports.Where(x => x.Name == portName).First().Quantity;
+                try
+                {
+                    count = Ports.Where(x => x.Name == portName).FirstOrDefault().Quantity;
+                }
+                catch { count = 0; }
             return count;
         }
 

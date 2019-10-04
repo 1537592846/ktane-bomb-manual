@@ -266,13 +266,13 @@ bomb msa lit
 bomb parallel 1 port
 bomb serial th8zk9
 complicated wires blue led | dont
-complicated wires red blue led | cut
 complicated wires red blue star led |dont
-complicated wires red star | cut
 complicated wires red | dont
+complicated wires red blue led | cut
+complicated wires red star | cut
 complicated wires white | cut
 morsematics first dot dot dash dot next
-morsematics second dahs dot dash dot next
+morsematics second dash dot dash dot next
 morsematics third dash dot dash next |send dot dash dash dot done
 passwords first golf bravo quebec yankee oscar charlie
 passwords second whiskey oscar sierra tango xray alpha ! password is 'could'

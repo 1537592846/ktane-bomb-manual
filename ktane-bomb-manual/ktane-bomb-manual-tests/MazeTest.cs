@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Maze1()
+        public void Maze_1()
         {
             var mazeModule = new Maze();
             mazeModule.Command(bomb, "maze circle at 1 0");
@@ -35,7 +35,7 @@ namespace Tests
         }
 
         [Test]
-        public void Maze2()
+        public void Maze_2()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "1,4";
@@ -53,7 +53,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze3()
+        public void Maze_3()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "3,3";
@@ -71,7 +71,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze4()
+        public void Maze_4()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "0,0";
@@ -89,7 +89,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze5()
+        public void Maze_5()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "2,4";
@@ -107,7 +107,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze6()
+        public void Maze_6()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "0,4";
@@ -125,7 +125,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze7()
+        public void Maze_7()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "0,1";
@@ -143,7 +143,7 @@ namespace Tests
 
 
         [Test]
-        public void Maze8()
+        public void Maze_8()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "0,3";
@@ -160,7 +160,7 @@ namespace Tests
         }
 
         [Test]
-        public void Maze9()
+        public void Maze_9()
         {
             var mazeModule = new Maze();
             mazeModule.Circle1 = "4,0";

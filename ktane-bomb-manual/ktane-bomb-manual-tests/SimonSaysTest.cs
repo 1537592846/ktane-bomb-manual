@@ -9,13 +9,13 @@ namespace Tests
         public Bomb bomb;
 
         [SetUp]
-        public void Setup()
+        public void SimonSays_Setup()
         {
             bomb = new Bomb();
         }
 
         [Test]
-        public void NoStrikesVowelTest()
+        public void SimonSays_NoStrikesVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "AB12C3";
@@ -27,7 +27,7 @@ namespace Tests
         }
 
         [Test]
-        public void OneStrikeVowelTest()
+        public void SimonSays_OneStrikeVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "AB12C3";
@@ -49,7 +49,7 @@ namespace Tests
         }
 
         [Test]
-        public void TwoStrikesVowelTest()
+        public void SimonSays_TwoStrikesVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "AB12C3";
@@ -63,7 +63,7 @@ namespace Tests
         }
 
         [Test]
-        public void NoStrikesNoVowelTest()
+        public void SimonSays_NoStrikesNoVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "TB12C3";
@@ -75,7 +75,7 @@ namespace Tests
         }
 
         [Test]
-        public void OneStrikeNoVowelTest()
+        public void SimonSays_OneStrikeNoVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "TB12C3";
@@ -97,7 +97,7 @@ namespace Tests
         }
 
         [Test]
-        public void TwoStrikesNoVowelTest()
+        public void SimonSays_TwoStrikesNoVowelTest()
         {
             var simonSaysModule = new SimonSays();
             bomb.Serial = "TB12C3";

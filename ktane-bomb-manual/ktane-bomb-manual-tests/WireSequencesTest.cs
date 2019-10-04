@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
-    public class WireSequenceTest
+    public class WireSequencesTest
     {
         public Bomb bomb;
 
@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void WireSequences_Test()
         {
             var wireSequencesModule = new WireSequences();
             Assert.AreEqual("Cut it.", wireSequencesModule.Command(bomb, "wire sequences red charlie"), null, "Error Test #1");

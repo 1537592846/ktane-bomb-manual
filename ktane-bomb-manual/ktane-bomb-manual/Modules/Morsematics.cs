@@ -27,7 +27,7 @@
                 return Solve(bomb);
             }
             AddCharacter(command);
-            if ((!string.IsNullOrWhiteSpace(RecievedCharacter1) && string.IsNullOrWhiteSpace(RecievedCharacter2) && string.IsNullOrWhiteSpace(RecievedCharacter3)))
+            if (!(string.IsNullOrWhiteSpace(RecievedCharacter1) || string.IsNullOrWhiteSpace(RecievedCharacter2) || string.IsNullOrWhiteSpace(RecievedCharacter3)))
             {
                 return Solve(bomb);
             }

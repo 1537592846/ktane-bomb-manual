@@ -7,11 +7,11 @@ namespace ktane_bomb_manual.Modules
     {
         public Passwords()
         {
-            Group1 = new List<string>();
-            Group2 = new List<string>();
-            Group3 = new List<string>();
-            Group4 = new List<string>();
-            Group5 = new List<string>();
+            Group1 = new List<string>() { " " };
+            Group2 = new List<string>() { " " };
+            Group3 = new List<string>() { " " };
+            Group4 = new List<string>() { " " };
+            Group5 = new List<string>() { " " };
         }
 
         public List<string> Group1;
@@ -29,9 +29,9 @@ namespace ktane_bomb_manual.Modules
         {
             if (command.Contains("solve"))
             {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
+                var solve = Solve(bomb);
+                Solved = solve != "Can't solve it yet.";
+                return solve;
             }
             if (command.Contains("reset"))
             {
@@ -39,13 +39,11 @@ namespace ktane_bomb_manual.Modules
                 return "Module reseted";
             }
             AddLetters(command);
-            if (Group1.Count > 0 && Group2.Count > 0 && Group3.Count > 0 && Group4.Count > 0 && Group5.Count > 0)
-            {
-                var solveReturn = Solve(bomb);
-                Solved = solveReturn != "Can't solve it yet.";
-                return solveReturn;
-            }
-            return "Letters added";
+
+            var solveReturn = Solve(bomb);
+            Solved = solveReturn != "Can't solve it yet.";
+
+            return Solved ? solveReturn : "Letters added.";
         }
 
         public void Reset()
@@ -62,55 +60,82 @@ namespace ktane_bomb_manual.Modules
             if (input.Contains("first"))
             {
                 Group1.Clear();
-                Group1.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group1.Add(letter);
                 }
+
+                Group2.Clear();
+                Group3.Clear();
+                Group4.Clear();
+                Group5.Clear();
+
+                Group2.Add(" ");
+                Group3.Add(" ");
+                Group4.Add(" ");
+                Group5.Add(" ");
+
                 return;
             }
 
             if (input.Contains("second"))
             {
                 Group2.Clear();
-                Group2.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group2.Add(letter);
                 }
+
+                Group3.Clear();
+                Group4.Clear();
+                Group5.Clear();
+
+                Group3.Add(" ");
+                Group4.Add(" ");
+                Group5.Add(" ");
+
                 return;
             }
 
             if (input.Contains("third"))
             {
                 Group3.Clear();
-                Group3.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group3.Add(letter);
                 }
+
+                Group4.Clear();
+                Group5.Clear();
+
+                Group4.Add(" ");
+                Group5.Add(" ");
+
                 return;
             }
 
             if (input.Contains("fourth"))
             {
                 Group4.Clear();
-                Group4.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
                     if (!string.IsNullOrEmpty(letter)) Group4.Add(letter);
                 }
+
+                Group5.Clear();
+
+                Group5.Add(" ");
+
                 return;
             }
 
             if (input.Contains("fifth") || input.Contains("last"))
             {
                 Group5.Clear();
-                Group5.Add(" ");
                 foreach (var phoneticLetter in input.Split(' '))
                 {
                     var letter = InternalFunctions.GetLetterFromPhoneticLetter(phoneticLetter);
@@ -124,7 +149,7 @@ namespace ktane_bomb_manual.Modules
         {
             var wordList = new List<string>();
 
-            foreach (var letter1 in Group1.OrderBy(x=>x))
+            foreach (var letter1 in Group1.OrderBy(x => x))
             {
                 foreach (var letter2 in Group2.OrderBy(x => x))
                 {
@@ -134,63 +159,57 @@ namespace ktane_bomb_manual.Modules
                         {
                             foreach (var letter5 in Group5.OrderBy(x => x))
                             {
-                                if (HasWordStartingWith(letter1 + letter2 + letter3 + letter4 + letter5))
-                                {
-                                    wordList.Add(Word(letter1 + letter2 + letter3 + letter4 + letter5).Trim());
-                                }
+                                wordList.AddRange(Word(letter1 + letter2 + letter3 + letter4 + letter5));
                             }
                         }
                     }
                 }
-                if (wordList.Count == 1) return "The password is " + wordList[0] + ".";
-                wordList.Clear();
             }
+            if (wordList.Count == 1) return "The password is " + wordList[0] + ".";
             return "Can't solve it yet.";
         }
 
-        public bool HasWordStartingWith(string word)
+        public List<string> Word(string word)
         {
-            return !string.IsNullOrEmpty(Word(word));
-        }
-
-        public string Word(string word)
-        {
-            if ("about".StartsWith(word)) return "about";
-            if ("after".StartsWith(word)) return "after";
-            if ("again".StartsWith(word)) return "again";
-            if ("below".StartsWith(word)) return "below";
-            if ("could".StartsWith(word)) return "could";
-            if ("every".StartsWith(word)) return "every";
-            if ("first".StartsWith(word)) return "first";
-            if ("found".StartsWith(word)) return "found";
-            if ("great".StartsWith(word)) return "great";
-            if ("house".StartsWith(word)) return "house";
-            if ("large".StartsWith(word)) return "large";
-            if ("learn".StartsWith(word)) return "learn";
-            if ("never".StartsWith(word)) return "never";
-            if ("other".StartsWith(word)) return "other";
-            if ("place".StartsWith(word)) return "place";
-            if ("plant".StartsWith(word)) return "plant";
-            if ("point".StartsWith(word)) return "point";
-            if ("right".StartsWith(word)) return "right";
-            if ("small".StartsWith(word)) return "small";
-            if ("sound".StartsWith(word)) return "sound";
-            if ("spell".StartsWith(word)) return "spell";
-            if ("still".StartsWith(word)) return "still";
-            if ("study".StartsWith(word)) return "study";
-            if ("their".StartsWith(word)) return "their";
-            if ("there".StartsWith(word)) return "there";
-            if ("these".StartsWith(word)) return "these";
-            if ("thing".StartsWith(word)) return "thing";
-            if ("think".StartsWith(word)) return "think";
-            if ("three".StartsWith(word)) return "three";
-            if ("water".StartsWith(word)) return "water";
-            if ("where".StartsWith(word)) return "where";
-            if ("which".StartsWith(word)) return "which";
-            if ("world".StartsWith(word)) return "world";
-            if ("would".StartsWith(word)) return "would";
-            if ("write".StartsWith(word)) return "write";
-            return "";
+            word = word.Trim();
+            if (string.IsNullOrWhiteSpace(word)) return new List<string>();
+            var wordsReturn = "";
+            if ("about".StartsWith(word)) wordsReturn += "about ";
+            if ("after".StartsWith(word)) wordsReturn += "after ";
+            if ("again".StartsWith(word)) wordsReturn += "again ";
+            if ("below".StartsWith(word)) wordsReturn += "below ";
+            if ("could".StartsWith(word)) wordsReturn += "could ";
+            if ("every".StartsWith(word)) wordsReturn += "every ";
+            if ("first".StartsWith(word)) wordsReturn += "first ";
+            if ("found".StartsWith(word)) wordsReturn += "found ";
+            if ("great".StartsWith(word)) wordsReturn += "great ";
+            if ("house".StartsWith(word)) wordsReturn += "house ";
+            if ("large".StartsWith(word)) wordsReturn += "large ";
+            if ("learn".StartsWith(word)) wordsReturn += "learn ";
+            if ("never".StartsWith(word)) wordsReturn += "never ";
+            if ("other".StartsWith(word)) wordsReturn += "other ";
+            if ("place".StartsWith(word)) wordsReturn += "place ";
+            if ("plant".StartsWith(word)) wordsReturn += "plant ";
+            if ("point".StartsWith(word)) wordsReturn += "point ";
+            if ("right".StartsWith(word)) wordsReturn += "right ";
+            if ("small".StartsWith(word)) wordsReturn += "small ";
+            if ("sound".StartsWith(word)) wordsReturn += "sound ";
+            if ("spell".StartsWith(word)) wordsReturn += "spell ";
+            if ("still".StartsWith(word)) wordsReturn += "still ";
+            if ("study".StartsWith(word)) wordsReturn += "study ";
+            if ("their".StartsWith(word)) wordsReturn += "their ";
+            if ("there".StartsWith(word)) wordsReturn += "there ";
+            if ("these".StartsWith(word)) wordsReturn += "these ";
+            if ("thing".StartsWith(word)) wordsReturn += "thing ";
+            if ("think".StartsWith(word)) wordsReturn += "think ";
+            if ("three".StartsWith(word)) wordsReturn += "three ";
+            if ("water".StartsWith(word)) wordsReturn += "water ";
+            if ("where".StartsWith(word)) wordsReturn += "where ";
+            if ("which".StartsWith(word)) wordsReturn += "which ";
+            if ("world".StartsWith(word)) wordsReturn += "world ";
+            if ("would".StartsWith(word)) wordsReturn += "would ";
+            if ("write".StartsWith(word)) wordsReturn += "write ";
+            return wordsReturn.Split(' ').Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
         }
     }
 }

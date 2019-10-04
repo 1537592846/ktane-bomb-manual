@@ -15,7 +15,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test()
+        public void RotaryPhone_Test()
         {
             var rotaryPhoneModule = new RotaryPhone();
             Assert.AreEqual("Numbers are 8 2 7.", rotaryPhoneModule.Command(bomb, "rotary phone numbers are 8 2 7"), "Error test #1", null);

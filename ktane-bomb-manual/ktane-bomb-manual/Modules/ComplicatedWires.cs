@@ -32,7 +32,7 @@ namespace ktane_bomb_manual.Modules
             wire.HasParallelPort = bomb.HasPort("parallel");
             wire.HasBatteries = bomb.HasManyBatteries(2);
 
-            return CutThisWire(wire) ? "Cut it." : "Don't cut it.";
+            return CutThisWire(wire) ? "Cut it." : "Leave it.";
         }
 
         public bool CutThisWire(ComplicatedWire wire)
