@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Bomb.cs" />
     <Compile Include="InternalFunctions.cs" />
+    <Compile Include="Modules\3dMaze.cs" />
+    <Compile Include="Modules\AdjacentLetters.cs" />
     <Compile Include="Modules\Button.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />

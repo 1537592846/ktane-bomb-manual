@@ -50,7 +50,7 @@ namespace ktane_bomb_manual.Modules
                 if (bomb.HasUnlitIndicator("car")) { EndNumbers.Add((2 + int.Parse(number)).ToString().Last().ToString()); return; }
                 if (bomb.GetUnlitIndicators() > bomb.GetLitIndicators()) { EndNumbers.Add((7 + int.Parse(number)).ToString().Last().ToString()); return; }
                 if (bomb.GetUnlitIndicators() == 0) { EndNumbers.Add((bomb.GetLitIndicators() + int.Parse(number)).ToString().Last().ToString()); return; }
-                EndNumbers.Add((bomb.GetLastSerialDigit() + int.Parse(number)).ToString().Last().ToString());
+                EndNumbers.Add((bomb.GetSerialLastNumberDigit() + int.Parse(number)).ToString().Last().ToString());
                 return;
             }
 

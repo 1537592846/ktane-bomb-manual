@@ -24,6 +24,12 @@ namespace Tests
             AssertCommand("Lit MSA indicator added.", ValidateCommand("bomb has indicator mike sierra alpha lit"), "Indicator configuration");
             AssertCommand("Parallel port added.", ValidateCommand("bomb has 1 parallel port"), "Port configuration");
 
+            //Adjacent letters
+            AssertCommand("Press: November. Yankee. Charlie. Foxtrot.", ValidateCommand("adjacent letters romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor"), "Adjacent Letters");
+
+            //Astrology
+            AssertCommand("Poor omen when the timer has a 1.", ValidateCommand("astrology fire uranus aries"), "Astrology");
+
             //Complicate wires
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");
             AssertCommand("Leave it.", ValidateCommand("complicated wires red"), "Complicated wires");
@@ -43,7 +49,7 @@ namespace Tests
             AssertCommand("The password is could.", ValidateCommand("passwords third delta whiskey uniform india lima"), "Passwords");
 
             //Plumbing
-            AssertCommand("Input: blue. Output: blue.", ValidateCommand("solve plumbing"),"Plumbing");
+            AssertCommand("Input: blue. Output: blue.", ValidateCommand("solve plumbing"), "Plumbing");
 
             //Round keypads
             AssertCommand("Press this ones: Aesc. Lambda. Little Yus. Lunate Sigma. Omega.", ValidateCommand("round keypads big yus yat little yus sigma omega question mark aesc lambda"), "Round keypads");

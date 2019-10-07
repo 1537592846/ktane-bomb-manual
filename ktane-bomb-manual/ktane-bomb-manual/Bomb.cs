@@ -108,12 +108,12 @@ namespace ktane_bomb_manual
         {
             try
             {
-                return Modules.Where(x => x.ModuleName.ToLower() == module && !x.Solved).First();
+                return Modules.Where(x => (char.IsNumber(module[0]) ? "_" : "" + x.ModuleName.ToLower()) == module && !x.Solved).First();
             }
             catch
             {
                 Type type;
-                ModulesAvaliable.TryGetValue(module, out type);
+                ModulesAvaliable.TryGetValue(char.IsNumber(module[0]) ? "_" : "" + module, out type);
                 Modules.Add((Module)Activator.CreateInstance(type));
                 return GetModule(module);
             }
@@ -121,7 +121,7 @@ namespace ktane_bomb_manual
 
         public Port GetPort(string port)
         {
-            return Ports.Where(x => x.Name == port).FirstOrDefault();
+            return Ports.Where(x => x.Name == port.ToLower()).FirstOrDefault();
         }
 
         public int GetPortsQuantity(string portName = "")
@@ -135,7 +135,7 @@ namespace ktane_bomb_manual
             else
                 try
                 {
-                    count = Ports.Where(x => x.Name == portName).FirstOrDefault().Quantity;
+                    count = Ports.Where(x => x.Name == portName.ToLower()).FirstOrDefault().Quantity;
                 }
                 catch { count = 0; }
             return count;
@@ -143,7 +143,7 @@ namespace ktane_bomb_manual
 
         public Indicator GetIndicator(string tag)
         {
-            return Indicators.Where(x => x.Tag == tag).FirstOrDefault();
+            return Indicators.Where(x => x.Tag == tag.ToLower()).FirstOrDefault();
         }
 
         public int GetLitIndicatorsInSerialQuantity()
@@ -187,12 +187,12 @@ namespace ktane_bomb_manual
 
         public int GetLitIndicatorsWithLetter(string letter)
         {
-            return Indicators.Where(x => x.Tag.Contains(letter) && x.LitIndicator).Count();
+            return Indicators.Where(x => x.Tag.Contains(letter.ToLower()) && x.LitIndicator).Count();
         }
 
         public int GetUnlitIndicatorsWithLetter(string letter)
         {
-            return Indicators.Where(x => x.Tag.Contains(letter) && !x.LitIndicator).Count();
+            return Indicators.Where(x => x.Tag.Contains(letter.ToLower()) && !x.LitIndicator).Count();
         }
 
         public string GetSerialCharacterAtPosition(int position)
@@ -202,14 +202,7 @@ namespace ktane_bomb_manual
 
         public List<int> GetSerialDigits()
         {
-            var list = new List<int>();
-
-            foreach (var digit in Serial.Where(x => char.IsDigit(x)))
-            {
-                list.Add(int.Parse(digit.ToString()));
-            }
-
-            return list;
+            return Serial.Where(x=>char.IsNumber(x)).Select(y=>int.Parse(y.ToString())).ToList();
         }
 
         public int GetBiggestSerialDigit()
@@ -236,7 +229,12 @@ namespace ktane_bomb_manual
             }
         }
 
-        public int GetLastSerialDigit()
+        public int GetSerialFirstNumberDigit()
+        {
+            return GetSerialDigits().First();
+        }
+
+        public int GetSerialLastNumberDigit()
         {
             return GetSerialDigits().Last();
         }
@@ -248,7 +246,7 @@ namespace ktane_bomb_manual
 
         public bool HasPort(string port)
         {
-            return GetPort(port) != null;
+            return GetPort(port.ToLower()) != null;
         }
 
         public bool HasAnyDuplicatedPort()
@@ -262,17 +260,17 @@ namespace ktane_bomb_manual
 
         public bool HasIndicator(string tag)
         {
-            return GetIndicator(tag) != null;
+            return GetIndicator(tag.ToLower()) != null;
         }
 
         public bool HasLitIndicator(string tag)
         {
-            return HasIndicator(tag) ? GetIndicator(tag).LitIndicator : false;
+            return HasIndicator(tag.ToLower()) ? GetIndicator(tag.ToLower()).LitIndicator : false;
         }
 
         public bool HasUnlitIndicator(string tag)
         {
-            return HasIndicator(tag) ? !GetIndicator(tag).LitIndicator : false;
+            return HasIndicator(tag.ToLower()) ? !GetIndicator(tag.ToLower()).LitIndicator : false;
         }
 
         public bool HasSerialChar(char character)
@@ -334,7 +332,7 @@ namespace ktane_bomb_manual
     {
         public Port(string name, int quantity)
         {
-            Name = name;
+            Name = name.ToLower();
             Quantity = quantity;
         }
 
@@ -346,7 +344,7 @@ namespace ktane_bomb_manual
     {
         public Indicator(string tag, bool litIndicator)
         {
-            Tag = tag;
+            Tag = tag.ToLower();
             LitIndicator = litIndicator;
         }
 
