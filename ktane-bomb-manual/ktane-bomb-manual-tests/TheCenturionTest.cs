@@ -32,6 +32,7 @@ namespace Tests
             //Astrology
             AssertCommand("Poor omen when the timer has a 1.", ValidateCommand("astrology fire uranus aries"), "Astrology");
 
+
             //Binary LEDs
             AssertCommand("Cut the green one on 1-2-5.", ValidateCommand("binary leds 1,3 2,3,4,5 5 1,2,5 2 1,2,5 5"), "Binary LEDs");
 
@@ -45,7 +46,7 @@ namespace Tests
             AssertCommand("The answer is 0, 0, 0, 0, 0, 0, 0, 1.", ValidateCommand("bitwise and"), "Bitwise");
 
             //Bulb
-            AssertCommand("Unscrew, then press I, I, I, then screw.", ValidateCommand("bulb blue off opaque"), "Bulb");
+            AssertCommand("Firstly unscrew, then press I, then press I, then press I, then screw, then you're done.", ValidateCommand("bulb blue off opaque"), "Bulb");
 
             //Complicate wires
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");
