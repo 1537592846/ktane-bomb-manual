@@ -41,6 +41,10 @@
     <Reference Include="Microsoft.CognitiveServices.Speech.csharp, Version=1.6.0.28, Culture=neutral, PublicKeyToken=d2e6dcccb609e663, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CognitiveServices.Speech.1.6.0\lib\net461\Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -65,6 +69,10 @@
     <Compile Include="InternalFunctions.cs" />
     <Compile Include="Modules\3dMaze.cs" />
     <Compile Include="Modules\AdjacentLetters.cs" />
+    <Compile Include="Modules\Astrology.cs" />
+    <Compile Include="Modules\BinaryLEDs.cs" />
+    <Compile Include="Modules\Bitmaps.cs" />
+    <Compile Include="Modules\Bitwise.cs" />
     <Compile Include="Modules\Button.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />

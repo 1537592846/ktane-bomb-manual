@@ -31,6 +31,8 @@ namespace ktane_bomb_manual
         public string Serial { get; set; }
         public int BatteryD { get; set; }
         public int BatteryAA { get; set; }
+        public int Time { get; set; }
+        public int ModulesQuantity { get; set; }
         public List<Port> Ports { get; set; }
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
@@ -89,6 +91,32 @@ namespace ktane_bomb_manual
                 var text = InternalFunctions.GetLetterFromPhoneticLetter(info[0]) + InternalFunctions.GetLetterFromPhoneticLetter(info[1]) + InternalFunctions.GetLetterFromPhoneticLetter(info[2]);
                 Indicators.Add(new Indicator(text, light));
                 return (light ? "Lit " : "Unlit ") + text.ToUpper() + " indicator added.";
+            }
+            if (command.Contains("time")|| command.Contains("minute"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.IsNumber(word))
+                    {
+                        Time = int.Parse(word);
+                        return "Time added.";
+                    }
+                }
+
+                return "Can't find time.";
+            }
+            if (command.Contains("module"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.IsNumber(word))
+                    {
+                        ModulesQuantity = int.Parse(word);
+                        return "Modules quantity added.";
+                    }
+                }
+
+                return "Can't find modules quantity.";
             }
             if (command.Contains("strike"))
             {
@@ -175,6 +203,11 @@ namespace ktane_bomb_manual
             return BatteryAA + BatteryD;
         }
 
+        public int GetBatteriesHolders()
+        {
+            return BatteryD + BatteryAA / 2;
+        }
+
         public int GetLitIndicators()
         {
             return Indicators.Where(x => x.LitIndicator).Count();
@@ -202,7 +235,7 @@ namespace ktane_bomb_manual
 
         public List<int> GetSerialDigits()
         {
-            return Serial.Where(x=>char.IsNumber(x)).Select(y=>int.Parse(y.ToString())).ToList();
+            return Serial.Where(x => char.IsNumber(x)).Select(y => int.Parse(y.ToString())).ToList();
         }
 
         public int GetBiggestSerialDigit()
@@ -320,6 +353,11 @@ namespace ktane_bomb_manual
         public bool HasManyBatteries(int number)
         {
             return BatteryAA + BatteryD >= number;
+        }
+
+        public bool HasMoreModulesThanTime()
+        {
+            return ModulesQuantity > Time;
         }
 
         public bool CanDefuse()

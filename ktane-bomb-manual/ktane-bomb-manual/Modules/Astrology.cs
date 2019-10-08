@@ -36,6 +36,8 @@ namespace ktane_bomb_manual.Modules
                 OmenValue += hasInCommon ? 1 : -1;
             }
 
+            Solved = true;
+
             if (OmenValue > 0)
                 return "Good omen when the timer has a " + OmenValue + ".";
             else if (OmenValue < 0)

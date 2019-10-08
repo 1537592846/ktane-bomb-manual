@@ -280,5 +280,10 @@
             }
             return true;
         }
+
+        public static bool IsNumber(string word)
+        {
+            try { int.Parse(word); return true; } catch { return false; }
+        }
     }
 }
