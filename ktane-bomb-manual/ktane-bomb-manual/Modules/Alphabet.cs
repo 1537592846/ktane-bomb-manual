@@ -17,6 +17,8 @@ namespace ktane_bomb_manual.Modules
         {
             if (Letters.Count != 4) { Letters.Clear(); return "Not enough letters to solve."; }
 
+            Solved = true;
+
             var message = "Press ";
 
             foreach (var letter in BiggestWordPossible())

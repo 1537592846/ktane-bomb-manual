@@ -1,5 +1,6 @@
 ﻿using ktane_bomb_manual;
 using NUnit.Framework;
+using System.Linq;
 
 namespace Tests
 {
@@ -51,6 +52,9 @@ namespace Tests
             //Bulb
             AssertCommand("First unscrew, then press I, then press I, then press I, then screw, then you're done.", ValidateCommand("bulb blue off opaque"), "Bulb");
 
+            //Chess
+            AssertCommand("The position is echo 5.", ValidateCommand("chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3"), "Chess");
+
             //Complicate wires
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");
             AssertCommand("Leave it.", ValidateCommand("complicated wires red"), "Complicated wires");
@@ -70,7 +74,7 @@ namespace Tests
             AssertCommand("The password is could.", ValidateCommand("passwords third delta whiskey uniform india lima"), "Passwords");
 
             //Plumbing
-            AssertCommand("Input: blue. Output: blue.", ValidateCommand("solve plumbing"), "Plumbing");
+            AssertCommand("Input: blue. Output: blue.", ValidateCommand("plumbing solve"), "Plumbing");
 
             //Round keypads
             AssertCommand("Press this ones: Aesc. Lambda. Little Yus. Lunate Sigma. Omega.", ValidateCommand("round keypads big yus yat little yus sigma omega question mark aesc lambda"), "Round keypads");
@@ -84,10 +88,16 @@ namespace Tests
             AssertCommand("Press yellow blue.", ValidateCommand("simon states red green"), "Simon states");
             AssertCommand("Press yellow blue yellow.", ValidateCommand("simon states red yellow"), "Simon states");
             AssertCommand("Press yellow blue yellow red.", ValidateCommand("simon states all"), "Simon states");
+            AssertCommand("Module defused.", ValidateCommand("simon states solved"), "Simon states");
 
             //Square button
             AssertCommand("Hold the button. What is the LED color?", ValidateCommand("square button blue run"), "Square button");
             AssertCommand("Release when the seconds are a multiple of seven.", ValidateCommand("square button led flick cyan"), "Square button");
+
+            //Bomb final validations
+            var modulesNotSolved = "";
+            program.mockBomb.Modules.Where(x => !x.Solved).Select(x => x.ModuleName).ToList().ForEach(x => { modulesNotSolved += x + ", "; });
+            Assert.AreEqual(program.mockBomb.Modules.Count(), program.mockBomb.Modules.Where(x => x.Solved).Count(), "Not enough modules solved. Modules not solved: " + modulesNotSolved, null);
         }
 
         public string ValidateCommand(string command)

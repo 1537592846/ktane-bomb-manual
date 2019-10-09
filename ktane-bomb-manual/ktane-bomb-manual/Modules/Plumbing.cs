@@ -26,6 +26,7 @@
             message += IsPipeActive(bomb, "blue", "output");
             message = message.Trim() + ".";
 
+            Solved = true;
             return message;
         }
 

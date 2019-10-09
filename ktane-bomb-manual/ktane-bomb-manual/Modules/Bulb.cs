@@ -18,6 +18,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
+            Solved = true;
             return "First " + Step1(bomb);
         }
 
@@ -82,9 +83,9 @@ namespace ktane_bomb_manual.Modules
 
         public string Step7(Bomb bomb)
         {
-            if (Color == "green") { CommandsExecuted.Add("I");return "press I, then "+Step11(bomb,"sig"); }
-            if(Color=="purple") { CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, then " + Step12(bomb); }
-            if (Color=="blue") { CommandsExecuted.Add("O"); return "press O, then " + Step11(bomb, "clr"); }
+            if (Color == "green") { CommandsExecuted.Add("I"); return "press I, then " + Step11(bomb, "sig"); }
+            if (Color == "purple") { CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, then " + Step12(bomb); }
+            if (Color == "blue") { CommandsExecuted.Add("O"); return "press O, then " + Step11(bomb, "clr"); }
             CommandsExecuted.Add("O"); CommandsExecuted.Add("screw"); return "press O, then screw, then " + Step13(bomb);
         }
 
@@ -113,8 +114,8 @@ namespace ktane_bomb_manual.Modules
         {
             switch (Color)
             {
-                case "purple": { CommandsExecuted.Add("I"); return "press I, then " + Step14(bomb); } 
-                case "red": { CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, then " + Step13(bomb); } 
+                case "purple": { CommandsExecuted.Add("I"); return "press I, then " + Step14(bomb); }
+                case "red": { CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, then " + Step13(bomb); }
                 case "blue": { CommandsExecuted.Add("O"); return "press O, then " + Step15(bomb); }
                 case "yellow": { CommandsExecuted.Add("O"); CommandsExecuted.Add("screw"); return "press O, then screw, then " + Step12(bomb); }
                 case "green": { CommandsExecuted.Add("screw"); CommandsExecuted.Add("I"); return "screw, then press I, then " + Step13(bomb); }
@@ -124,7 +125,7 @@ namespace ktane_bomb_manual.Modules
 
         public string Step11(Bomb bomb, string indicator)
         {
-            if (bomb.HasIndicator(indicator)) {CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, the you're done."; }
+            if (bomb.HasIndicator(indicator)) { CommandsExecuted.Add("I"); CommandsExecuted.Add("screw"); return "press I, then screw, the you're done."; }
             CommandsExecuted.Add("O");
             CommandsExecuted.Add("screw");
             return "press O, then screw, the you're done.";

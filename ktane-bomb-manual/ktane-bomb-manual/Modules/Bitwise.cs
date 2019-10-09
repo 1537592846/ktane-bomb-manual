@@ -30,6 +30,8 @@ namespace ktane_bomb_manual.Modules
                 message += bit + ", ";
             }
 
+            Solved = true;
+
             return message.Substring(0, message.Length - 2) + ".";
         }
 

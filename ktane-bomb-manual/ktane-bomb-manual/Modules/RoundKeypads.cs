@@ -22,7 +22,7 @@ namespace ktane_bomb_manual.Modules
                 if (!list.Contains(symbol))
                     message += WhichSymbol(symbol) + ". ";
             }
-
+            Solved = true;
             return message.TrimEnd();
         }
 

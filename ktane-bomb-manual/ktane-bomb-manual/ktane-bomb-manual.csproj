@@ -76,6 +76,7 @@
     <Compile Include="Modules\Bitwise.cs" />
     <Compile Include="Modules\Bulb.cs" />
     <Compile Include="Modules\Button.cs" />
+    <Compile Include="Modules\Chess.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
     <Compile Include="Modules\ForgetMeNot.cs" />

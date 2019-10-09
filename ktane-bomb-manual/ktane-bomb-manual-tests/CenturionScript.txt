@@ -1,22 +1,4 @@
-	adventure game golem 6 8 3 5"3 41º 9.0 m/s 107 kpa weapon broadsword caber grimoire lamp throphy symbol | symbol caber
-	against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
-	alphabet zulu yankee november lima | zulu november yankee lima
-	battleship ? echo 3 charlie 4 alpha 1
-bitwise and | 00000001
-	broken button | three six burst other rca 'right submit'
-	bulb blue off opaque | unscrew 1 1 1 screw
-	cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
-	chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
-	chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
-	clock no number gold spades yellow black present | 5 hours backwards 23 minutes
-	clockwise ! left left set
-	color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
-	color squares 1 green | red
-	color squares 10 blue | column
-	color squares 12 column | green
-	color squares 14 green | magenta
-	color squares 5 red | yellow
-	color squares 8 yellow | blue
+chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
 	combo lock | 14 1 15
 	complex button blue hold purple detonate purple press | botton button
 	connect check 51 38 17 25 | all red
@@ -256,15 +238,33 @@ bitwise and | 00000001
 	yatzee full house 3 on 5| keep 5
 	yatzee | all fives
 	zoo killer whale blue whale | camel lobster canguro wolf monkey
+*clockwise ! left left set
 -3d maze bravo charlie hotel east charlie empty bravo empty | go to charlie, left front front hotel, right front left front charlie right front till the end
+-adventure game golem 6 8 3 5"3 41º 9.0 m/s 107 kpa broadsword caber grimoire lamp throphy symbol | symbol caber
+-against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
+-battleship ? echo 3 charlie 4 alpha 1
+-broken button | three six burst other rca 'right submit'
+-cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
+-chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
+-clock no number gold spades yellow black present | 5 hours backwards 23 minutes
+-color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
+-color squares 1 green | red
+-color squares 10 blue | column
+-color squares 12 column | green
+-color squares 14 green | magenta
+-color squares 5 red | yellow
+-color squares 8 yellow | blue
 adjacent letters romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor | november yankee charlie foxtrot
+alphabet zulu yankee november lima | zulu november yankee lima
 astrology fire urnus aries | poor omen on 1
 binary led 1,3 2,3,4,5 5 1,2,5 2 1,2,5 5 | green on 1,2,5
 bitmaps 5 12 8 8 |4
+bitwise and | 00000001
 bomb 4 aa 1 d
 bomb msa lit
 bomb parallel 1 port
 bomb serial th8zk9
+bulb blue off opaque | unscrew 1 1 1 screw
 complicated wires blue led | dont
 complicated wires red blue led | cut
 complicated wires red blue star led |dont

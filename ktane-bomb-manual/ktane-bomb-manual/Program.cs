@@ -137,15 +137,6 @@ namespace ktane_bomb_manual
                 {
                     return mockBomb.Command(command);
                 }
-                if (command.Contains("solve"))
-                {
-                    commandReturn = mockBomb.GetModule(command.Replace("solve", "").Trim()).Solve(mockBomb);
-                    if (commandReturn == "")
-                    {
-                        commandReturn = "Command computed.";
-                    }
-                    return commandReturn;
-                }
                 try
                 {
                     commandReturn = mockBomb.GetModule(command.Split(' ')[0] + command.Split(' ')[1] + command.Split(' ')[2]).Command(mockBomb, command);
