@@ -2,6 +2,11 @@
 {
     public static class InternalFunctions
     {
+        public static string GetPhoneticLetterFromLetter(char letter)
+        {
+            return GetPhoneticLetterFromLetter(letter.ToString());
+        }
+
         public static string GetPhoneticLetterFromLetter(string letter)
         {
             switch (letter)

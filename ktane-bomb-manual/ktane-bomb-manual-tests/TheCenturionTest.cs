@@ -29,6 +29,9 @@ namespace Tests
             //Adjacent letters
             AssertCommand("Press: November. Yankee. Charlie. Foxtrot.", ValidateCommand("adjacent letters romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor"), "Adjacent Letters");
 
+            //Alphabet
+            AssertCommand("Press zulu, november, yankee, lima.", ValidateCommand("alphabet zulu yankee november lima"), "Alphabet");
+
             //Astrology
             AssertCommand("Poor omen when the timer has a 1.", ValidateCommand("astrology fire uranus aries"), "Astrology");
 
@@ -46,7 +49,7 @@ namespace Tests
             AssertCommand("The answer is 0, 0, 0, 0, 0, 0, 0, 1.", ValidateCommand("bitwise and"), "Bitwise");
 
             //Bulb
-            AssertCommand("Firstly unscrew, then press I, then press I, then press I, then screw, then you're done.", ValidateCommand("bulb blue off opaque"), "Bulb");
+            AssertCommand("First unscrew, then press I, then press I, then press I, then screw, then you're done.", ValidateCommand("bulb blue off opaque"), "Bulb");
 
             //Complicate wires
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");

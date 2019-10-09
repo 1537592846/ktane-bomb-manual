@@ -18,7 +18,7 @@ namespace ktane_bomb_manual.Modules
 
         public override string Solve(Bomb bomb)
         {
-            return "Firstly " + Step1(bomb);
+            return "First " + Step1(bomb);
         }
 
         public override string Command(Bomb bomb, string command)

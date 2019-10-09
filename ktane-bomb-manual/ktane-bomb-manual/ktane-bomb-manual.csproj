@@ -69,6 +69,7 @@
     <Compile Include="InternalFunctions.cs" />
     <Compile Include="Modules\3dMaze.cs" />
     <Compile Include="Modules\AdjacentLetters.cs" />
+    <Compile Include="Modules\Alphabet.cs" />
     <Compile Include="Modules\Astrology.cs" />
     <Compile Include="Modules\BinaryLEDs.cs" />
     <Compile Include="Modules\Bitmaps.cs" />
