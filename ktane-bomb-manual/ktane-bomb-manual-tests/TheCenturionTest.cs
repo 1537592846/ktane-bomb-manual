@@ -30,6 +30,9 @@ namespace Tests
             //Adjacent letters
             AssertCommand("Press: November. Yankee. Charlie. Foxtrot.", ValidateCommand("adjacent letters romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor"), "Adjacent Letters");
 
+            //Adventure Games
+            AssertCommand("Use symbol, then caber.", ValidateCommand("adventure games golem 6 8 3 5'3 41C 9.0m/s 107kpa broadsword caber grimoire lamp throphy symbol"), "Adventure Games");
+
             //Alphabet
             AssertCommand("Press zulu, november, yankee, lima.", ValidateCommand("alphabet zulu yankee november lima"), "Alphabet");
 
@@ -51,6 +54,9 @@ namespace Tests
 
             //Bulb
             AssertCommand("First unscrew, then press I, then press I, then press I, then screw, then you're done.", ValidateCommand("bulb blue off opaque"), "Bulb");
+
+            //Cheap Checkout
+            AssertCommand("Return 1 dollar and 1 cent.", ValidateCommand("cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatoes 1.5 lettuce"), "Cheap Checkout");
 
             //Chess
             AssertCommand("The position is echo 5.", ValidateCommand("chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3"), "Chess");

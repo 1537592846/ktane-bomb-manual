@@ -288,7 +288,24 @@
 
         public static bool IsNumber(string word)
         {
-            try { int.Parse(word); return true; } catch { return false; }
+            try { double.Parse(word); return true; } catch { return false; }
+        }
+
+        public static int DigitalRoot(double number)
+        {
+            if (number.ToString().Length == 1)
+            {
+                return (int)number;
+            }
+
+            var numbers = number.ToString().Replace(".", "");
+            var result = 0;
+            foreach (var i in numbers)
+            {
+                result += int.Parse(i.ToString());
+            }
+
+            return DigitalRoot(result);
         }
     }
 }

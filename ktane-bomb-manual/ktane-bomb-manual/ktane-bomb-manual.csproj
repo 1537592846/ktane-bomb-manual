@@ -69,6 +69,7 @@
     <Compile Include="InternalFunctions.cs" />
     <Compile Include="Modules\3dMaze.cs" />
     <Compile Include="Modules\AdjacentLetters.cs" />
+    <Compile Include="Modules\AdventureGames.cs" />
     <Compile Include="Modules\Alphabet.cs" />
     <Compile Include="Modules\Astrology.cs" />
     <Compile Include="Modules\BinaryLEDs.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Modules\Bitwise.cs" />
     <Compile Include="Modules\Bulb.cs" />
     <Compile Include="Modules\Button.cs" />
+    <Compile Include="Modules\CheapCheckout.cs" />
     <Compile Include="Modules\Chess.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
