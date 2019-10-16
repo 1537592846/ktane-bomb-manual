@@ -61,6 +61,9 @@ namespace Tests
             //Chess
             AssertCommand("The position is echo 5.", ValidateCommand("chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3"), "Chess");
 
+            //Color math
+            AssertCommand("The order is magenta, black, magenta, gray.", ValidateCommand("color math black white yellow magenta green addiction orange purple white orange"), "Color Math");
+
             //Complicate wires
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue led"), "Complicated wires");
             AssertCommand("Leave it.", ValidateCommand("complicated wires red"), "Complicated wires");

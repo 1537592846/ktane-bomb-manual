@@ -238,6 +238,22 @@ namespace ktane_bomb_manual
             return Serial.Where(x => char.IsNumber(x)).Select(y => int.Parse(y.ToString())).ToList();
         }
 
+        public List<string> GetSerialCharacters()
+        {
+            return Serial.Where(x => !char.IsNumber(x)).Select(y => y.ToString()
+).ToList();
+        }
+
+        public int GetSerialVowelsQuantity()
+        {
+            return GetSerialCharacters().Where(x=> x == "a" || x == "e" || x == "i" || x == "o" || x == "u").Count();
+        }
+
+        public int GetSerialConsonantsQuantity()
+        {
+            return GetSerialCharacters().Count() - GetSerialVowelsQuantity();
+        }
+
         public int GetBiggestSerialDigit()
         {
             try
@@ -275,6 +291,11 @@ namespace ktane_bomb_manual
         public int GetManyDigitsInSerial()
         {
             return GetSerialDigits().Count();
+        }
+
+        public int GetManyCharactersInSerial()
+        {
+            return 6- GetSerialDigits().Count();
         }
 
         public bool HasPort(string port)
