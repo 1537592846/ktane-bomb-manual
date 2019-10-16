@@ -1,4 +1,4 @@
-	combo lock | 14 1 15
+-combination lock | 14 1 15
 	complex button blue hold purple detonate purple press | botton button
 	connect check 51 38 17 25 | all red
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
@@ -242,10 +242,8 @@
 -against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
 -battleship ? echo 3 charlie 4 alpha 1
 -broken button | three six burst other rca 'right submit'
--cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
 -chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
 -clock no number gold spades yellow black present | 5 hours backwards 23 minutes
--color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
 -color squares 1 green | red
 -color squares 10 blue | column
 -color squares 12 column | green
@@ -264,7 +262,9 @@ bomb msa lit
 bomb parallel 1 port
 bomb serial th8zk9
 bulb blue off opaque | unscrew 1 1 1 screw
+cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
 chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
+color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
 complicated wires blue led | dont
 complicated wires red blue led | cut
 complicated wires red blue star led |dont
