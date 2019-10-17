@@ -1,5 +1,3 @@
-	clock hours gold matches no number | 5
-	clock minutes spades gold black am present | 23
 	complex button blue hold purple detonate purple press | botton button
 	connect check 51 38 17 25 | all red
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
@@ -265,6 +263,8 @@ bomb serial th8zk9
 bulb blue off opaque | unscrew 1 1 1 screw
 cheap checkout 22 dollars saturday honey deodorant mustard socks 1 potatos 1.5 lettuce | 1 dolar 1 penny
 chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
+clock hours gold matches no number | 5
+clock minutes spades gold black am present | 23
 color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
 complicated wires blue led | dont
 complicated wires red blue led | cut
