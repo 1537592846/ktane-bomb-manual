@@ -103,6 +103,10 @@ namespace Tests
             AssertCommand("Hold the button. What is the LED color?", ValidateCommand("square button blue run"), "Square button");
             AssertCommand("Release when the seconds are a multiple of seven.", ValidateCommand("square button led flick cyan"), "Square button");
 
+            //The Clock
+            AssertCommand("Set the hours to the 5 o'clock position.", ValidateCommand("clock hours gold matches no number"),"");
+            AssertCommand("Set the minutes to 23.", ValidateCommand("clock minutes spades gold black am present"),"");
+
             //Bomb final validations
             var modulesNotSolved = "";
             program.mockBomb.Modules.Where(x => !x.Solved).Select(x => x.ModuleName).ToList().ForEach(x => { modulesNotSolved += x + ", "; });
