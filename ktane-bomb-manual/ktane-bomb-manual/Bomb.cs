@@ -92,7 +92,7 @@ namespace ktane_bomb_manual
                 Indicators.Add(new Indicator(text, light));
                 return (light ? "Lit " : "Unlit ") + text.ToUpper() + " indicator added.";
             }
-            if (command.Contains("time")|| command.Contains("minute"))
+            if (command.Contains("time") || command.Contains("minute"))
             {
                 foreach (var word in command.Split(' '))
                 {
@@ -246,7 +246,7 @@ namespace ktane_bomb_manual
 
         public int GetSerialVowelsQuantity()
         {
-            return GetSerialCharacters().Where(x=> x == "a" || x == "e" || x == "i" || x == "o" || x == "u").Count();
+            return GetSerialCharacters().Where(x => x == "a" || x == "e" || x == "i" || x == "o" || x == "u").Count();
         }
 
         public int GetSerialConsonantsQuantity()
@@ -295,7 +295,7 @@ namespace ktane_bomb_manual
 
         public int GetManyCharactersInSerial()
         {
-            return 6- GetSerialDigits().Count();
+            return 6 - GetSerialDigits().Count();
         }
 
         public bool HasPort(string port)
@@ -325,6 +325,15 @@ namespace ktane_bomb_manual
         public bool HasUnlitIndicator(string tag)
         {
             return HasIndicator(tag.ToLower()) ? !GetIndicator(tag.ToLower()).LitIndicator : false;
+        }
+
+        public bool HasAnySerialChar(string characters)
+        {
+            foreach (var character in characters)
+            {
+                if (HasSerialChar(character)) return true;
+            }
+            return false;
         }
 
         public bool HasSerialChar(char character)

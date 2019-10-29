@@ -80,6 +80,7 @@
     <Compile Include="Modules\CheapCheckout.cs" />
     <Compile Include="Modules\Chess.cs" />
     <Compile Include="Modules\ColorMath.cs" />
+    <Compile Include="Modules\FastMath.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
     <Compile Include="Modules\ForgetMeNot.cs" />

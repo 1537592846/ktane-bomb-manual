@@ -76,6 +76,12 @@ namespace Tests
             AssertCommand("Set the hours to the 5 o'clock position.", ValidateCommand("clock hours gold matches no number"), "Clock");
             AssertCommand("Set the minutes to 23.", ValidateCommand("clock minutes spades gold black am present"), "Clock");
 
+            //Fast Math
+            AssertCommand("97.", ValidateCommand("fast math alpha november"), "Fast Math");
+            AssertCommand("19.", ValidateCommand("fast math bravo delta"), "Fast Math");
+            AssertCommand("03.", ValidateCommand("fast math golf charlie"), "Fast Math");
+            AssertCommand("65.", ValidateCommand("fast math november delta"), "Fast Math");
+
             //Morsematics
             AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");
             AssertCommand("Character added.", ValidateCommand("morsematics second dash dot dash dot next"), "Morsematics");

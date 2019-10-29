@@ -1,8 +1,30 @@
+	3d maze bravo charlie hotel east charlie empty bravo empty | go to charlie, left front front hotel, right front left front charlie right front till the end
+	against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
+	battleship ? echo 3 charlie 4 alpha 1
+	broken button | three six burst other rca 'right submit'
+	chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
+	color squares 1 green | red
+	color squares 10 blue | column
+	color squares 12 column | green
+	color squares 14 green | magenta
+	color squares 5 red | yellow
+	color squares 8 yellow | blue
+	combination lock | 14 1 15
+	complex button blue hold purple detonate purple press | botton button
+	connect check 51 38 17 25 | all red
+	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
+	crazy talk is 'empty space' | one six
+	creation day 1 rain
+	creation day 2 clear 
+	creation day 3 heat wave
+	creation day 4 clear | egg life earth
+	creation day 5 rain | turtle egg fire
+	cruel piano keys vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
+	cryptography 4 3 4 3 3 4 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
+	double oh 10 65 | 65 then 44 glitch
+	double oh 11 74 47 up down single| 47
+	double oh 81 26 | 81
 	emoji )= :) - :| :( | -54
-	fast math alpha november
-	fast math bravo delta
-	fast math golf charlie
-	fast math november delta
 	fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
 	foreign exchange charlie november yankee | middle middle
 	friendship top down tiara throphy "two flower" "five notes" "ordinary sun" "grape strawberry" left right tiara "five notes" "white flower" "grape strawberry" | autenticity, helpfullness
@@ -223,32 +245,6 @@
 	yatzee | all fives
 	zoo killer whale blue whale | camel lobster canguro wolf monkey
 *clockwise ! left left set
--3d maze bravo charlie hotel east charlie empty bravo empty | go to charlie, left front front hotel, right front left front charlie right front till the end
--against "i scream. you scream. but only i love it." "are you sure this is the combination you need?" | white 5 3 right black 4	right
--battleship ? echo 3 charlie 4 alpha 1
--broken button | three six burst other rca 'right submit'
--chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
--color squares 1 green | red
--color squares 10 blue | column
--color squares 12 column | green
--color squares 14 green | magenta
--color squares 5 red | yellow
--color squares 8 yellow | blue
--combination lock | 14 1 15
--complex button blue hold purple detonate purple press | botton button
--connect check 51 38 17 25 | all red
--coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
--crazy talk is 'empty space' | one six
--creation day 1 rain
--creation day 2 clear 
--creation day 3 heat wave
--creation day 4 clear | egg life earth
--creation day 5 rain | turtle egg fire
--cruel piano keys vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
--cryptography 4 3 4 3 3 4 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
--double oh 10 65 | 65 then 44 glitch
--double oh 11 74 47 up down single| 47
--double oh 81 26 | 81
 adjacent letters romeo november quebec lima uniform yankee sierra hotel charlie tango foxtrot victor | november yankee charlie foxtrot
 adventure game golem 683 5"3 41º 9.0 m/s 107 kpa broadsword caber grimoire lamp throphy symbol | symbol caber
 alphabet zulu yankee november lima | zulu november yankee lima
@@ -272,6 +268,10 @@ complicated wires red blue star led |dont
 complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
+fast math alpha november
+fast math bravo delta
+fast math golf charlie
+fast math november delta
 morsematics first dot dot dash dot next
 morsematics second dash dot dash dot next
 morsematics third dash dot dash next |send dot dash dash dot done
