@@ -76,6 +76,9 @@ namespace Tests
             AssertCommand("Set the hours to the 5 o'clock position.", ValidateCommand("clock hours gold matches no number"), "Clock");
             AssertCommand("Set the minutes to 23.", ValidateCommand("clock minutes spades gold black am present"), "Clock");
 
+            //Emoji Math
+            AssertCommand("The result is -54.", ValidateCommand("emoji math )= :) - :| :("), "Emoji Math");
+
             //Fast Math
             AssertCommand("97.", ValidateCommand("fast math alpha november"), "Fast Math");
             AssertCommand("19.", ValidateCommand("fast math bravo delta"), "Fast Math");
