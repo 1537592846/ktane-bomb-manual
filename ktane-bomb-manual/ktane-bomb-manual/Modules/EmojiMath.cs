@@ -38,17 +38,17 @@
             command = command.Replace(":|", "8");
             command = command.Replace("|:", "9");
 
-            foreach (string letter in command)
+            foreach (var letter in command)
             {
                 if (letter == '+' || letter == '-' || letter == '/' || letter == '*')
                 {
-                    Operation = letter.ToString();
+                    Operation += letter.ToString();
                     continue;
                 }
 
                 if (string.IsNullOrWhiteSpace(Operation))
                 {
-                    FirstNumber += letter;
+                    FirstNumber += letter.ToString();
                 }
                 else
                 {

@@ -61,6 +61,10 @@ namespace Tests
             //Chess
             AssertCommand("The position is echo 5.", ValidateCommand("chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3"), "Chess");
 
+            //Clock
+            AssertCommand("Set the hours to the 5 o'clock position.", ValidateCommand("clock hours gold matches no number"), "Clock");
+            AssertCommand("Set the minutes to 23.", ValidateCommand("clock minutes spades gold black am present"), "Clock");
+
             //Color math
             AssertCommand("The order is magenta, black, magenta, gray.", ValidateCommand("color math black white yellow magenta green addiction orange purple white orange"), "Color Math");
 
@@ -72,9 +76,8 @@ namespace Tests
             AssertCommand("Cut it.", ValidateCommand("complicated wires red star"), "Complicated wires");
             AssertCommand("Cut it.", ValidateCommand("complicated wires "), "Complicated wires");
 
-            //Clock
-            AssertCommand("Set the hours to the 5 o'clock position.", ValidateCommand("clock hours gold matches no number"), "Clock");
-            AssertCommand("Set the minutes to 23.", ValidateCommand("clock minutes spades gold black am present"), "Clock");
+            //Connection Check
+            AssertCommand("Connection 1 is not connected. Connection 2 is not connected. Connection 3 is not connected. Connection 4 is not connected.", ValidateCommand("connection check 51 38 17 25"), "Connection Check");
 
             //Emoji Math
             AssertCommand("The result is -54.", ValidateCommand("emoji math )= :) - :| :("), "Emoji Math");
