@@ -83,6 +83,7 @@
     <Compile Include="Modules\ConnectionCheck.cs" />
     <Compile Include="Modules\EmojiMath.cs" />
     <Compile Include="Modules\FastMath.cs" />
+    <Compile Include="Modules\FizzBuzz.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
     <Compile Include="Modules\ForgetMeNot.cs" />
@@ -97,6 +98,8 @@
     <Compile Include="Modules\Passwords.cs" />
     <Compile Include="Modules\Plumbing.cs" />
     <Compile Include="Modules\RotaryPhone.cs" />
+    <Compile Include="Modules\Screw.cs" />
+    <Compile Include="Modules\SimonScreams.cs" />
     <Compile Include="Modules\SimonStates.cs" />
     <Compile Include="Modules\SimonSays.cs" />
     <Compile Include="Modules\SquareButton.cs" />

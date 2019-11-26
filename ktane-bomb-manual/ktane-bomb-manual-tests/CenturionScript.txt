@@ -23,8 +23,6 @@
 	double oh 10 65 | 65 then 44 glitch
 	double oh 11 74 47 up down single| 47
 	double oh 81 26 | 81
-	emoji math )= :) - :| :( | -54
-	fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
 	foreign exchange charlie november yankee | middle middle
 	friendship top down tiara throphy "two flower" "five notes" "ordinary sun" "grape strawberry" left right tiara "five notes" "white flower" "grape strawberry" | autenticity, helpfullness
 	gamepad 4 6 0 8 | alpha bravo left right down right bravo up
@@ -50,11 +48,11 @@
 	ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
 	laundry | wash leave dry alone, 110ºc wet clean
 	leader blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
+	led encryptions blue uniform tango alpha sierra | sierra
 	led encryptions blue xray golf india yankee | india
 	led encryptions orange foxtrot papa bravo delta | no idea
 	led encryptions orange foxtrot papa bravo delta | papa
 	led encryptions yellow mike tango oscar sierra | sierra
-	led encryptionsblue uniform tango alpha sierra | sierra
 	light cycle magenta yellow white red blue green | red magenta green blue white yellow
 	listening | $ & $ $ *
 	logic uniform OR NOT xray right arrow oscar || romeo NAND november down arrow NOT foxtrot | true false
@@ -94,9 +92,6 @@
 	shapeshift flat round | ticket point
 	silly slots sally blue cherry red grapes red grapes | pull
 	sily slots sausages blue grapes green grapes green grapes | keep
-	simon screams yellow purple red green purple | green red blue
-	simon screams yellow purple red green | blue purple red
-	simon screams yellow purple red | green red blue
 	skewed slots 6 5 9 | 0 4 2
 	souvenir "listening" | $ & $ $ *
 	souvenir 3d maze marking | bravo charlie hotel
@@ -268,10 +263,12 @@ complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
 connection check 51 38 17 25 | all red
+emoji math )= :) - :| :( | -54
 fast math alpha november
 fast math bravo delta
 fast math golf charlie
 fast math november delta
+fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
 morsematics first dot dot dash dot next
 morsematics second dash dot dash dot next
 morsematics third dash dot dash next |send dot dash dash dot done
@@ -280,6 +277,9 @@ passwords second whiskey oscar sierra tango xray alpha ! password is 'could'
 plumbing | blue to blue
 round keypads big yus yat little yus sigma omega question mark aesc lambda | little yus sigma omega aesc lambda
 safety safe 6 3 4 6 10 1 | 2 10 4 5 7 3
+simon screams yellow purple red green purple | green red blue
+simon screams yellow purple red green | blue purple red
+simon screams yellow purple red | green red blue
 simon states all | yellow blue yellow red
 simon states red green | yellow blue 
 simon states red yellow | yellow blue yellow

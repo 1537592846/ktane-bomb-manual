@@ -33,6 +33,7 @@ namespace ktane_bomb_manual
         public int BatteryAA { get; set; }
         public int Time { get; set; }
         public int ModulesQuantity { get; set; }
+        public int PortPlates { get; set; }
         public List<Port> Ports { get; set; }
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
@@ -73,6 +74,17 @@ namespace ktane_bomb_manual
                         }
                     }
                 }
+            }
+            if (command.Contains("plate"))
+            {
+                foreach(var word in command.Split(' '))
+                {
+                    if (InternalFunctions.IsNumber(word))
+                    {
+
+                    }
+                }
+                return info[1][0].ToString().ToUpper() + info[1].Substring(1).ToLower() + " port added.";
             }
             if (command.Contains("port"))
             {
@@ -303,6 +315,11 @@ namespace ktane_bomb_manual
             return GetPort(port.ToLower()) != null;
         }
 
+        public bool HasManyStrikes(int number)
+        {
+            return Strikes >= number;
+        }
+
         public bool HasAnyDuplicatedPort()
         {
             foreach (var port in Ports)
@@ -380,9 +397,39 @@ namespace ktane_bomb_manual
             return !HasSerialLastDigitEven();
         }
 
+        public bool HasSerialNumbersLetters(int numbers, int letters)
+        {
+            return GetSerialCharacters().Count == letters && GetSerialDigits().Count == letters;
+        }
+
         public bool HasManyBatteries(int number)
         {
             return BatteryAA + BatteryD >= number;
+        }
+
+        public bool HasManyBatteriesHolders(int number)
+        {
+            return GetBatteriesHolders() >= number;
+        }
+
+        public bool HasManyIndicators(int number)
+        {
+            return Indicators.Count >= number;
+        }
+
+        public bool HasManyPorts(int number)
+        {
+            return Ports.Count >= number;
+        }
+
+        public bool HasManyDigitsInSerial(int number)
+        {
+            return GetManyDigitsInSerial() >= number;
+        }
+
+        public bool HasManyCharactersInSerial(int number)
+        {
+            return GetManyCharactersInSerial() >= number;
         }
 
         public bool HasMoreModulesThanTime()

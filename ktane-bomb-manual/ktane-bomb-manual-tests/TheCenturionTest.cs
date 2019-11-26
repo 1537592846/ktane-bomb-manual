@@ -24,6 +24,7 @@ namespace Tests
             AssertCommand("D batteries added.", ValidateCommand("bomb has 1 d battery"), "D batteries configuration");
             AssertCommand("Lit MSA indicator added.", ValidateCommand("bomb has indicator mike sierra alpha lit"), "Indicator configuration");
             AssertCommand("Parallel port added.", ValidateCommand("bomb has 1 parallel port"), "Port configuration");
+            AssertCommand("Port plates added.", ValidateCommand("bomb has 1 port plate"), "Port configuration");
             AssertCommand("Time added.", ValidateCommand("bomb has 100 minutes"), "Port configuration");
             AssertCommand("Modules quantity added.", ValidateCommand("bomb has 101 modules"), "Port configuration");
 
@@ -87,6 +88,9 @@ namespace Tests
             AssertCommand("19.", ValidateCommand("fast math bravo delta"), "Fast Math");
             AssertCommand("03.", ValidateCommand("fast math golf charlie"), "Fast Math");
             AssertCommand("65.", ValidateCommand("fast math november delta"), "Fast Math");
+            
+            //FizzBuzz
+            AssertCommand("Buzz, Number, Number.", ValidateCommand("fizz buzz white 0820717 red 0395544 blue 5764108"), "FizzBuzz");
 
             //Morsematics
             AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");
@@ -106,6 +110,15 @@ namespace Tests
 
             //Safety safe
             AssertCommand("First dial: 2 turns. Second dial: 10 turns. Third dial: 4 turns. Fourth dial: 5 turns. Fifth dial: 7 turns. Sixth dial: 3 turns.", ValidateCommand("safety safe 6 3 4 6 10 1"), "Safety safe");
+
+            //Screw
+            AssertCommand("First color red, press alpha. Second color yellow, press second. Third color red, press alpha.", ValidateCommand("screw bravo charlie alpha delta white magenta blue yellow red green"), "Screw");
+
+            //Simon screams
+            AssertCommand("Sequence saved.", ValidateCommand("simon screams colors yellow orange red blue purple green"), "Simon screams");
+            AssertCommand("Press green, then red, then blue.", ValidateCommand("simon screams yellow purple red"), "Simon screams");
+            AssertCommand("Press blue, then purple, then red.", ValidateCommand("simon screams yellow purple red green"), "Simon screams");
+            AssertCommand("Press green, then red, then blue.", ValidateCommand("simon screams yellow purple red green purple"), "Simon screams");
 
             //Simon states
             AssertCommand("Top left color added.", ValidateCommand("simon states top left blue"), "Simon states");

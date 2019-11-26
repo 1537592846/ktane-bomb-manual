@@ -199,33 +199,22 @@
 
         public static int GetNumber(string word)
         {
+            if (int.TryParse(word, out int number)return number;
+
             switch (word)
             {
-                case "1":
                 case "one": return 1;
-                case "2":
                 case "two": return 2;
-                case "3":
                 case "three": return 3;
-                case "4":
                 case "four": return 4;
-                case "5":
                 case "five": return 5;
-                case "6":
                 case "six": return 6;
-                case "7":
                 case "seven": return 7;
-                case "8":
                 case "eight": return 8;
-                case "9":
                 case "nine": return 9;
-                case "0":
                 case "zero": return 0;
-                case "10":
                 case "ten": return 10;
-                case "11":
                 case "eleven": return 11;
-                case "12":
                 case "twelve": return 12;
                 default: return -1;
             }
@@ -289,6 +278,29 @@
         public static bool IsNumber(string word)
         {
             try { double.Parse(word); return true; } catch { return false; }
+        }
+
+        public static bool IsColor(string word)
+        {
+            switch (word)
+            {
+                case "blue":
+                case "grey":
+                case "gray":
+                case "black":
+                case "white":
+                case "yellow":
+                case "purple":
+                case "green":
+                case "magenta":
+                case "orange":
+                case "red":
+                case "cyan":
+                case "dark grey":
+                case "jade":
+                    return true;
+            }
+            return false;
         }
 
         public static int DigitalRoot(double number)

@@ -5,7 +5,6 @@ namespace ktane_bomb_manual.Modules
 {
     public class SquareButton : Module
     {
-        public List<string> Colors = new List<string>() { "jade", "blue", "yellow", "dark grey", "red", "green", "white", "black", "purple", "cyan", "orange" };
         public string Color { get; set; }
         public string Text { get; set; }
         public string LED { get; set; }
@@ -48,7 +47,7 @@ namespace ktane_bomb_manual.Modules
         {
             if (Color == "blue" && bomb.BatteryAA > bomb.BatteryD) return TextPressOrHold(1);
             if (Color == "blue" || Color == "yellow" || Text.Count() >= bomb.GetBiggestSerialDigit()) return TextPressOrHold(2);
-            if (Color == "blue" || Color == "yellow" || Colors.Contains(Text)) return TextPressOrHold(1);
+            if (Color == "blue" || Color == "yellow" || InternalFunctions.IsColor(Text)) return TextPressOrHold(1);
             if (string.IsNullOrWhiteSpace(Text)) return TextPressOrHold(1);
             if (Text != "dark grey" && Text.Count() > bomb.GetLitIndicators()) return TextPressOrHold(2);
             if (bomb.GetUnlitIndicators() <= 2 && bomb.HasSerialVowel()) return TextPressOrHold(2);
