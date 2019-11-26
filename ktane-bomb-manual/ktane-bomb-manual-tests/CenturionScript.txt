@@ -11,7 +11,6 @@
 	color squares 8 yellow | blue
 	combination lock | 14 1 15
 	complex button blue hold purple detonate purple press | botton button
-	connect check 51 38 17 25 | all red
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
 	crazy talk is 'empty space' | one six
 	creation day 1 rain
@@ -24,7 +23,7 @@
 	double oh 10 65 | 65 then 44 glitch
 	double oh 11 74 47 up down single| 47
 	double oh 81 26 | 81
-	emoji )= :) - :| :( | -54
+	emoji math )= :) - :| :( | -54
 	fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
 	foreign exchange charlie november yankee | middle middle
 	friendship top down tiara throphy "two flower" "five notes" "ordinary sun" "grape strawberry" left right tiara "five notes" "white flower" "grape strawberry" | autenticity, helpfullness
@@ -268,6 +267,7 @@ complicated wires red blue star led |dont
 complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
+connection check 51 38 17 25 | all red
 fast math alpha november
 fast math bravo delta
 fast math golf charlie
