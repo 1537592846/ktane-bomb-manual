@@ -77,14 +77,14 @@ namespace ktane_bomb_manual
             }
             if (command.Contains("plate"))
             {
-                foreach(var word in command.Split(' '))
+                foreach (var word in command.Split(' '))
                 {
                     if (InternalFunctions.IsNumber(word))
                     {
-
+                        PortPlates = InternalFunctions.GetNumber(word);
                     }
                 }
-                return info[1][0].ToString().ToUpper() + info[1].Substring(1).ToLower() + " port added.";
+                return "Port plates added.";
             }
             if (command.Contains("port"))
             {
@@ -180,6 +180,17 @@ namespace ktane_bomb_manual
                 catch { count = 0; }
             return count;
         }
+
+        public int GetPortTypesQuantity()
+        {
+            return Ports.Count;
+        }
+
+        public int GetPortPlatesQuantity()
+        {
+            return PortPlates;
+        }
+
 
         public Indicator GetIndicator(string tag)
         {

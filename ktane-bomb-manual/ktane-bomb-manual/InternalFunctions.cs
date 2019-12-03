@@ -199,7 +199,7 @@
 
         public static int GetNumber(string word)
         {
-            if (int.TryParse(word, out int number)return number;
+            if (int.TryParse(word, out int number))return number;
 
             switch (word)
             {

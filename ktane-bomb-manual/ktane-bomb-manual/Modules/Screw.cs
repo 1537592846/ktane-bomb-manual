@@ -43,10 +43,7 @@ namespace ktane_bomb_manual.Modules
 
             if (thirdStageHole > 6) thirdStageHole = thirdStageHole % 6;
             if (thirdStageHole == -1) thirdStageHole = 0;
-            if (thirdStageHole == firstStageHole || thirdStageHole == secondStageHole) thirdStageHole++;
-            if (thirdStageHole > 6) thirdStageHole = thirdStageHole % 6;
-            if (thirdStageHole == -1) thirdStageHole = 0;
-            if (thirdStageHole == firstStageHole || thirdStageHole == secondStageHole) thirdStageHole++;
+            if (thirdStageHole == secondStageHole) thirdStageHole++;
             if (thirdStageHole > 6) thirdStageHole = thirdStageHole % 6;
             if (thirdStageHole == -1) thirdStageHole = 0;
 
@@ -54,55 +51,63 @@ namespace ktane_bomb_manual.Modules
             var colorSecondStage = Colors[secondStageHole];
             var colorThirdStage = Colors[thirdStageHole];
 
-            var result = "First color " + colorFirstStage + ", press ";
+            var result = "First color " + colorFirstStage + ", press " + GetButton(bomb, colorFirstStage, firstStageHole);
+            result += "Second color " + colorSecondStage + ", press " + GetButton(bomb, colorSecondStage, secondStageHole);
+            result += "Third color " + colorThirdStage + ", press " + GetButton(bomb, colorThirdStage, thirdStageHole);
 
-            switch (colorFirstStage)
+            Solved = true;
+
+            return result.Trim();
+        }
+
+        public string GetButton(Bomb bomb, string color, int index)
+        {
+            switch (color)
             {
                 case "red":
                 case "yellow":
                 case "green":
                     {
-                        if (firstStageHole < 3)
+                        if (index < 3)
                         {
-                            if (firstStageHole % 3 == bomb.GetBatteriesHolders() - 1) { result += "fourth. "; break; }
-                            if (Buttons[0] == "alpha" || Buttons[2] == "alpha") { result += "charlie. "; break; }
-                            if (bomb.HasPort("clr") || bomb.HasPort("frk") || bomb.HasPort("trn")) { result += "third. "; break; }
-                            if (Colors[0] == "blue" || Colors[1] == "blue" || Colors[2] == "blue") { result += "first. "; break; }
-                            result += "bravo. "; break;
+                            if (index % 3 == bomb.GetBatteriesHolders() - 1) return "fourth. ";
+                            if (Buttons[0] == "alpha" || Buttons[2] == "alpha") return "charlie. ";
+                            if (bomb.HasPort("clr") || bomb.HasPort("frk") || bomb.HasPort("trn")) return "third. ";
+                            if (Colors[0] == "blue" || Colors[1] == "blue" || Colors[2] == "blue") return "first. ";
+                            return "bravo. ";
                         }
                         else
                         {
-                            if (firstStageHole % 3 == bomb.GetPortsQuantity() - 1) { result += "second. "; break; }
-                            if (firstStageHole % 3 == bomb.GetBatteries() - 1) { result += "delta. "; break; }
-                            if (Colors[(firstStageHole + 3) % 3] != "white") { result += "alpha. "; break; }
-                            if ((Colors[3] != "magenta" && firstStageHole != 3) || (Colors[4] != "magenta" && firstStageHole != 4) || (Colors[5] != "magenta" && firstStageHole != 5)) { result += "charlie. "; break; }
-                            result += "first. "; break;
+                            if (index % 3 == bomb.GetPortsQuantity() - 1) return "second. ";
+                            if (index % 3 == bomb.GetBatteries() - 1) return "delta. ";
+                            if (Colors[(index + 3) % 3] != "white") return "alpha. ";
+                            if ((Colors[3] != "magenta" && index != 3) || (Colors[4] != "magenta" && index != 4) || (Colors[5] != "magenta" && index != 5)) return "charlie. ";
+                            return "first. ";
                         }
                     }
                 case "blue":
                 case "magenta":
                 case "white":
                     {
-                        if (firstStageHole < 3)
+                        if (index < 3)
                         {
-                            if (firstStageHole % 3 == bomb.GetPortsQuantity() - 1) { result += "delta. "; break; }
-                            if (Buttons[1] == "charle" || Buttons[3] == "charle") { result += "bravo. "; break; }
-                            if (bomb.HasPort("car") || bomb.HasPort("frq") || bomb.HasPort("snd")) { result += "fourth. "; break; }
-                            if (Colors[0] == "red" || Colors[1] == "red" || Colors[2] == "red") { result += "second. "; break; }
-                            result += "alpha. "; break;
+                            if (index % 3 == bomb.GetPortTypesQuantity() - 1) return "delta. ";
+                            if (Buttons[1] == "charle" || Buttons[3] == "charle") return "bravo. ";
+                            if (bomb.HasPort("car") || bomb.HasPort("frq") || bomb.HasPort("snd")) return "fourth. ";
+                            if (Colors[0] == "red" || Colors[1] == "red" || Colors[2] == "red") return "second. ";
+                            return "alpha. ";
                         }
                         else
                         {
-                            if (firstStageHole % 3 == bomb.GetPortsPlatesQuantity() - 1) { result += "second. "; break; }
-                            if (firstStageHole % 3 == bomb.GetBatteries() - 1) { result += "delta. "; break; }
-                            if (Colors[(firstStageHole + 3) % 3] != "white") { result += "alpha. "; break; }
-                            if ((Colors[3] != "magenta" && firstStageHole != 3) || (Colors[4] != "magenta" && firstStageHole != 4) || (Colors[5] != "magenta" && firstStageHole != 5)) { result += "charlie. "; break; }
-                            result += "first. "; break;
+                            if (index % 3 == bomb.GetPortPlatesQuantity() - 1) return "second. ";
+                            if (index % 3 == bomb.GetBatteries() - 1) return "delta. ";
+                            if (Colors[(index + 3) % 3] != "white") return "alpha. ";
+                            if ((Colors[3] != "magenta" && index != 3) || (Colors[4] != "magenta" && index != 4) || (Colors[5] != "magenta" && index != 5)) return "charlie. ";
+                            return "first. ";
                         }
                     }
             }
-
-            return result;
+            return "";
         }
     }
 }
