@@ -257,6 +257,11 @@
             }
         }
 
+        public static bool IsPhoneticLetter(string word)
+        {
+            return GetLetterFromPhoneticLetter(word) != "";
+        }
+
         public static bool IsSquare(int value)
         {
             for (int i = 1; i * i <= value; i++)

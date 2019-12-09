@@ -19,7 +19,6 @@
 	creation day 4 clear | egg life earth
 	creation day 5 rain | turtle egg fire
 	cruel piano keys vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
-	cryptography 4 3 4 3 3 4 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
 	double oh 10 65 | 65 then 44 glitch
 	double oh 11 74 47 up down single| 47
 	double oh 81 26 | 81
@@ -263,6 +262,7 @@ complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
 connection check 51 38 17 25 | all red
+cryptography 4 3 4 3 3 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
 emoji math )= :) - :| :( | -54
 fast math alpha november
 fast math bravo delta

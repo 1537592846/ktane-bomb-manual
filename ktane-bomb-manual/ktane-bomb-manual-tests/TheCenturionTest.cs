@@ -80,6 +80,9 @@ namespace Tests
             //Connection Check
             AssertCommand("Connection 1 is not connected. Connection 2 is not connected. Connection 3 is not connected. Connection 4 is not connected.", ValidateCommand("connection check 51 38 17 25"), "Connection Check");
 
+            //Cryptography            
+            AssertCommand("Order is india, romeo, november, oscar, whiskey.", ValidateCommand("cryptography 4 3 4 3 3 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey"), "Cryptography");
+
             //Emoji Math
             AssertCommand("The result is -54.", ValidateCommand("emoji math )= :) - :| :("), "Emoji Math");
 
