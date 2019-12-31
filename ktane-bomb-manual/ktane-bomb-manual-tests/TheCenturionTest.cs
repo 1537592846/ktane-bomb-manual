@@ -75,7 +75,7 @@ namespace Tests
             AssertCommand("Leave it.", ValidateCommand("complicated wires red blue star led"), "Complicated wires");
             AssertCommand("Cut it.", ValidateCommand("complicated wires blue led"), "Complicated wires");
             AssertCommand("Cut it.", ValidateCommand("complicated wires red star"), "Complicated wires");
-            AssertCommand("Cut it.", ValidateCommand("complicated wires "), "Complicated wires");
+            AssertCommand("Cut it.", ValidateCommand("complicated wires white"), "Complicated wires");
 
             //Connection Check
             AssertCommand("Connection 1 is not connected. Connection 2 is not connected. Connection 3 is not connected. Connection 4 is not connected.", ValidateCommand("connection check 51 38 17 25"), "Connection Check");
