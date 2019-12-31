@@ -34,19 +34,24 @@ namespace ktane_bomb_manual.Modules
             for (int i = 0; i < command.Split(' ').Count(); i++)
             {
                 var oneWord = command.Split(' ')[i];
-                var twoWord = command.Split(' ')[i];
+                var twoWord = command.Split(' ')[i]+" ";
                 try { twoWord += command.Split(' ')[i + 1]; } catch { };
-                var threeWord = command.Split(' ')[i];
-                try { threeWord += command.Split(' ')[i + 1]; } catch { };
+                var threeWord = command.Split(' ')[i] + " ";
+                try { threeWord += command.Split(' ')[i + 1] + " "; } catch { };
                 try { threeWord += command.Split(' ')[i + 2]; } catch { };
                 wordListToAdd.Add(threeWord);
                 wordListToAdd.Add(twoWord);
                 wordListToAdd.Add(oneWord);
             }
 
-            foreach(var words in wordListToAdd)
+            foreach (var words in wordListToAdd)
             {
                 AddSymbol(words);
+            }
+
+            foreach (var symbol in Symbols)
+            {
+                System.Console.WriteLine(WhichSymbol(symbol));
             }
 
             return Solve(bomb);
@@ -71,7 +76,7 @@ namespace ktane_bomb_manual.Modules
 
         public void AddSymbol(string description)
         {
-            description = " "+description+" ";
+            description = " " + description + " ";
             //Symbol names
             if (description.Contains("broad omega")) { AddSymbolToList((int)SymbolList.BroadOmega); return; }
             if (description.Contains("omega")) { AddSymbolToList((int)SymbolList.Omega); return; }
