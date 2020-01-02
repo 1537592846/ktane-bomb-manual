@@ -46,7 +46,7 @@
 	ice cream dave double chocolate tutti frutti neapolitan the classic | neapolitan
 	ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
 	laundry | wash leave dry alone, 110ºc wet clean
-	leader blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
+	leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
 	led encryptions blue uniform tango alpha sierra | sierra
 	led encryptions blue xray golf india yankee | india
 	led encryptions orange foxtrot papa bravo delta | no idea

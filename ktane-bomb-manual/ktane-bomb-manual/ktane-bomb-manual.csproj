@@ -85,6 +85,7 @@
     <Compile Include="Modules\EmojiMath.cs" />
     <Compile Include="Modules\FastMath.cs" />
     <Compile Include="Modules\FizzBuzz.cs" />
+    <Compile Include="Modules\FollowTheLeader.cs" />
     <Compile Include="Modules\SafetySafe.cs" />
     <Compile Include="Modules\ComplicatedWires.cs" />
     <Compile Include="Modules\ForgetMeNot.cs" />
