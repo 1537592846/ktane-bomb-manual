@@ -56,7 +56,7 @@ namespace ktane_bomb_manual.Modules
 
             while (!StartPosition.Resolved)
             {
-                if (!StartPosition.Previous.Resolved||(ReversedOrder&&!StartPosition.Next.Resolved))
+                if (!StartPosition.Previous.Resolved || (ReversedOrder && !StartPosition.Next.Resolved))
                 {
                     result += StartPosition.Start + "-" + StartPosition.End + ", ";
                     StartPosition.Resolved = true;
@@ -64,16 +64,10 @@ namespace ktane_bomb_manual.Modules
                     if (ReversedOrder)
                     {
                         StartPosition = StartPosition.Previous;
-                        var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                        if (number == -1) number = 26;
-                        letter = InternalFunctions.GetLetterFromNumber(number);
                     }
                     else
                     {
                         StartPosition = StartPosition.Next;
-                        var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                        if (number == 27) number = 1;
-                        letter = InternalFunctions.GetLetterFromNumber(number);
                     }
                     continue;
                 }
@@ -87,20 +81,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 StartPosition.ShouldBeCut = true;
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -112,20 +106,20 @@ namespace ktane_bomb_manual.Modules
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.ShouldBeCut = true;
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -136,20 +130,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -160,20 +154,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -184,20 +178,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -208,20 +202,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -232,20 +226,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -256,20 +250,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -280,20 +274,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -304,20 +298,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -328,20 +322,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -352,20 +346,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
@@ -376,20 +370,20 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.Resolved = true;
-                                if (ReversedOrder)
-                                {
-                                    StartPosition = StartPosition.Previous;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
-                                    if (number == -1) number = 26;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
-                                else
-                                {
-                                    StartPosition = StartPosition.Next;
-                                    var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
-                                    if (number == 27) number = 1;
-                                    letter = InternalFunctions.GetLetterFromNumber(number);
-                                }
+                            }
+                            if (ReversedOrder)
+                            {
+                                StartPosition = StartPosition.Previous;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) - 1;
+                                if (number == -1) number = 26;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
+                            }
+                            else
+                            {
+                                StartPosition = StartPosition.Next;
+                                var number = InternalFunctions.GetNumberFromLetter(letter) + 1;
+                                if (number == 27) number = 1;
+                                letter = InternalFunctions.GetLetterFromNumber(number);
                             }
                             continue;
                         }
