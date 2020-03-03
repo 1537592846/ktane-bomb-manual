@@ -165,7 +165,7 @@
 
         public static int GetNumberFromLetter(string letter)
         {
-            switch (letter)
+            switch (letter.ToLower())
             {
                 case "a": return 1;
                 case "b": return 2;

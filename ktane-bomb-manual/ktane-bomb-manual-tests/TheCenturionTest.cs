@@ -96,7 +96,7 @@ namespace Tests
             AssertCommand("Buzz, Number, Number.", ValidateCommand("fizz buzz white 0820717 red 0395544 blue 5764108"), "FizzBuzz");
 
             //Follow the Leader
-            AssertCommand("Cut wires 6-7, 7-9, 10-11, 11-12, 12-1, 5-6.", ValidateCommand("follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black"), "Follow the Leader");
+            AssertCommand("Cut wires 5-6, 6-7, 9-10, 10-11, 11-12, 12-1, 4-5.", ValidateCommand("follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black"), "Follow the Leader");
 
             //Morsematics
             AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");

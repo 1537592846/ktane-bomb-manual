@@ -96,7 +96,7 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "B":
                     case "O":
@@ -105,7 +105,6 @@ namespace ktane_bomb_manual.Modules
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
                                 StartPosition.ShouldBeCut = true;
-                                StartPosition.Resolved = true;
                             }
                             if (ReversedOrder)
                             {
@@ -121,15 +120,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "C":
                     case "P":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.ShouldBeCut)
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -145,15 +144,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "D":
                     case "Q":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.Color == "red" || StartPosition.Previous.Color == "blue" || StartPosition.Previous.Color == "black")
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -169,15 +168,19 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "E":
                     case "R":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            var list = new List<string>();
+                            if (!list.Exists(x => x == StartPosition.Previous.Previous.Previous.Color)) list.Add(StartPosition.Previous.Previous.Previous.Color);
+                            if (!list.Exists(x => x == StartPosition.Previous.Previous.Color)) list.Add(StartPosition.Previous.Previous.Color);
+                            if (!list.Exists(x => x == StartPosition.Previous.Color)) list.Add(StartPosition.Previous.Color);
+                            if (list.Count == 2)
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -193,15 +196,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "F":
                     case "S":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if ((StartPosition.Previous.Previous.Color == StartPosition.Color && StartPosition.Previous.Color != StartPosition.Color) || (StartPosition.Previous.Color == StartPosition.Color && StartPosition.Previous.Previous.Color != StartPosition.Color))
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -217,15 +220,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "G":
                     case "T":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.Color == "yellow" || StartPosition.Previous.Color == "white" || StartPosition.Previous.Color == "green")
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -241,15 +244,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "H":
                     case "U":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (!StartPosition.Previous.ShouldBeCut)
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -265,15 +268,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "I":
                     case "V":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.Start + 1 != StartPosition.Start)
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -289,15 +292,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "J":
                     case "W":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.Color != "white" || StartPosition.Previous.Color != "black" || StartPosition.Previous.Color != "red")
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -313,15 +316,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "K":
                     case "X":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (StartPosition.Previous.Previous.Color != StartPosition.Previous.Color)
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -337,15 +340,15 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "L":
                     case "Y":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            if (!(StartPosition.Previous.End <= 6))
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -361,15 +364,16 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                     case "M":
                     case "Z":
                         {
-                            if (StartPosition.Previous.Color != "yellow" && StartPosition.Previous.Color != "blue" && StartPosition.Previous.Color != "green")
+                            var list = new List<string> { "white", "black" };
+                            if (!list.Contains(StartPosition.Previous.Previous.Color) || !list.Contains(StartPosition.Previous.Color))
                             {
                                 result += StartPosition.Start + "-" + StartPosition.End + ", ";
-                                StartPosition.Resolved = true;
+                                StartPosition.ShouldBeCut = true;
                             }
                             if (ReversedOrder)
                             {
@@ -385,14 +389,14 @@ namespace ktane_bomb_manual.Modules
                                 if (number == 27) number = 1;
                                 letter = InternalFunctions.GetLetterFromNumber(number);
                             }
-                            continue;
+                            break;
                         }
                 }
 
-                StartPosition.Resolved = true;
+                StartPosition.Previous.Resolved = true;
             }
-
-            return result;
+            Solved = true;
+            return result.Substring(0, result.Length - 2) + ".";
         }
 
         public void SetInitialPosition(Bomb bomb)
