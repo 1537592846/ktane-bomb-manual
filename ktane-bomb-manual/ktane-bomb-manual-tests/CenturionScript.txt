@@ -46,7 +46,6 @@
 	ice cream dave double chocolate tutti frutti neapolitan the classic | neapolitan
 	ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
 	laundry | wash leave dry alone, 110ºc wet clean
-	leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
 	led encryptions blue uniform tango alpha sierra | sierra
 	led encryptions blue xray golf india yankee | india
 	led encryptions orange foxtrot papa bravo delta | no idea
@@ -55,16 +54,6 @@
 	light cycle magenta yellow white red blue green | red magenta green blue white yellow
 	listening | $ & $ $ *
 	logic uniform OR NOT xray right arrow oscar || romeo NAND november down arrow NOT foxtrot | true false
-	micro circuits 10 pins start at 1 | blue
-	micro circuits 10 pins start at 10 | white
-	micro circuits 10 pins start at 2 | magenta
-	micro circuits 10 pins start at 3 | green
-	micro circuits 10 pins start at 4 | white
-	micro circuits 10 pins start at 5 | white
-	micro circuits 10 pins start at 6 | white
-	micro circuits 10 pins start at 7 | white
-	micro circuits 10 pins start at 8 | yellow
-	micro circuits 10 pins start at 9 | red
 	minefield blue green orange red black yellow | orange
 	monster board magmy shock fountain heavy rain tangle | fountain
 	mouse maze yellow torus in corner green sphere corredor 1 step t junction | yellow going to white
@@ -269,6 +258,17 @@ fast math bravo delta
 fast math golf charlie
 fast math november delta
 fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
+follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
+micro circuits 10 pins start at 1 | blue
+micro circuits 10 pins start at 10 | white
+micro circuits 10 pins start at 2 | magenta
+micro circuits 10 pins start at 3 | green
+micro circuits 10 pins start at 4 | white
+micro circuits 10 pins start at 5 | white
+micro circuits 10 pins start at 6 | white
+micro circuits 10 pins start at 7 | white
+micro circuits 10 pins start at 8 | yellow
+micro circuits 10 pins start at 9 | red
 morsematics first dot dot dash dot next
 morsematics second dash dot dash dot next
 morsematics third dash dot dash next |send dot dash dash dot done

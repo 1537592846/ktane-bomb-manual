@@ -100,7 +100,7 @@ namespace ktane_bomb_manual.Modules
             DEX = int.Parse(wordList[2]);
             INT = int.Parse(wordList[3]);
             Height = wordList[4];
-            Temperature = int.Parse(wordList[5].Replace("C", ""));
+            Temperature = int.Parse(wordList[5].Replace("c", ""));
             Gravity = double.Parse(wordList[6].Replace("m/s", ""), CultureInfo.InvariantCulture);
             Pressure = int.Parse(wordList[7].Replace("kpa", ""));
             var weaponAndItem = wordList.Skip(8).ToList();

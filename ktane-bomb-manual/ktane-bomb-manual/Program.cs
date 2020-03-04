@@ -68,6 +68,7 @@ namespace ktane_bomb_manual
 
         public static string Command(string command)
         {
+            command = command.ToLower();
             var commandReturn = "";
             try
             {
@@ -121,6 +122,7 @@ namespace ktane_bomb_manual
 
         public string MockCommand(string command)
         {
+            command = command.ToLower();
             if (mockBomb == null)
             {
                 mockBomb = new Bomb();
@@ -130,7 +132,7 @@ namespace ktane_bomb_manual
             {
                 if (command.Contains("new bomb"))
                 {
-                    mockBomb =  new Bomb();
+                    mockBomb = new Bomb();
                     return "Bomb reseted.";
                 }
                 if (command.Contains("bomb"))

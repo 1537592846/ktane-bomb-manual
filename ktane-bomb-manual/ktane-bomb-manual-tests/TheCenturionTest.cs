@@ -98,6 +98,21 @@ namespace Tests
             //Follow the Leader
             AssertCommand("Cut wires 5-6, 6-7, 9-10, 10-11, 11-12, 12-1, 4-5.", ValidateCommand("follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black"), "Follow the Leader");
 
+            //Microcontrollers
+            AssertCommand("Type added.",ValidateCommand("microcontrollers type is leds"),"Microcontrollers");
+            AssertCommand("Serial added.",ValidateCommand("microcontrollers serial is foxtrot november xray 7 5 3 7 0 7 5 9"),"Microcontrollers");
+            AssertCommand("Pin quantity added.",ValidateCommand("microcontrollers 10 pins"),"Microcontrollers");
+            AssertCommand("Blue.",ValidateCommand("microcontrollers at 1"), "Microcontrollers");
+            AssertCommand("Magenta.",ValidateCommand("microcontrollers at 2"), "Microcontrollers");
+            AssertCommand("Green.",ValidateCommand("microcontrollers at 3"), "Microcontrollers");
+            AssertCommand("White.",ValidateCommand("microcontrollers at 4"), "Microcontrollers");
+            AssertCommand("White.",ValidateCommand("microcontrollers at 5"), "Microcontrollers");
+            AssertCommand("White.",ValidateCommand("microcontrollers at 6"), "Microcontrollers");
+            AssertCommand("White.",ValidateCommand("microcontrollers at 7"), "Microcontrollers");
+            AssertCommand("Yellow.",ValidateCommand("microcontrollers at 8"), "Microcontrollers");
+            AssertCommand("Red.",ValidateCommand("microcontrollers at 9"), "Microcontrollers");
+            AssertCommand("White.",ValidateCommand("microcontrollers at 10"), "Microcontrollers");
+
             //Morsematics
             AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");
             AssertCommand("Character added.", ValidateCommand("morsematics second dash dot dash dot next"), "Morsematics");

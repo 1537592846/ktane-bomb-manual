@@ -369,6 +369,15 @@ namespace ktane_bomb_manual
             return Serial.Contains(character.ToString().ToUpper());
         }
 
+        public bool HasSerialChar(string characters)
+        {
+            foreach (var c in characters)
+            {
+                if (HasSerialChar(c)) return true;
+            }
+            return false;
+        }
+
         public bool HasAnyDuplicatedSerialChar()
         {
             foreach (var letter in Serial)
