@@ -197,9 +197,14 @@
             }
         }
 
+        public static int GetNumberFromPhoneticLetter(string phoneticLetter)
+        {
+            return GetNumberFromLetter(GetLetterFromPhoneticLetter(phoneticLetter));
+        }
+
         public static int GetNumber(string word)
         {
-            if (int.TryParse(word, out int number))return number;
+            if (int.TryParse(word, out int number)) return number;
 
             switch (word)
             {

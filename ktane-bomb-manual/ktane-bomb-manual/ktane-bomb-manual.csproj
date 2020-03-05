@@ -75,6 +75,7 @@
     <Compile Include="Modules\BinaryLEDs.cs" />
     <Compile Include="Modules\Bitmaps.cs" />
     <Compile Include="Modules\Bitwise.cs" />
+    <Compile Include="Modules\LEDEncryption.cs" />
     <Compile Include="Modules\Bulb.cs" />
     <Compile Include="Modules\Microcontrollers.cs" />
     <Compile Include="Modules\Button.cs" />

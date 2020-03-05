@@ -91,27 +91,33 @@ namespace Tests
             AssertCommand("19.", ValidateCommand("fast math bravo delta"), "Fast Math");
             AssertCommand("03.", ValidateCommand("fast math golf charlie"), "Fast Math");
             AssertCommand("65.", ValidateCommand("fast math november delta"), "Fast Math");
-            
+
             //FizzBuzz
             AssertCommand("Buzz, Number, Number.", ValidateCommand("fizz buzz white 0820717 red 0395544 blue 5764108"), "FizzBuzz");
 
             //Follow the Leader
             AssertCommand("Cut wires 5-6, 6-7, 9-10, 10-11, 11-12, 12-1, 4-5.", ValidateCommand("follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black"), "Follow the Leader");
 
+            //LED Encryption
+            AssertCommand("Press papa.", ValidateCommand("led encryption orange foxtrot papa bravo delta"), "LED Encryption");
+            AssertCommand("Press india.", ValidateCommand("led encryption blue xray golf india yankee"), "LED Encryption");
+            AssertCommand("Press sierra.", ValidateCommand("led encryption yellow mike tango oscar sierra"), "LED Encryption");
+            AssertCommand("Press sierra.", ValidateCommand("led encryption blue uniform tango alpha sierra"), "LED Encryption");
+
             //Microcontrollers
-            AssertCommand("Type added.",ValidateCommand("microcontrollers type is leds"),"Microcontrollers");
-            AssertCommand("Serial added.",ValidateCommand("microcontrollers serial is foxtrot november xray 7 5 3 7 0 7 5 9"),"Microcontrollers");
-            AssertCommand("Pin quantity added.",ValidateCommand("microcontrollers 10 pins"),"Microcontrollers");
-            AssertCommand("Blue.",ValidateCommand("microcontrollers at 1"), "Microcontrollers");
-            AssertCommand("Magenta.",ValidateCommand("microcontrollers at 2"), "Microcontrollers");
-            AssertCommand("Green.",ValidateCommand("microcontrollers at 3"), "Microcontrollers");
-            AssertCommand("White.",ValidateCommand("microcontrollers at 4"), "Microcontrollers");
-            AssertCommand("White.",ValidateCommand("microcontrollers at 5"), "Microcontrollers");
-            AssertCommand("White.",ValidateCommand("microcontrollers at 6"), "Microcontrollers");
-            AssertCommand("White.",ValidateCommand("microcontrollers at 7"), "Microcontrollers");
-            AssertCommand("Yellow.",ValidateCommand("microcontrollers at 8"), "Microcontrollers");
-            AssertCommand("Red.",ValidateCommand("microcontrollers at 9"), "Microcontrollers");
-            AssertCommand("White.",ValidateCommand("microcontrollers at 10"), "Microcontrollers");
+            AssertCommand("Type added.", ValidateCommand("microcontrollers type is leds"), "Microcontrollers");
+            AssertCommand("Serial added.", ValidateCommand("microcontrollers serial is foxtrot november xray 7 5 3 7 0 7 5 9"), "Microcontrollers");
+            AssertCommand("Pin quantity added.", ValidateCommand("microcontrollers 10 pins"), "Microcontrollers");
+            AssertCommand("White.", ValidateCommand("microcontrollers at 5"), "Microcontrollers");
+            AssertCommand("Magenta.", ValidateCommand("microcontrollers at 2"), "Microcontrollers");
+            AssertCommand("Red.", ValidateCommand("microcontrollers at 9"), "Microcontrollers");
+            AssertCommand("White.", ValidateCommand("microcontrollers at 7"), "Microcontrollers");
+            AssertCommand("Blue.", ValidateCommand("microcontrollers at 1"), "Microcontrollers");
+            AssertCommand("White.", ValidateCommand("microcontrollers at 6"), "Microcontrollers");
+            AssertCommand("White.", ValidateCommand("microcontrollers at 10"), "Microcontrollers");
+            AssertCommand("Green.", ValidateCommand("microcontrollers at 3"), "Microcontrollers");
+            AssertCommand("Yellow.", ValidateCommand("microcontrollers at 8"), "Microcontrollers");
+            AssertCommand("White.", ValidateCommand("microcontrollers at 4"), "Microcontrollers");
 
             //Morsematics
             AssertCommand("Character added.", ValidateCommand("morsematics first dot dot dash dot next"), "Morsematics");
