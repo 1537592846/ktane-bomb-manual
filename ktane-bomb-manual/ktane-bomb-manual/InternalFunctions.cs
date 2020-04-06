@@ -262,6 +262,11 @@
             }
         }
 
+        public static string ToPascalCase(string text)
+        {
+            return text.ToUpper()[0] + text.Substring(1);
+        }
+
         public static bool IsPhoneticLetter(string word)
         {
             return GetLetterFromPhoneticLetter(word) != "";

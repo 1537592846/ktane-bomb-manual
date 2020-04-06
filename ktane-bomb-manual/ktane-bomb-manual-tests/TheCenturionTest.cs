@@ -124,6 +124,9 @@ namespace Tests
             AssertCommand("Character added.", ValidateCommand("morsematics second dash dot dash dot next"), "Morsematics");
             AssertCommand("Send dot dash dash dot done.", ValidateCommand("morsematics third dash dot dash next"), "Morsematics");
 
+            //Murder
+            AssertCommand("Scarlett, with Dagger, in Library.", ValidateCommand("murder peacock green white scarlet rope spanner candle dagger hall"), "Murder");
+
             //Passwords
             AssertCommand("Letters added.", ValidateCommand("passwords first golf bravo quebec yankee oscar charlie"), "Passwords");
             AssertCommand("Letters added.", ValidateCommand("passwords second whisley oscar sierra tango xray alpha"), "Passwords");

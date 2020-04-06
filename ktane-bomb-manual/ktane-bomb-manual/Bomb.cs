@@ -321,8 +321,10 @@ namespace ktane_bomb_manual
             return 6 - GetSerialDigits().Count();
         }
 
-        public bool HasPort(string port)
+        public bool HasPort(string port,int quantity=0)
         {
+            if(quantity > 0)
+                return GetPortsQuantity(port)==quantity;
             return GetPort(port.ToLower()) != null;
         }
 
