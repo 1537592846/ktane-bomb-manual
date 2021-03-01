@@ -1,4 +1,6 @@
-﻿namespace ktane_bomb_manual
+﻿using System;
+
+namespace ktane_bomb_manual
 {
     public static class InternalFunctions
     {
@@ -274,11 +276,8 @@
 
         public static bool IsSquare(int value)
         {
-            for (int i = 1; i * i <= value; i++)
-            {
-                if (i * i == value) return true;
-            }
-            return false;
+            var root = Math.Sqrt(value);
+            return root==(int)root;
         }
 
         public static bool IsPrime(int value)

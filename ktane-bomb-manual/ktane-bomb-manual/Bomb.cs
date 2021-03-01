@@ -166,19 +166,10 @@ namespace ktane_bomb_manual
 
         public int GetPortsQuantity(string portName = "")
         {
-            var count = 0;
             if (string.IsNullOrEmpty(portName))
-                foreach (var port in Ports)
-                {
-                    count += port.Quantity;
-                }
+                return Ports.Sum(x => x.Quantity);
             else
-                try
-                {
-                    count = Ports.Where(x => x.Name == portName.ToLower()).FirstOrDefault().Quantity;
-                }
-                catch { count = 0; }
-            return count;
+                return Ports.Where(x => x.Name == portName.ToLower()).Sum(x => x.Quantity);
         }
 
         public int GetPortTypesQuantity()
@@ -190,7 +181,6 @@ namespace ktane_bomb_manual
         {
             return PortPlates;
         }
-
 
         public Indicator GetIndicator(string tag)
         {
@@ -263,8 +253,7 @@ namespace ktane_bomb_manual
 
         public List<string> GetSerialCharacters()
         {
-            return Serial.Where(x => !char.IsNumber(x)).Select(y => y.ToString()
-).ToList();
+            return Serial.Where(x => !char.IsNumber(x)).Select(y => y.ToString()).ToList();
         }
 
         public int GetSerialVowelsQuantity()
