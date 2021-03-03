@@ -10,6 +10,7 @@
     <AssemblyName>ktane-bomb-manual</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <LangVersion>9.0</LangVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
@@ -77,6 +78,7 @@
     <Compile Include="Modules\BinaryLEDs.cs" />
     <Compile Include="Modules\Bitmaps.cs" />
     <Compile Include="Modules\Bitwise.cs" />
+    <Compile Include="Modules\RememberMe.cs" />
     <Compile Include="Modules\LEDEncryption.cs" />
     <Compile Include="Modules\Bulb.cs" />
     <Compile Include="Modules\Microcontrollers.cs" />
