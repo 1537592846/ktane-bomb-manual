@@ -17,7 +17,7 @@ namespace ktane_bomb_manual
             Indicators = new List<Indicator>();
             Modules = new List<Module>();
             ModulesAvaliable = new Dictionary<string, Type>();
-            var classList = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+            var classList = System.Reflection.Assembly.GetAssembly(typeof(Program)).ExportedTypes
                  .Where(t => t.Namespace == "ktane_bomb_manual.Modules")
                  .ToList();
 
