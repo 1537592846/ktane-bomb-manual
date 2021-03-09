@@ -22,7 +22,7 @@ namespace ktane_bomb_manual.Modules
                 message += i % 3 == 2 ? " next. " : ", ";
             }
             while (!char.IsDigit(message.Last())) { message = message.Substring(0, message.Count() - 1); }
-            
+            Solved = true;
             return message+" done.";
         }
 
