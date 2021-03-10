@@ -423,6 +423,11 @@ namespace ktane_bomb_manual
             return GetBatteriesHolders() >= number;
         }
 
+        public bool HasExactlyBatteries(int number)
+        {
+            return HasManyBatteries(number) && !HasManyBatteries(number + 1);
+        }
+
         public bool HasManyIndicators(int number)
         {
             return Indicators.Count >= number;
