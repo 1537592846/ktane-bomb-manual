@@ -262,7 +262,8 @@ namespace Tests
             AssertCommand("Hold the button. What is the LED color?", ValidateCommand("square button blue run"), "Square button");
             AssertCommand("Release when the seconds are a multiple of seven.", ValidateCommand("square button led flick cyan"), "Square button");
 
-            //Two bits
+            //Text Field
+            AssertCommand("Row 1 column 1, row 2 column 4.", ValidateCommand("text field charlie"), "text field");
 
             //Bomb final validations
             var modulesNotSolved = "";
