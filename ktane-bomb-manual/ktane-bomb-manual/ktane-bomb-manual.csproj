@@ -73,6 +73,7 @@
     <Compile Include="Modules\3dMaze.cs" />
     <Compile Include="Modules\AdjacentLetters.cs" />
     <Compile Include="Modules\AdventureGames.cs" />
+    <Compile Include="Modules\TextField.cs" />
     <Compile Include="Modules\Alphabet.cs" />
     <Compile Include="Modules\Astrology.cs" />
     <Compile Include="Modules\BinaryLEDs.cs" />
