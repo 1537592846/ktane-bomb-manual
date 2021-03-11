@@ -88,6 +88,14 @@ namespace Tests
             #region Connection Check
             AssertCommand("Connection 1 is not connected. Connection 2 is not connected. Connection 3 is not connected. Connection 4 is not connected.", ValidateCommand("connection check 51 38 17 25"), "Connection Check");
             #endregion
+            #region Creation
+            AssertCommand("Where is water located?", ValidateCommand("creation rain"), "Creation");
+            AssertCommand("Mix air and fire to create energy.", ValidateCommand("creation upper right"), "Creation");
+            AssertCommand("Mix earth and water to create swamp.", ValidateCommand("creation clear"), "Creation");
+            AssertCommand("Mix energy and swamp to create life.", ValidateCommand("creation heat wave"), "Creation");
+            AssertCommand("Mix earth and life to create egg.", ValidateCommand("creation clear"), "Creation");
+            AssertCommand("Mix egg and fire to create turtle.", ValidateCommand("creation rain"), "Creation");
+            #endregion
             #region Cryptography            
             AssertCommand("Order is india, romeo, november, oscar, whiskey.", ValidateCommand("cryptography 4 3 4 3 3 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey"), "Cryptography");
             #endregion

@@ -7,11 +7,6 @@
 	complex button blue hold purple detonate purple press | botton button
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
 	crazy talk is 'empty space' | one six
-	creation day 1 rain
-	creation day 2 clear 
-	creation day 3 heat wave
-	creation day 4 clear | egg life earth
-	creation day 5 rain | turtle egg fire
 	cruel piano keys vibrato turn sharp | Eb Eb D D Eb Eb D Eb Eb D Eb
 	double oh 10 65 | 65 then 44 glitch
 	double oh 11 74 47 up down single| 47
@@ -152,6 +147,11 @@ complicated wires red star | cut
 complicated wires red | dont
 complicated wires white | cut
 connection check 51 38 17 25 | all red
+creation day 1 rain | air fire energy
+creation day 2 clear | water earth swamp
+creation day 3 heat wave | swamp energy life
+creation day 4 clear | life earth egg
+creation day 5 rain | egg fire turtle
 cryptography 4 3 4 3 3 4 4 4 3 5 3 8 2 3 7 5 november india romeo oscar whiskey | india romeo november oscar whiskey
 emoji math )= :) - :| :( | -54
 fast math alpha november
