@@ -4,7 +4,6 @@
     {
         int Row;
         int Column;
-        string LetterIndicators;
 
         public override string Solve(Bomb bomb)
         {
