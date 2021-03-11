@@ -3,12 +3,6 @@
 	battleship ? echo 3 charlie 4 alpha 1
 	broken button | three six burst other rca 'right submit'
 	chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
-	color squares 1 green | red
-	color squares 10 blue | column
-	color squares 12 column | green
-	color squares 14 green | magenta
-	color squares 5 red | yellow
-	color squares 8 yellow | blue
 	combination lock | 14 1 15
 	complex button blue hold purple detonate purple press | botton button
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
@@ -104,102 +98,8 @@
 	souvenir third broken button | burst
 	souvenir third chess coordinate | bravo 5
 	souvenir third query in two bits | 0 0
-	stage 01 is 3
-	stage 02 is 6
-	stage 03 is 2
-	stage 04 is 1 
-	stage 06 is 1
-	stage 07 is 5
-	stage 08 is 5
-	stage 09 is 3
-	stage 10 is 1
-	stage 11 is 3
-	stage 12 is 0
-	stage 13 is 0
-	stage 14 is 2
-	stage 15 is 7
-	stage 16 is 7
-	stage 17 is 9
-	stage 19 is 6
-	stage 20 is 9
-	stage 21 is 5
-	stage 22 is 7
-	stage 23 is 1
-	stage 24 is 2
-	stage 25 is 2
-	stage 26 is 6
-	stage 27 is 1
-	stage 28 is 6
-	stage 29 is 1
-	stage 30 is 6
-	stage 31 is 7
-	stage 32 is 5
-	stage 33 is 5
-	stage 34 is 3
-	stage 35 is 6
-	stage 36 is 4
-	stage 37 is 7
-	stage 38 is 6
-	stage 39 is 8
-	stage 40 is 0
-	stage 41 is 4
-	stage 42 is 0
-	stage 43 is 8
-	stage 44 is 6
-	stage 45 is 7
-	stage 46 is 4
-	stage 47 is 0
-	stage 48 is 3
-	stage 49 is 1
-	stage 50 is 9
-	stage 51 is 3
-	stage 52 is 5
-	stage 53 is 0
-	stage 54 is 4
-	stage 55 is 7
-	stage 57 is 6
-	stage 58 is 1
-	stage 59 is 8
-	stage 60 is 5
-	stage 61 is 9
-	stage 62 is 8
-	stage 63 is 7
-	stage 64 is 4
-	stage 65 is 5
-	stage 66 is 6
-	stage 67 is 8
-	stage 68 is 5
-	stage 69 is 7
-	stage 70 is 8
-	stage 71 is 5
-	stage 72 is 2
-	stage 73 is 1
-	stage 74 is 8
-	stage 75 is 0
-	stage 76 is 0
-	stage 77 is 3
-	stage 78 is 8
-	stage 79 is 8
-	stage 80 is 4
-	stage 81 is 8
-	stage 82 is 2
-	stage 83 is 1
-	stage 84 is 4
-	stage 86 is 5
-	stage 87 is 6
-	stage 88 is 8
-	stage 89 is 7
-	stage 90 is 7
-	stage 91 is 6
-	stage 92 is 3
-	stage 92 is 9
-	stage 94 is 0
-	stage 95 is 9
-	stage 96 is 5
-	stage 97 is 9
 	switches down down up up down | 3 4 5 2 1 4 3
 	symbolic passwords black star question mark teh omega short i ksi | question mark ksi short i teh black star omega
-	text field charlie | alpha 1 delta 2
 	third base 6 6 india 8 | hotel 6 sierra india
 	third base 6 oscar 8 india | zulu 8 - xray india - india 8 oscar 9
 	third base india 8 oscar 9 | upper right
@@ -239,6 +139,12 @@ chess echo 1 bravo 1 bravo 5 alpha 6 delta 4 delta 3 ! echo 5
 clock hours gold matches no number | 5
 clock minutes spades gold black am present | 23
 color math black white yellow magenta green addiction orange purple white orange | magenta black magenta grey
+colored squares 1 green | red
+colored squares 10 blue | column
+colored squares 12 column | green
+colored squares 14 green | magenta
+colored squares 5 red | yellow
+colored squares 8 yellow | blue
 complicated wires blue led | dont
 complicated wires red blue led | cut
 complicated wires red blue star led |dont
@@ -286,3 +192,97 @@ simon states top right blue
 simon states yellow | yellow
 square button blue run | hold
 square button led flick cyan | multiple of seven on minutes and seconds
+stage 01 is 3
+stage 02 is 6
+stage 03 is 2
+stage 04 is 1 
+stage 06 is 1
+stage 07 is 5
+stage 08 is 5
+stage 09 is 3
+stage 10 is 1
+stage 11 is 3
+stage 12 is 0
+stage 13 is 0
+stage 14 is 2
+stage 15 is 7
+stage 16 is 7
+stage 17 is 9
+stage 19 is 6
+stage 20 is 9
+stage 21 is 5
+stage 22 is 7
+stage 23 is 1
+stage 24 is 2
+stage 25 is 2
+stage 26 is 6
+stage 27 is 1
+stage 28 is 6
+stage 29 is 1
+stage 30 is 6
+stage 31 is 7
+stage 32 is 5
+stage 33 is 5
+stage 34 is 3
+stage 35 is 6
+stage 36 is 4
+stage 37 is 7
+stage 38 is 6
+stage 39 is 8
+stage 40 is 0
+stage 41 is 4
+stage 42 is 0
+stage 43 is 8
+stage 44 is 6
+stage 45 is 7
+stage 46 is 4
+stage 47 is 0
+stage 48 is 3
+stage 49 is 1
+stage 50 is 9
+stage 51 is 3
+stage 52 is 5
+stage 53 is 0
+stage 54 is 4
+stage 55 is 7
+stage 57 is 6
+stage 58 is 1
+stage 59 is 8
+stage 60 is 5
+stage 61 is 9
+stage 62 is 8
+stage 63 is 7
+stage 64 is 4
+stage 65 is 5
+stage 66 is 6
+stage 67 is 8
+stage 68 is 5
+stage 69 is 7
+stage 70 is 8
+stage 71 is 5
+stage 72 is 2
+stage 73 is 1
+stage 74 is 8
+stage 75 is 0
+stage 76 is 0
+stage 77 is 3
+stage 78 is 8
+stage 79 is 8
+stage 80 is 4
+stage 81 is 8
+stage 82 is 2
+stage 83 is 1
+stage 84 is 4
+stage 86 is 5
+stage 87 is 6
+stage 88 is 8
+stage 89 is 7
+stage 90 is 7
+stage 91 is 6
+stage 92 is 3
+stage 92 is 9
+stage 94 is 0
+stage 95 is 9
+stage 96 is 5
+stage 97 is 9
+text field charlie | alpha 1 delta 2
