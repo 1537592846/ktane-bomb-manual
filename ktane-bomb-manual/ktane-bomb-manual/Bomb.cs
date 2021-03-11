@@ -335,10 +335,20 @@ namespace ktane_bomb_manual
         {
             return GetIndicator(tag.ToLower()) != null;
         }
+        
+        public bool HasAnyLitIndicator()
+        {
+            return GetLitIndicators() > 0;
+        }
 
         public bool HasLitIndicator(string tag)
         {
             return HasIndicator(tag.ToLower()) ? GetIndicator(tag.ToLower()).LitIndicator : false;
+        }
+
+        public bool HasAnyUnlitIndicator()
+        {
+            return GetUnlitIndicators() > 0;
         }
 
         public bool HasUnlitIndicator(string tag)
@@ -410,7 +420,7 @@ namespace ktane_bomb_manual
 
         public bool HasSerialNumbersLetters(int numbers, int letters)
         {
-            return GetSerialCharacters().Count == letters && GetSerialDigits().Count == letters;
+            return GetSerialCharacters().Count == letters && GetSerialDigits().Count == numbers;
         }
 
         public bool HasManyBatteries(int number)
