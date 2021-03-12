@@ -36,7 +36,8 @@
 	laundry | wash leave dry alone, 110ºc wet clean
 	light cycle magenta yellow white red blue green | red magenta green blue white yellow
 	listening | $ & $ $ *
-	logic uniform OR NOT xray right arrow oscar || romeo NAND november down arrow NOT foxtrot | true false
+	logic romeo NAND november down arrow NOT foxtrot | true false
+	logic uniform OR NOT xray right arrow oscar 
 	minefield blue green orange red black yellow | orange
 	monster board magmy shock fountain heavy rain tangle | fountain
 	mouse maze yellow torus in corner green sphere corredor 1 step t junction | yellow going to white
@@ -44,7 +45,6 @@
 	mystic square center 4 no 9 | 4 3 1 5 8 2 6 7
 	neutral 5 blue | green
 	neutral see green magenta yellow | top left bottom right top
-	neutralization | laoh filter off 12 drops 
 	numberpad red red red white red green white green green green | 1 7 9 3
 	only connect acute charlie oscar uniform india reverse charlie umlat alpha bar delta standard romeo sierra | bar delta reverse charlie acute charlie then acute oscar uniform india
 	only connect corn viper twister flex two reed water eye of horus the lion team wonderes | lion
@@ -177,6 +177,7 @@ micro circuits 10 pins start at 9 | red
 morsematics first dot dot dash dot next
 morsematics second dash dot dash dot next
 morsematics third dash dot dash next |send dot dash dash dot done
+neutralization blue 5| laoh filter off 12 drops 
 passwords first golf bravo quebec yankee oscar charlie
 passwords second whiskey oscar sierra tango xray alpha ! password is 'could'
 plumbing | blue to blue

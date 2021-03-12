@@ -247,6 +247,9 @@ namespace Tests
             #region Murder
             AssertCommand("Scarlett, with Dagger, in Library.", ValidateCommand("murder peacock green white scarlet rope spanner candle dagger hall"), "Murder");
             #endregion
+            #region Neutralization
+            AssertCommand("Lithium hydroxide, lima india oscar hotel. 12 drops. Filter off.", ValidateCommand("neutralization blue 5"), "Neutralization");
+            #endregion
             #region Passwords
             AssertCommand("Letters added.", ValidateCommand("passwords first golf bravo quebec yankee oscar charlie"), "Passwords");
             AssertCommand("Letters added.", ValidateCommand("passwords second whisley oscar sierra tango xray alpha"), "Passwords");
