@@ -3,7 +3,6 @@
 	battleship ? echo 3 charlie 4 alpha 1
 	broken button | three six burst other rca 'right submit'
 	chord quality bravo delta echo golf# 3 2 4 3 | golf, 5 2 3
-	combination lock | 14 1 15
 	complex button blue hold purple detonate purple press | botton button
 	coordinates 3x5 "3,0" chinese 9 '1 right from 9 oclock' 5,1 '1 down from top right' 4,3 9 oclock c-4 | '1 down from top right' c-4
 	crazy talk is 'empty space' | one six
@@ -140,6 +139,7 @@ colored squares 12 column | green
 colored squares 14 green | magenta
 colored squares 5 red | yellow
 colored squares 8 yellow | blue
+combination lock | 14 1 15
 complicated wires blue led | dont
 complicated wires red blue led | cut
 complicated wires red blue star led |dont

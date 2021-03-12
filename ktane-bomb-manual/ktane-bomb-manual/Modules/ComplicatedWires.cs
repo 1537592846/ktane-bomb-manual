@@ -17,12 +17,17 @@ namespace ktane_bomb_manual.Modules
         {
             string config = "";
 
+            if (command.Contains("solved"))
+            {
+                Solved = true;
+                return "Module solved.";
+            }
+
             foreach (var word in command.Split(' ').Where(x => x == "none" || x == "white" || x == "blue" || x == "red" || x == "star" || x == "led"))
             {
                 config += word + " ";
             }
             wire = new ComplicatedWire(config.Trim());
-            Solved = true;
             return Solve(bomb);
         }
 

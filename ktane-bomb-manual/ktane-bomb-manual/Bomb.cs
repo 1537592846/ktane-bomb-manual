@@ -310,6 +310,11 @@ namespace ktane_bomb_manual
             return 6 - GetSerialDigits().Count();
         }
 
+        public int GetSolvedModules()
+        {
+            return Modules.Where(x => x.Solved).Count();
+        }
+
         public bool HasPort(string port,int quantity=0)
         {
             if(quantity > 0)
