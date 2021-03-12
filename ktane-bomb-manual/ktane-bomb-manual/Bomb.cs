@@ -1,4 +1,5 @@
 ﻿using ktane_bomb_manual.Modules;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,8 @@ namespace ktane_bomb_manual
 
             foreach (var classType in classList)
             {
-                if (!ModulesAvaliable.ContainsKey(classType.Name.ToLower())) ModulesAvaliable.Add(classType.Name.ToLower(), classType);
+                if (!ModulesAvaliable.ContainsKey(classType.Name.ToLower()))
+                    ModulesAvaliable.Add(classType.Name.ToLower(), classType);
             }
         }
 
@@ -216,9 +218,24 @@ namespace ktane_bomb_manual
             return BatteryAA + BatteryD;
         }
 
+        public int GetAABatteries()
+        {
+            return BatteryAA;
+        }
+
+        public int GetDBatteries()
+        {
+            return BatteryD;
+        }
+
         public int GetBatteriesHolders()
         {
             return BatteryD + BatteryAA / 2;
+        }
+
+        public int GetIndicators()
+        {
+            return Indicators.Count();
         }
 
         public int GetLitIndicators()
@@ -315,10 +332,10 @@ namespace ktane_bomb_manual
             return Modules.Where(x => x.Solved).Count();
         }
 
-        public bool HasPort(string port,int quantity=0)
+        public bool HasPort(string port, int quantity = 0)
         {
-            if(quantity > 0)
-                return GetPortsQuantity(port)==quantity;
+            if (quantity > 0)
+                return GetPortsQuantity(port) == quantity;
             return GetPort(port.ToLower()) != null;
         }
 
@@ -331,7 +348,23 @@ namespace ktane_bomb_manual
         {
             foreach (var port in Ports)
             {
-                if (port.Quantity >= 2) return true;
+                if (port.Quantity >= 2)
+                    return true;
+            }
+            return false;
+        }
+
+        public bool HasIndicatorWithLetter(string letter)
+        {
+            return GetLitIndicatorsWithLetter(letter) + GetUnlitIndicatorsWithLetter(letter) != 0;
+        }
+
+        public bool HasIndicatorWithLetterInWord(string word)
+        {
+            foreach (var letter in word)
+            {
+                if (HasIndicatorWithLetter(letter.ToString()))
+                    return true;
             }
             return false;
         }
@@ -340,7 +373,7 @@ namespace ktane_bomb_manual
         {
             return GetIndicator(tag.ToLower()) != null;
         }
-        
+
         public bool HasAnyLitIndicator()
         {
             return GetLitIndicators() > 0;
@@ -365,7 +398,8 @@ namespace ktane_bomb_manual
         {
             foreach (var character in characters)
             {
-                if (HasSerialChar(character)) return true;
+                if (HasSerialChar(character))
+                    return true;
             }
             return false;
         }
@@ -379,7 +413,8 @@ namespace ktane_bomb_manual
         {
             foreach (var c in characters)
             {
-                if (HasSerialChar(c)) return true;
+                if (HasSerialChar(c))
+                    return true;
             }
             return false;
         }
@@ -388,7 +423,8 @@ namespace ktane_bomb_manual
         {
             foreach (var letter in Serial)
             {
-                if (Serial.Where(x => x == letter).Count() >= 2) return true;
+                if (Serial.Where(x => x == letter).Count() >= 2)
+                    return true;
             }
             return false;
         }
