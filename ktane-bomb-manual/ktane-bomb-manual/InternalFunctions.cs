@@ -317,6 +317,11 @@ namespace ktane_bomb_manual
             return false;
         }
 
+        public static bool HasVowelInWord(string word)
+        {
+            return word.ToLower().Contains("a") || word.ToLower().Contains("e") || word.ToLower().Contains("i") || word.ToLower().Contains("o") || word.ToLower().Contains("u");
+        }
+
         public static int DigitalRoot(double number)
         {
             if (number.ToString().Length == 1)
