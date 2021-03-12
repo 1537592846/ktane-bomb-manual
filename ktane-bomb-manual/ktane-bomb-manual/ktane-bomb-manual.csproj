@@ -75,6 +75,7 @@
     <Compile Include="Modules\AdventureGames.cs" />
     <Compile Include="Modules\CombinationLocks.cs" />
     <Compile Include="Modules\ColoredSquares.cs" />
+    <Compile Include="Modules\Neutralization.cs" />
     <Compile Include="Modules\Creation.cs" />
     <Compile Include="Modules\TextField.cs" />
     <Compile Include="Modules\Alphabet.cs" />
