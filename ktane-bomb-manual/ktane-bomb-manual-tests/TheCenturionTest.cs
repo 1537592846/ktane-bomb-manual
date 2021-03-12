@@ -68,6 +68,9 @@ namespace Tests
             #region Color math
             AssertCommand("The order is magenta, black, magenta, gray.", ValidateCommand("color math black white yellow magenta green addiction orange purple white orange"), "Color Math");
             #endregion
+            #region Combination Locks
+            AssertCommand("The numbers are 5, 12, 17.", ValidateCommand("combination locks"),"Combination Locks");
+            #endregion
             #region Colored Squares
             AssertCommand("Press red.", ValidateCommand("colored squares 1 green"), "Colored Squares");
             AssertCommand("Press yellow.", ValidateCommand("colored squares 5"), "Colored Squares");
@@ -84,6 +87,7 @@ namespace Tests
             AssertCommand("Cut it.", ValidateCommand("complicated wires blue led"), "Complicated wires");
             AssertCommand("Cut it.", ValidateCommand("complicated wires red star"), "Complicated wires");
             AssertCommand("Cut it.", ValidateCommand("complicated wires white"), "Complicated wires");
+            AssertCommand("Module solved.", ValidateCommand("complicated wires solved"), "Complicated wires");
             #endregion
             #region Connection Check
             AssertCommand("Connection 1 is not connected. Connection 2 is not connected. Connection 3 is not connected. Connection 4 is not connected.", ValidateCommand("connection check 51 38 17 25"), "Connection Check");
