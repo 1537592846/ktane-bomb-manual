@@ -25,6 +25,7 @@ namespace Tests
             AssertCommand("Lit MSA indicator added.", ValidateCommand("bomb has indicator mike sierra alpha lit"), "Indicator configuration");
             AssertCommand("Parallel port added.", ValidateCommand("bomb has 1 parallel port"), "Port configuration");
             AssertCommand("Port plates added.", ValidateCommand("bomb has 1 port plate"), "Port configuration");
+            AssertCommand("Empty port plates added.", ValidateCommand("bomb has 1 empty port plate"), "Port configuration");
             AssertCommand("Time added.", ValidateCommand("bomb has 100 minutes"), "Port configuration");
             AssertCommand("Modules quantity added.", ValidateCommand("bomb has 101 modules"), "Port configuration");
             #endregion
@@ -217,6 +218,11 @@ namespace Tests
             AssertCommand("Number saved.", ValidateCommand("forget me not 5"), "Forget me not");
             AssertCommand("Number saved.", ValidateCommand("forget me not 9"), "Forget me not");
             AssertCommand("Listing the number, pay attention. 4, 1, 7 next. 9, 6, 2 next. 4, 4, 2 next. 0, 2, 9 next. 1, 3, 1 next. 1, 1, 3 next. 0, 8, 4 next. 6, 0, 1 next. 1, 8, 0 next. 5, 0, 5 next. 6, 6, 4 next. 2, 5, 1 next. 3, 0, 7 next. 9, 5, 1 next. 4, 1, 2 next. 7, 9, 4 next. 2, 8, 2 next. 4, 9, 5 next. 8, 1, 5 next. 7, 9, 6 next. 0, 7, 6 next. 5, 6, 7 next. 9, 6, 8 next. 7, 6, 3 next. 0, 7, 9 next. 1, 4, 3 next. 5, 2, 5 next. 9, 2, 5 next. 2, 2, 5 next. 5, 8, 8 next. 5, 0, 2 next. 9, 0, 4 next. 8 done.", ValidateCommand("forget me not solve"), "Forget me not");
+            #endregion
+            #region Ice Cream
+            AssertCommand("Ashley wants cookies and cream. Remember, even minutes.", ValidateCommand("ice cream ashley double strawberry cookies and cream double chocolate neapolitan vanilla"), "Ice Cream");
+            AssertCommand("Dave wants neapolitan. Remember, even minutes.", ValidateCommand("ice cream dave double chocolate tutti frutti neapolitan vanilla the classic"), "Ice Cream");
+            AssertCommand("Jade wants vanilla. Remember, even minutes.", ValidateCommand("ice cream jade mint chocolate chip vanilla double strawberry neapolitan cookies and cream"), "Ice Cream");
             #endregion
             #region LED Encryption
             AssertCommand("Press papa.", ValidateCommand("led encryption orange foxtrot papa bravo delta"), "LED Encryption");

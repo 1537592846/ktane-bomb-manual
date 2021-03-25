@@ -30,9 +30,6 @@
 	german whos on first moment | ogoht, so ein, charlie, zein, ten, so', moment
 	german whos on first warte | so'
 	hexagon left triangle at 3,3 down triangle at 4,6 green at 2,1 | southwest southeast northeast south south 	south southeast out of there
-	ice cream ashely double strawberry cookies and cream double chocolate neapolitan | cookies and cream
-	ice cream dave double chocolate tutti frutti neapolitan the classic | neapolitan
-	ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
 	laundry | wash leave dry alone, 110ºc wet clean
 	light cycle magenta yellow white red blue green | red magenta green blue white yellow
 	listening | $ & $ $ *
@@ -160,6 +157,9 @@ fast math golf charlie
 fast math november delta
 fizz buzz white 0820717 red 0395544 blue 5764108 ! buzz number number
 follow the leader 1 blue 3 white 4 white 5 yellow 6 red 7 black 9 blue 10 white 11 black 12 black 1 | cut 6 7 10 11 12 1 5 
+ice cream ashely double strawberry cookies and cream double chocolate neapolitan | cookies and cream
+ice cream dave double chocolate tutti frutti neapolitan the classic | neapolitan
+ice cream jade mint choc chip double strawberry neapolitan cookies and cream | vanilla
 led encryptions blue uniform tango alpha sierra | sierra
 led encryptions blue xray golf india yankee | india
 led encryptions orange foxtrot papa bravo delta | papa

@@ -14,6 +14,8 @@ namespace ktane_bomb_manual
             Serial = "";
             BatteryD = 0;
             BatteryAA = 0;
+            PortPlates = 0;
+            EmptyPortPlates = 0;
             Ports = new List<Port>();
             Indicators = new List<Indicator>();
             Modules = new List<Module>();
@@ -36,6 +38,7 @@ namespace ktane_bomb_manual
         public int Time { get; set; }
         public int ModulesQuantity { get; set; }
         public int PortPlates { get; set; }
+        public int EmptyPortPlates { get; set; }
         public List<Port> Ports { get; set; }
         public List<Indicator> Indicators { get; set; }
         public List<Module> Modules { get; set; }
@@ -76,6 +79,17 @@ namespace ktane_bomb_manual
                         }
                     }
                 }
+            }
+            if (command.Contains("empty"))
+            {
+                foreach (var word in command.Split(' '))
+                {
+                    if (InternalFunctions.IsNumber(word))
+                    {
+                        EmptyPortPlates = InternalFunctions.GetNumber(word);
+                    }
+                }
+                return "Empty port plates added.";
             }
             if (command.Contains("plate"))
             {
@@ -330,6 +344,11 @@ namespace ktane_bomb_manual
         public int GetSolvedModules()
         {
             return Modules.Where(x => x.Solved).Count();
+        }
+
+        public bool HasEmptyPortPlate()
+        {
+            return EmptyPortPlates != 0;
         }
 
         public bool HasPort(string port, int quantity = 0)
