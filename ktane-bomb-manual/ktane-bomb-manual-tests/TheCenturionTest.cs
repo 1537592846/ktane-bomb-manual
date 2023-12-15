@@ -297,7 +297,7 @@ namespace Tests
             #region Bomb final validations
             var modulesNotSolved = "";
             program.mockBomb.Modules.Where(x => !x.Solved).Select(x => x.ModuleName).ToList().ForEach(x => { modulesNotSolved += x + ", "; });
-            Assert.AreEqual(program.mockBomb.Modules.Count(), program.mockBomb.Modules.Where(x => x.Solved).Count(), "Not enough modules solved. Modules not solved: " + modulesNotSolved, null);
+            Assert.That(program.mockBomb.Modules.Where(x => x.Solved).Count(), Is.EqualTo(program.mockBomb.Modules.Count()), "Not enough modules solved. Modules not solved: " + modulesNotSolved, null);
             #endregion
         }
 
@@ -308,7 +308,7 @@ namespace Tests
 
         public void AssertCommand(string expected, string obtained, string message)
         {
-            Assert.AreEqual(expected, obtained, message, null);
+            Assert.That(obtained, Is.EqualTo(expected), message, null);
         }
     }
 }

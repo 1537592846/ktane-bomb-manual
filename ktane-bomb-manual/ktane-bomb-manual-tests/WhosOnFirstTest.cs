@@ -18,8 +18,8 @@ namespace Tests
         public void WhosOnFirst_Test()
         {
             var whosOnFirstModule = new WhosOnFirst();
-            Assert.AreEqual("Bottom left tile.", whosOnFirstModule.Command(bomb, "whos on first empty"), "Error test #1", null);
-            Assert.AreEqual("Press the first one to appear: Right. Left. First. No. Middle. Yes. Blank. What. Uhhh. Wait. Press. Ready. Okay. Nothing.", whosOnFirstModule.Command(bomb, "whos on first left"), "Error test #2", null);
+            Assert.That(whosOnFirstModule.Command(bomb, "whos on first empty"), Is.EqualTo("Bottom left tile."), "Error test #1", null);
+            Assert.That(whosOnFirstModule.Command(bomb, "whos on first left"), Is.EqualTo("Press the first one to appear: Right. Left. First. No. Middle. Yes. Blank. What. Uhhh. Wait. Press. Ready. Okay. Nothing."), "Error test #2", null);
         }
     }
 }

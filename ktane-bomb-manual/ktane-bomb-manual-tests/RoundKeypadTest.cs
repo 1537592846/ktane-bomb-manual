@@ -27,7 +27,7 @@ namespace Tests
             roundKeypadsModule.AddSymbol("question mark");
             roundKeypadsModule.AddSymbol("aesc");
             roundKeypadsModule.AddSymbol("lambda");
-            Assert.AreEqual("Press this ones: Aesc. Lambda. Little Yus. Lunate Sigma. Omega.", roundKeypadsModule.Solve(bomb), "Error Test #1", null);
+            Assert.That(roundKeypadsModule.Solve(bomb), Is.EqualTo("Press this ones: Aesc. Lambda. Little Yus. Lunate Sigma. Omega."), "Error Test #1", null);
         }
     }
 }

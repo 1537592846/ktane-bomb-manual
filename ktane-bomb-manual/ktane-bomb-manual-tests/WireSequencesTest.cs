@@ -18,16 +18,16 @@ namespace Tests
         public void WireSequences_Test()
         {
             var wireSequencesModule = new WireSequences();
-            Assert.AreEqual("Cut it.", wireSequencesModule.Command(bomb, "wire sequences red charlie"), null, "Error Test #1");
-            Assert.AreEqual("Cut it.", wireSequencesModule.Command(bomb, "wire sequences black alpha"), null, "Error Test #2");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences blue charlie"), null, "Error Test #3");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences black bravo"), null, "Error Test #4");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences black charlie"), null, "Error Test #5");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences red charlie"), null, "Error Test #6");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences black bravo"), null, "Error Test #7");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences blue bravo"), null, "Error Test #8");
-            Assert.AreEqual("Leave it.", wireSequencesModule.Command(bomb, "wire sequences blue charlie"), null, "Error Test #9");
-            Assert.AreEqual("Module solved.", wireSequencesModule.Command(bomb, "wire sequences solved"), null, "Error Test #10");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences red charlie"), Is.EqualTo("Cut it."), null, "Error Test #1");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences black alpha"), Is.EqualTo("Cut it."), null, "Error Test #2");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences blue charlie"), Is.EqualTo("Leave it."), null, "Error Test #3");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences black bravo"), Is.EqualTo("Leave it."), null, "Error Test #4");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences black charlie"), Is.EqualTo("Leave it."), null, "Error Test #5");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences red charlie"), Is.EqualTo("Leave it."), null, "Error Test #6");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences black bravo"), Is.EqualTo("Leave it."), null, "Error Test #7");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences blue bravo"), Is.EqualTo("Leave it."), null, "Error Test #8");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences blue charlie"), Is.EqualTo("Leave it."), null, "Error Test #9");
+            Assert.That(wireSequencesModule.Command(bomb, "wire sequences solved"), Is.EqualTo("Module solved."), null, "Error Test #10");
         }
     }
 }

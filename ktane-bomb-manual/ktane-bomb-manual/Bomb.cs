@@ -155,10 +155,7 @@ namespace ktane_bomb_manual
             return "Command not found.";
         }
 
-        public void AddStrike()
-        {
-            Strikes += 1;
-        }
+        public void AddStrike() => Strikes += 1;
 
         public Module GetModule(string module)
         {
@@ -168,40 +165,23 @@ namespace ktane_bomb_manual
             }
             catch
             {
-                Type type;
-                ModulesAvaliable.TryGetValue(char.IsNumber(module[0]) ? "_" : "" + module, out type);
+                ModulesAvaliable.TryGetValue(char.IsNumber(module[0]) ? "_" : "" + module, out Type type);
                 Modules.Add((Module)Activator.CreateInstance(type));
                 return GetModule(module);
             }
         }
 
-        public Port GetPort(string port)
-        {
-            return Ports.Where(x => x.Name == port.ToLower()).FirstOrDefault();
-        }
+        public Port GetPort(string port) => Ports.Where(x => x.Name == port.ToLower()).FirstOrDefault();
 
-        public int GetPortsQuantity(string portName = "")
-        {
-            if (string.IsNullOrEmpty(portName))
-                return Ports.Sum(x => x.Quantity);
-            else
-                return Ports.Where(x => x.Name == portName.ToLower()).Sum(x => x.Quantity);
-        }
+        public int GetPortsQuantity(string portName = "") => string.IsNullOrEmpty(portName)
+                ? Ports.Sum(x => x.Quantity)
+                : Ports.Where(x => x.Name == portName.ToLower()).Sum(x => x.Quantity);
 
-        public int GetPortTypesQuantity()
-        {
-            return Ports.Count;
-        }
+        public int GetPortTypesQuantity() => Ports.Count;
 
-        public int GetPortPlatesQuantity()
-        {
-            return PortPlates;
-        }
+        public int GetPortPlatesQuantity() => PortPlates;
 
-        public Indicator GetIndicator(string tag)
-        {
-            return Indicators.Where(x => x.Tag == tag.ToLower()).FirstOrDefault();
-        }
+        public Indicator GetIndicator(string tag) => Indicators.Where(x => x.Tag == tag.ToLower()).FirstOrDefault();
 
         public int GetLitIndicatorsInSerialQuantity()
         {
@@ -227,75 +207,33 @@ namespace ktane_bomb_manual
             return count;
         }
 
-        public int GetBatteries()
-        {
-            return BatteryAA + BatteryD;
-        }
+        public int GetBatteries() => BatteryAA + BatteryD;
 
-        public int GetAABatteries()
-        {
-            return BatteryAA;
-        }
+        public int GetAABatteries() => BatteryAA;
 
-        public int GetDBatteries()
-        {
-            return BatteryD;
-        }
+        public int GetDBatteries() => BatteryD;
 
-        public int GetBatteriesHolders()
-        {
-            return BatteryD + BatteryAA / 2;
-        }
+        public int GetBatteriesHolders() => BatteryD + BatteryAA / 2;
 
-        public int GetIndicators()
-        {
-            return Indicators.Count();
-        }
+        public int GetIndicators() => Indicators.Count();
 
-        public int GetLitIndicators()
-        {
-            return Indicators.Where(x => x.LitIndicator).Count();
-        }
+        public int GetLitIndicators() => Indicators.Count(x => x.LitIndicator);
 
-        public int GetUnlitIndicators()
-        {
-            return Indicators.Where(x => !x.LitIndicator).Count();
-        }
+        public int GetUnlitIndicators() => Indicators.Count(x => !x.LitIndicator);
 
-        public int GetLitIndicatorsWithLetter(string letter)
-        {
-            return Indicators.Where(x => x.Tag.Contains(letter.ToLower()) && x.LitIndicator).Count();
-        }
+        public int GetLitIndicatorsWithLetter(string letter) => Indicators.Count(x => x.Tag.Contains(letter.ToLower()) && x.LitIndicator);
 
-        public int GetUnlitIndicatorsWithLetter(string letter)
-        {
-            return Indicators.Where(x => x.Tag.Contains(letter.ToLower()) && !x.LitIndicator).Count();
-        }
+        public int GetUnlitIndicatorsWithLetter(string letter) => Indicators.Count(x => x.Tag.Contains(letter.ToLower()) && !x.LitIndicator);
 
-        public string GetSerialCharacterAtPosition(int position)
-        {
-            return Serial[position - 1].ToString().ToLower();
-        }
+        public string GetSerialCharacterAtPosition(int position) => Serial[position - 1].ToString().ToLower();
 
-        public List<int> GetSerialDigits()
-        {
-            return Serial.Where(x => char.IsNumber(x)).Select(y => int.Parse(y.ToString())).ToList();
-        }
+        public List<int> GetSerialDigits() => Serial.Where(x => char.IsNumber(x)).Select(y => int.Parse(y.ToString())).ToList();
 
-        public List<string> GetSerialCharacters()
-        {
-            return Serial.Where(x => !char.IsNumber(x)).Select(y => y.ToString()).ToList();
-        }
+        public List<string> GetSerialCharacters() => Serial.Where(x => !char.IsNumber(x)).Select(y => y.ToString()).ToList();
 
-        public int GetSerialVowelsQuantity()
-        {
-            return GetSerialCharacters().Where(x => x == "a" || x == "e" || x == "i" || x == "o" || x == "u").Count();
-        }
+        public int GetSerialVowelsQuantity() => GetSerialCharacters().Count(x => x == "a" || x == "e" || x == "i" || x == "o" || x == "u");
 
-        public int GetSerialConsonantsQuantity()
-        {
-            return GetSerialCharacters().Count() - GetSerialVowelsQuantity();
-        }
+        public int GetSerialConsonantsQuantity() => GetSerialCharacters().Count() - GetSerialVowelsQuantity();
 
         public int GetBiggestSerialDigit()
         {
@@ -321,47 +259,21 @@ namespace ktane_bomb_manual
             }
         }
 
-        public int GetSerialFirstNumberDigit()
-        {
-            return GetSerialDigits().First();
-        }
+        public int GetSerialFirstNumberDigit() => GetSerialDigits().First();
 
-        public int GetSerialLastNumberDigit()
-        {
-            return GetSerialDigits().Last();
-        }
+        public int GetSerialLastNumberDigit() => GetSerialDigits().Last();
 
-        public int GetManyDigitsInSerial()
-        {
-            return GetSerialDigits().Count();
-        }
+        public int GetManyDigitsInSerial() => GetSerialDigits().Count();
 
-        public int GetManyCharactersInSerial()
-        {
-            return 6 - GetSerialDigits().Count();
-        }
+        public int GetManyCharactersInSerial() => 6 - GetSerialDigits().Count();
 
-        public int GetSolvedModules()
-        {
-            return Modules.Where(x => x.Solved).Count();
-        }
+        public int GetSolvedModules() => Modules.Count(x => x.Solved);
 
-        public bool HasEmptyPortPlate()
-        {
-            return EmptyPortPlates != 0;
-        }
+        public bool HasEmptyPortPlate() => EmptyPortPlates != 0;
 
-        public bool HasPort(string port, int quantity = 0)
-        {
-            if (quantity > 0)
-                return GetPortsQuantity(port) == quantity;
-            return GetPort(port.ToLower()) != null;
-        }
+        public bool HasPort(string port, int quantity = 0) => quantity > 0 ? GetPortsQuantity(port) == quantity : GetPort(port.ToLower()) != null;
 
-        public bool HasManyStrikes(int number)
-        {
-            return Strikes >= number;
-        }
+        public bool HasManyStrikes(int number) => Strikes >= number;
 
         public bool HasAnyDuplicatedPort()
         {
@@ -373,10 +285,7 @@ namespace ktane_bomb_manual
             return false;
         }
 
-        public bool HasIndicatorWithLetter(string letter)
-        {
-            return GetLitIndicatorsWithLetter(letter) + GetUnlitIndicatorsWithLetter(letter) != 0;
-        }
+        public bool HasIndicatorWithLetter(string letter) => GetLitIndicatorsWithLetter(letter) + GetUnlitIndicatorsWithLetter(letter) != 0;
 
         public bool HasIndicatorWithLetterInWord(string word)
         {
@@ -388,30 +297,15 @@ namespace ktane_bomb_manual
             return false;
         }
 
-        public bool HasIndicator(string tag)
-        {
-            return GetIndicator(tag.ToLower()) != null;
-        }
+        public bool HasIndicator(string tag) => GetIndicator(tag.ToLower()) != null;
 
-        public bool HasAnyLitIndicator()
-        {
-            return GetLitIndicators() > 0;
-        }
+        public bool HasAnyLitIndicator() => GetLitIndicators() > 0;
 
-        public bool HasLitIndicator(string tag)
-        {
-            return HasIndicator(tag.ToLower()) ? GetIndicator(tag.ToLower()).LitIndicator : false;
-        }
+        public bool HasLitIndicator(string tag) => HasIndicator(tag.ToLower()) && GetIndicator(tag.ToLower()).LitIndicator;
 
-        public bool HasAnyUnlitIndicator()
-        {
-            return GetUnlitIndicators() > 0;
-        }
+        public bool HasAnyUnlitIndicator() => GetUnlitIndicators() > 0;
 
-        public bool HasUnlitIndicator(string tag)
-        {
-            return HasIndicator(tag.ToLower()) ? !GetIndicator(tag.ToLower()).LitIndicator : false;
-        }
+        public bool HasUnlitIndicator(string tag) => HasIndicator(tag.ToLower()) && !GetIndicator(tag.ToLower()).LitIndicator;
 
         public bool HasAnySerialChar(string characters)
         {
@@ -423,10 +317,7 @@ namespace ktane_bomb_manual
             return false;
         }
 
-        public bool HasSerialChar(char character)
-        {
-            return Serial.Contains(character.ToString().ToUpper());
-        }
+        public bool HasSerialChar(char character) => Serial.Contains(character.ToString().ToUpper());
 
         public bool HasSerialChar(string characters)
         {
@@ -448,85 +339,37 @@ namespace ktane_bomb_manual
             return false;
         }
 
-        public bool HasSerialVowel()
-        {
-            return HasSerialChar('A') || HasSerialChar('E') || HasSerialChar('I') || HasSerialChar('O') || HasSerialChar('U');
-        }
+        public bool HasSerialVowel() => HasSerialChar('A') || HasSerialChar('E') || HasSerialChar('I') || HasSerialChar('O') || HasSerialChar('U');
 
-        public bool HasSerialConsonant()
-        {
-            return !HasSerialVowel();
-        }
+        public bool HasSerialConsonant() => HasSerialChar('B') || HasSerialChar('C') || HasSerialChar('D') || HasSerialChar('F') || HasSerialChar('G') || HasSerialChar('H') || HasSerialChar('J') || HasSerialChar('K') || HasSerialChar('L') || HasSerialChar('M') || HasSerialChar('N') || HasSerialChar('P') || HasSerialChar('Q') || HasSerialChar('R') || HasSerialChar('S') || HasSerialChar('T') || HasSerialChar('V') || HasSerialChar('W') || HasSerialChar('X') || HasSerialChar('Y') || HasSerialChar('Z');
 
-        public bool HasSerialEven()
-        {
-            return HasSerialChar('2') || HasSerialChar('4') || HasSerialChar('6') || HasSerialChar('8') || HasSerialChar('0');
-        }
+        public bool HasSerialEven() => HasSerialChar('2') || HasSerialChar('4') || HasSerialChar('6') || HasSerialChar('8') || HasSerialChar('0');
 
-        public bool HasSerialOdd()
-        {
-            return !HasSerialEven();
-        }
+        public bool HasSerialOdd() => !HasSerialEven();
 
-        public bool HasSerialLastDigitEven()
-        {
-            return Serial.Last() == '2' || Serial.Last() == '4' || Serial.Last() == '6' || Serial.Last() == '8' || Serial.Last() == '0';
-        }
+        public bool HasSerialLastDigitEven() => Serial.Last() == '2' || Serial.Last() == '4' || Serial.Last() == '6' || Serial.Last() == '8' || Serial.Last() == '0';
 
-        public bool HasSerialLastDigitOdd()
-        {
-            return !HasSerialLastDigitEven();
-        }
+        public bool HasSerialLastDigitOdd() => !HasSerialLastDigitEven();
 
-        public bool HasSerialNumbersLetters(int numbers, int letters)
-        {
-            return GetSerialCharacters().Count == letters && GetSerialDigits().Count == numbers;
-        }
+        public bool HasSerialNumbersLetters(int numbers, int letters) => GetSerialCharacters().Count == letters && GetSerialDigits().Count == numbers;
 
-        public bool HasManyBatteries(int number)
-        {
-            return BatteryAA + BatteryD >= number;
-        }
+        public bool HasManyBatteries(int number) => BatteryAA + BatteryD >= number;
 
-        public bool HasManyBatteriesHolders(int number)
-        {
-            return GetBatteriesHolders() >= number;
-        }
+        public bool HasManyBatteriesHolders(int number) => GetBatteriesHolders() >= number;
 
-        public bool HasExactlyBatteries(int number)
-        {
-            return HasManyBatteries(number) && !HasManyBatteries(number + 1);
-        }
+        public bool HasExactlyBatteries(int number) => HasManyBatteries(number) && !HasManyBatteries(number + 1);
 
-        public bool HasManyIndicators(int number)
-        {
-            return Indicators.Count >= number;
-        }
+        public bool HasManyIndicators(int number) => Indicators.Count >= number;
 
-        public bool HasManyPorts(int number)
-        {
-            return Ports.Count >= number;
-        }
+        public bool HasManyPorts(int number) => Ports.Count >= number;
 
-        public bool HasManyDigitsInSerial(int number)
-        {
-            return GetManyDigitsInSerial() >= number;
-        }
+        public bool HasManyDigitsInSerial(int number) => GetManyDigitsInSerial() >= number;
 
-        public bool HasManyCharactersInSerial(int number)
-        {
-            return GetManyCharactersInSerial() >= number;
-        }
+        public bool HasManyCharactersInSerial(int number) => GetManyCharactersInSerial() >= number;
 
-        public bool HasMoreModulesThanTime()
-        {
-            return ModulesQuantity > Time;
-        }
+        public bool HasMoreModulesThanTime() => ModulesQuantity > Time;
 
-        public bool CanDefuse()
-        {
-            return Serial == "";
-        }
+        public bool CanDefuse() => Serial == "";
     }
 
     public class Port

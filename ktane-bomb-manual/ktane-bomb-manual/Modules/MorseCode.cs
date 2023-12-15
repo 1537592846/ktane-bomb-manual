@@ -27,32 +27,46 @@ namespace ktane_bomb_manual.Modules
             }
             AddSequence(command);
 
-            if (GetFrequence() != "") return Solve(bomb);
-
-            return "Sequence added";
+            return GetFrequence() != "" ? Solve(bomb) : "Sequence added";
         }
 
         public string GetFrequence()
         {
             var word = InternalFunctions.GetLetterFromMorse(Sequence1) + InternalFunctions.GetLetterFromMorse(Sequence2) + InternalFunctions.GetLetterFromMorse(Sequence3) + InternalFunctions.GetLetterFromMorse(Sequence4) + InternalFunctions.GetLetterFromMorse(Sequence5) + InternalFunctions.GetLetterFromMorse(Sequence6) + InternalFunctions.GetLetterFromMorse(Sequence1) + InternalFunctions.GetLetterFromMorse(Sequence2) + InternalFunctions.GetLetterFromMorse(Sequence3) + InternalFunctions.GetLetterFromMorse(Sequence4) + InternalFunctions.GetLetterFromMorse(Sequence5);
 
-            if (word.Contains("shell")) return "5 0 5";
-            if (word.Contains("halls")) return "5 1 5";
-            if (word.Contains("slick")) return "5 2 2";
-            if (word.Contains("trick")) return "5 3 2";
-            if (word.Contains("boxes")) return "5 3 5";
-            if (word.Contains("leaks")) return "5 4 2";
-            if (word.Contains("strobe")) return "5 4 5";
-            if (word.Contains("bistro")) return "5 5 2";
-            if (word.Contains("flick")) return "5 5 5";
-            if (word.Contains("bombs")) return "5 6 5";
-            if (word.Contains("break")) return "5 7 2";
-            if (word.Contains("brick")) return "5 7 5";
-            if (word.Contains("steak")) return "5 8 2";
-            if (word.Contains("sting")) return "5 9 2";
-            if (word.Contains("vector")) return "5 9 5";
-            if (word.Contains("beats")) return "6 0 0";
-            return "";
+            return word.Contains("shell")
+                ? "5 0 5"
+                : word.Contains("halls")
+                ? "5 1 5"
+                : word.Contains("slick")
+                ? "5 2 2"
+                : word.Contains("trick")
+                ? "5 3 2"
+                : word.Contains("boxes")
+                ? "5 3 5"
+                : word.Contains("leaks")
+                ? "5 4 2"
+                : word.Contains("strobe")
+                ? "5 4 5"
+                : word.Contains("bistro")
+                ? "5 5 2"
+                : word.Contains("flick")
+                ? "5 5 5"
+                : word.Contains("bombs")
+                ? "5 6 5"
+                : word.Contains("break")
+                ? "5 7 2"
+                : word.Contains("brick")
+                ? "5 7 5"
+                : word.Contains("steak")
+                ? "5 8 2"
+                : word.Contains("sting")
+                ? "5 9 2"
+                : word.Contains("vector")
+                ? "5 9 5"
+                : word.Contains("beats")
+                ? "6 0 0"
+                : "";
         }
 
         public void AddSequence(string sequence)

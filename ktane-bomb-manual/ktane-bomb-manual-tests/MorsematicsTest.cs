@@ -26,7 +26,7 @@ namespace Tests
             morsematicsModule.Command(bomb,"the first one is dot dot dash dot next");
             morsematicsModule.Command(bomb, "the second is dash dot dash dot next");
             morsematicsModule.Command(bomb, "and the third is dash dot dash next");
-            Assert.AreEqual("Send dot dash dash dot done.", morsematicsModule.Command(bomb,"solve morsematics"),"Error Test #1",null);
+            Assert.That(morsematicsModule.Command(bomb,"solve morsematics"), Is.EqualTo("Send dot dash dash dot done."), "Error Test #1",null);
         }
     }
 }

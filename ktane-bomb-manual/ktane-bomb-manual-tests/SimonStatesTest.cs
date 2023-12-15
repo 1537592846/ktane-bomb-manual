@@ -19,11 +19,11 @@ namespace Tests
         {
             var simonStatesModule = new SimonStates();
             simonStatesModule.Command(bomb, "simon states top left blue");
-            Assert.AreEqual("Press yellow.", simonStatesModule.Command(bomb, "simon states yellow"), "Error Test #1", null);
-            Assert.AreEqual("Press yellow blue.", simonStatesModule.Command(bomb, "simon states red green"), "Error Test #2", null);
-            Assert.AreEqual("Press yellow blue yellow.", simonStatesModule.Command(bomb, "simon states yellow red"), "Error Test #3", null);
-            Assert.AreEqual("Press yellow blue yellow red.", simonStatesModule.Command(bomb, "simon states all"), "Error Test #4", null);
-            Assert.AreEqual("Module defused.", simonStatesModule.Command(bomb, "simon says solved"), "Error Test #5", null);
+            Assert.That(simonStatesModule.Command(bomb, "simon states yellow"), Is.EqualTo("Press yellow."), "Error Test #1", null);
+            Assert.That(simonStatesModule.Command(bomb, "simon states red green"), Is.EqualTo("Press yellow blue."), "Error Test #2", null);
+            Assert.That(simonStatesModule.Command(bomb, "simon states yellow red"), Is.EqualTo("Press yellow blue yellow."), "Error Test #3", null);
+            Assert.That(simonStatesModule.Command(bomb, "simon states all"), Is.EqualTo("Press yellow blue yellow red."), "Error Test #4", null);
+            Assert.That(simonStatesModule.Command(bomb, "simon says solved"), Is.EqualTo("Module defused."), "Error Test #5", null);
         }
     }
 }

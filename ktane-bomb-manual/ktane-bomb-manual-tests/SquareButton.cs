@@ -23,11 +23,11 @@ namespace Tests
         public void SquareButton_Test()
         {
             var squareButtonModule = new SquareButton();
-            Assert.AreEqual("Just press it.", squareButtonModule.Command(bomb, "square button yellow elevate"), "Error Test #1", null);
+            Assert.That(squareButtonModule.Command(bomb, "square button yellow elevate"), Is.EqualTo("Just press it."), "Error Test #1", null);
 
             squareButtonModule = new SquareButton();
-            Assert.AreEqual("Hold the button. What is the LED color?", squareButtonModule.Command(bomb, "square button blue detonate"), "Error Test #4", null);
-            Assert.AreEqual("Release when the seconds add up to three or thirteen.", squareButtonModule.Command(bomb, "square button led orange"), "Error Test #7", null);
+            Assert.That(squareButtonModule.Command(bomb, "square button blue detonate"), Is.EqualTo("Hold the button. What is the LED color?"), "Error Test #4", null);
+            Assert.That(squareButtonModule.Command(bomb, "square button led orange"), Is.EqualTo("Release when the seconds add up to three or thirteen."), "Error Test #7", null);
         }
     }
 }

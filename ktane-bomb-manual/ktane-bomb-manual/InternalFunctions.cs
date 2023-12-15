@@ -4,275 +4,247 @@ namespace ktane_bomb_manual
 {
     public static class InternalFunctions
     {
-        public static string GetPhoneticLetterFromLetter(char letter)
-        {
-            return GetPhoneticLetterFromLetter(letter.ToString());
-        }
+        private const string V = "a";
 
-        public static string GetPhoneticLetterFromLetter(string letter)
-        {
-            switch (letter)
-            {
-                case "a": return "alpha";
-                case "b": return "bravo";
-                case "c": return "charlie";
-                case "d": return "delta";
-                case "e": return "echo";
-                case "f": return "foxtrot";
-                case "g": return "golf";
-                case "h": return "hotel";
-                case "i": return "india";
-                case "j": return "juliet";
-                case "k": return "kilo";
-                case "l": return "lima";
-                case "m": return "mike";
-                case "n": return "november";
-                case "o": return "oscar";
-                case "p": return "papa";
-                case "q": return "quebec";
-                case "r": return "romeo";
-                case "s": return "sierra";
-                case "t": return "tango";
-                case "u": return "uniform";
-                case "v": return "victor";
-                case "w": return "whiskey";
-                case "x": return "xray";
-                case "y": return "yankee";
-                case "z": return "zulu";
-                default: return "";
-            }
-        }
+        public static string GetPhoneticLetterFromLetter(char letter) => GetPhoneticLetterFromLetter(letter.ToString());
 
-        public static string GetLetterFromPhoneticLetter(string phoneticLetter)
+        public static string GetPhoneticLetterFromLetter(string letter) => letter switch
         {
-            switch (phoneticLetter)
-            {
-                case "alpha": return "a";
-                case "bravo": return "b";
-                case "charlie": return "c";
-                case "delta": return "d";
-                case "echo": return "e";
-                case "foxtrot": return "f";
-                case "golf": return "g";
-                case "hotel": return "h";
-                case "india": return "i";
-                case "juliet": return "j";
-                case "kilo": return "k";
-                case "lima": return "l";
-                case "mike": return "m";
-                case "november": return "n";
-                case "oscar": return "o";
-                case "papa": return "p";
-                case "quebec": return "q";
-                case "romeo": return "r";
-                case "sierra": return "s";
-                case "tango": return "t";
-                case "uniform": return "u";
-                case "victor": return "v";
-                case "whiskey": return "w";
-                case "xray": return "x";
-                case "yankee": return "y";
-                case "zulu": return "z";
-                default: return "";
-            }
-        }
+            V => "alpha",
+            "b" => "bravo",
+            "c" => "charlie",
+            "d" => "delta",
+            "e" => "echo",
+            "f" => "foxtrot",
+            "g" => "golf",
+            "h" => "hotel",
+            "i" => "india",
+            "j" => "juliet",
+            "k" => "kilo",
+            "l" => "lima",
+            "m" => "mike",
+            "n" => "november",
+            "o" => "oscar",
+            "p" => "papa",
+            "q" => "quebec",
+            "r" => "romeo",
+            "s" => "sierra",
+            "t" => "tango",
+            "u" => "uniform",
+            "v" => "victor",
+            "w" => "whiskey",
+            "x" => "xray",
+            "y" => "yankee",
+            "z" => "zulu",
+            _ => "",
+        };
 
-        public static string GetLetterFromMorse(string morse)
+        public static string GetLetterFromPhoneticLetter(string phoneticLetter) => phoneticLetter switch
         {
-            switch (morse)
-            {
-                case "dash next": return "t";
-                case "dash dash next": return "m";
-                case "dash dash dash next": return "o";
-                case "dash dash dash dash dash next": return "0";
-                case "dash dash dash dash dot next": return "9";
-                case "dash dash dash dot dot next": return "8";
-                case "dash dash dot next": return "g";
-                case "dash dash dot dash next": return "q";
-                case "dash dash dot dot next": return "z";
-                case "dash dash dot dot dot next": return "7";
-                case "dash dot next": return "n";
-                case "dash dot dash next": return "k";
-                case "dash dot dash dash next": return "y";
-                case "dash dot dash dot next": return "c";
-                case "dash dot dot next": return "d";
-                case "dash dot dot dash next": return "x";
-                case "dash dot dot dot next": return "b";
-                case "dash dot dot dot dot next": return "6";
-                case "dot next": return "e";
-                case "dot dash next": return "a";
-                case "dot dash dash next": return "w";
-                case "dot dash dash dash next": return "j";
-                case "dot dash dash dash dash next": return "1";
-                case "dot dash dash dot next": return "p";
-                case "dot dash dot next": return "r";
-                case "dot dash dot dot next": return "l";
-                case "dot dot next": return "i";
-                case "dot dot dash next": return "u";
-                case "dot dot dash dash dash next": return "2";
-                case "dot dot dash dot next": return "f";
-                case "dot dot dot next": return "s";
-                case "dot dot dot dash next": return "v";
-                case "dot dot dot dash dash next": return "3";
-                case "dot dot dot dot next": return "h";
-                case "dot dot dot dot dash next": return "4";
-                case "dot dot dot dot dot next": return "5";
-                default: return "";
-            }
-        }
+            "alpha" => "a",
+            "bravo" => "b",
+            "charlie" => "c",
+            "delta" => "d",
+            "echo" => "e",
+            "foxtrot" => "f",
+            "golf" => "g",
+            "hotel" => "h",
+            "india" => "i",
+            "juliet" => "j",
+            "kilo" => "k",
+            "lima" => "l",
+            "mike" => "m",
+            "november" => "n",
+            "oscar" => "o",
+            "papa" => "p",
+            "quebec" => "q",
+            "romeo" => "r",
+            "sierra" => "s",
+            "tango" => "t",
+            "uniform" => "u",
+            "victor" => "v",
+            "whiskey" => "w",
+            "xray" => "x",
+            "yankee" => "y",
+            "zulu" => "z",
+            _ => "",
+        };
 
-        public static string GetMorseFromLetter(string letter)
+        public static string GetLetterFromMorse(string morse) => morse switch
         {
-            switch (letter)
-            {
-                case "a": return "dot dash";
-                case "b": return "dash dot dot dot";
-                case "c": return "dash dot dash dot";
-                case "d": return "dash dot dot";
-                case "e": return "dot";
-                case "f": return "dot dot dash dot";
-                case "g": return "dash dash dot";
-                case "h": return "dot dot dot dot";
-                case "i": return "dot dot";
-                case "j": return "dot dash dash dash";
-                case "k": return "dash dot dash";
-                case "l": return "dot dash dot dot";
-                case "m": return "dash dash";
-                case "n": return "dash dot";
-                case "o": return "dash dash dash";
-                case "p": return "dot dash dash dot";
-                case "q": return "dash dash dot dash";
-                case "r": return "dot dash dot";
-                case "s": return "dot dot dot";
-                case "t": return "dash";
-                case "u": return "dot dot dash";
-                case "v": return "dot dot dot dash";
-                case "w": return "dot dash dash";
-                case "x": return "dash dot dot dash";
-                case "y": return "dash dot dash dash";
-                case "z": return "dash dash dot dot";
-                case "1": return "dot dash dash dash dash";
-                case "2": return "dot dot dash dash dash";
-                case "3": return "dot dot dot dash dash";
-                case "4": return "dot dot dot dot dash";
-                case "5": return "dot dot dot dot dot";
-                case "6": return "dash dot dot dot dot";
-                case "7": return "dash dash dot dot dot";
-                case "8": return "dash dash dash dot dot";
-                case "9": return "dash dash dash dash dot";
-                case "0": return "dash dash dash dash dash";
-                default: return "";
-            }
-        }
+            "dash next" => "t",
+            "dash dash next" => "m",
+            "dash dash dash next" => "o",
+            "dash dash dash dash dash next" => "0",
+            "dash dash dash dash dot next" => "9",
+            "dash dash dash dot dot next" => "8",
+            "dash dash dot next" => "g",
+            "dash dash dot dash next" => "q",
+            "dash dash dot dot next" => "z",
+            "dash dash dot dot dot next" => "7",
+            "dash dot next" => "n",
+            "dash dot dash next" => "k",
+            "dash dot dash dash next" => "y",
+            "dash dot dash dot next" => "c",
+            "dash dot dot next" => "d",
+            "dash dot dot dash next" => "x",
+            "dash dot dot dot next" => "b",
+            "dash dot dot dot dot next" => "6",
+            "dot next" => "e",
+            "dot dash next" => "a",
+            "dot dash dash next" => "w",
+            "dot dash dash dash next" => "j",
+            "dot dash dash dash dash next" => "1",
+            "dot dash dash dot next" => "p",
+            "dot dash dot next" => "r",
+            "dot dash dot dot next" => "l",
+            "dot dot next" => "i",
+            "dot dot dash next" => "u",
+            "dot dot dash dash dash next" => "2",
+            "dot dot dash dot next" => "f",
+            "dot dot dot next" => "s",
+            "dot dot dot dash next" => "v",
+            "dot dot dot dash dash next" => "3",
+            "dot dot dot dot next" => "h",
+            "dot dot dot dot dash next" => "4",
+            "dot dot dot dot dot next" => "5",
+            _ => "",
+        };
 
-        public static int GetNumberFromLetter(string letter)
+        public static string GetMorseFromLetter(string letter) => letter switch
         {
-            switch (letter.ToLower())
-            {
-                case "a": return 1;
-                case "b": return 2;
-                case "c": return 3;
-                case "d": return 4;
-                case "e": return 5;
-                case "f": return 6;
-                case "g": return 7;
-                case "h": return 8;
-                case "i": return 9;
-                case "j": return 10;
-                case "k": return 11;
-                case "l": return 12;
-                case "m": return 13;
-                case "n": return 14;
-                case "o": return 15;
-                case "p": return 16;
-                case "q": return 17;
-                case "r": return 18;
-                case "s": return 19;
-                case "t": return 20;
-                case "u": return 21;
-                case "v": return 22;
-                case "w": return 23;
-                case "x": return 24;
-                case "y": return 25;
-                case "z": return 26;
-                default: return 0;
-            }
-        }
+            "a" => "dot dash",
+            "b" => "dash dot dot dot",
+            "c" => "dash dot dash dot",
+            "d" => "dash dot dot",
+            "e" => "dot",
+            "f" => "dot dot dash dot",
+            "g" => "dash dash dot",
+            "h" => "dot dot dot dot",
+            "i" => "dot dot",
+            "j" => "dot dash dash dash",
+            "k" => "dash dot dash",
+            "l" => "dot dash dot dot",
+            "m" => "dash dash",
+            "n" => "dash dot",
+            "o" => "dash dash dash",
+            "p" => "dot dash dash dot",
+            "q" => "dash dash dot dash",
+            "r" => "dot dash dot",
+            "s" => "dot dot dot",
+            "t" => "dash",
+            "u" => "dot dot dash",
+            "v" => "dot dot dot dash",
+            "w" => "dot dash dash",
+            "x" => "dash dot dot dash",
+            "y" => "dash dot dash dash",
+            "z" => "dash dash dot dot",
+            "1" => "dot dash dash dash dash",
+            "2" => "dot dot dash dash dash",
+            "3" => "dot dot dot dash dash",
+            "4" => "dot dot dot dot dash",
+            "5" => "dot dot dot dot dot",
+            "6" => "dash dot dot dot dot",
+            "7" => "dash dash dot dot dot",
+            "8" => "dash dash dash dot dot",
+            "9" => "dash dash dash dash dot",
+            "0" => "dash dash dash dash dash",
+            _ => "",
+        };
 
-        public static int GetNumberFromPhoneticLetter(string phoneticLetter)
+        public static int GetNumberFromLetter(string letter) => letter.ToLower() switch
         {
-            return GetNumberFromLetter(GetLetterFromPhoneticLetter(phoneticLetter));
-        }
+            "a" => 1,
+            "b" => 2,
+            "c" => 3,
+            "d" => 4,
+            "e" => 5,
+            "f" => 6,
+            "g" => 7,
+            "h" => 8,
+            "i" => 9,
+            "j" => 10,
+            "k" => 11,
+            "l" => 12,
+            "m" => 13,
+            "n" => 14,
+            "o" => 15,
+            "p" => 16,
+            "q" => 17,
+            "r" => 18,
+            "s" => 19,
+            "t" => 20,
+            "u" => 21,
+            "v" => 22,
+            "w" => 23,
+            "x" => 24,
+            "y" => 25,
+            "z" => 26,
+            _ => 0,
+        };
 
-        public static int GetNumber(string word)
-        {
-            if (int.TryParse(word, out int number)) return number;
+        public static int GetNumberFromPhoneticLetter(string phoneticLetter) => GetNumberFromLetter(GetLetterFromPhoneticLetter(phoneticLetter));
 
-            switch (word)
-            {
-                case "one": return 1;
-                case "two": return 2;
-                case "three": return 3;
-                case "four": return 4;
-                case "five": return 5;
-                case "six": return 6;
-                case "seven": return 7;
-                case "eight": return 8;
-                case "nine": return 9;
-                case "zero": return 0;
-                case "ten": return 10;
-                case "eleven": return 11;
-                case "twelve": return 12;
-                default: return -1;
-            }
-        }
+        public static int GetNumber(string word) => int.TryParse(word, out int number)
+                ? number
+                : word switch
+                {
+                    "one" => 1,
+                    "two" => 2,
+                    "three" => 3,
+                    "four" => 4,
+                    "five" => 5,
+                    "six" => 6,
+                    "seven" => 7,
+                    "eight" => 8,
+                    "nine" => 9,
+                    "zero" => 0,
+                    "ten" => 10,
+                    "eleven" => 11,
+                    "twelve" => 12,
+                    _ => -1,
+                };
 
         public static string GetLetterFromNumber(int value)
         {
             value += 52;
-            value = value % 26;
+            value %= 26;
             if (value == 0) value = 26;
-            switch (value)
+            return value switch
             {
-                case 1: return "a";
-                case 2: return "b";
-                case 3: return "c";
-                case 4: return "d";
-                case 5: return "e";
-                case 6: return "f";
-                case 7: return "g";
-                case 8: return "h";
-                case 9: return "i";
-                case 10: return "j";
-                case 11: return "k";
-                case 12: return "l";
-                case 13: return "m";
-                case 14: return "n";
-                case 15: return "o";
-                case 16: return "p";
-                case 17: return "q";
-                case 18: return "r";
-                case 19: return "s";
-                case 20: return "t";
-                case 21: return "u";
-                case 22: return "v";
-                case 23: return "w";
-                case 24: return "x";
-                case 25: return "y";
-                case 26: return "z";
-                default: return "";
-            }
+                1 => "a",
+                2 => "b",
+                3 => "c",
+                4 => "d",
+                5 => "e",
+                6 => "f",
+                7 => "g",
+                8 => "h",
+                9 => "i",
+                10 => "j",
+                11 => "k",
+                12 => "l",
+                13 => "m",
+                14 => "n",
+                15 => "o",
+                16 => "p",
+                17 => "q",
+                18 => "r",
+                19 => "s",
+                20 => "t",
+                21 => "u",
+                22 => "v",
+                23 => "w",
+                24 => "x",
+                25 => "y",
+                26 => "z",
+                _ => "",
+            };
         }
 
-        public static string ToPascalCase(string text)
-        {
-            return text.ToUpper()[0] + text.Substring(1);
-        }
+        public static string ToPascalCase(string text) => text.ToUpper()[0] + text.Substring(1);
 
-        public static bool IsPhoneticLetter(string word)
-        {
-            return GetLetterFromPhoneticLetter(word) != "";
-        }
+        public static bool IsPhoneticLetter(string word) => GetLetterFromPhoneticLetter(word) != "";
 
         public static bool IsSquare(int value)
         {
@@ -313,14 +285,13 @@ namespace ktane_bomb_manual
                 case "dark grey":
                 case "jade":
                     return true;
+                default:
+                    break;
             }
             return false;
         }
 
-        public static bool HasVowelInWord(string word)
-        {
-            return word.ToLower().Contains("a") || word.ToLower().Contains("e") || word.ToLower().Contains("i") || word.ToLower().Contains("o") || word.ToLower().Contains("u");
-        }
+        public static bool HasVowelInWord(string word) => word.ToLower().Contains("a") || word.ToLower().Contains("e") || word.ToLower().Contains("i") || word.ToLower().Contains("o") || word.ToLower().Contains("u");
 
         public static int DigitalRoot(double number)
         {

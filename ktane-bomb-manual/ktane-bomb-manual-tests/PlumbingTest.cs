@@ -24,7 +24,7 @@ namespace Tests
         public void Plumbing_Test()
         {
             var plumbingModule = new Plumbing();
-            Assert.AreEqual("Input: blue. Output: yellow.",plumbingModule.Command(bomb,"solve plumbing"),"Error test #1",null);
+            Assert.That(plumbingModule.Command(bomb,"solve plumbing"), Is.EqualTo("Input: blue. Output: yellow."), "Error test #1",null);
         }
     }
 }

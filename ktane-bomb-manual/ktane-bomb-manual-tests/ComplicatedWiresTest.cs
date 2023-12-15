@@ -21,19 +21,19 @@ namespace Tests
             bomb.BatteryAA = 2;
 
             var complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Leave it.", complicatedWires.Command(bomb, "complicated wires is red blue"), "Error Test #1", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires is red blue"), Is.EqualTo("Leave it."), "Error Test #1", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Cut it.", complicatedWires.Command(bomb, "complicated wires is star led"), "Error Test #2", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires is star led"), Is.EqualTo("Cut it."), "Error Test #2", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Cut it.", complicatedWires.Command(bomb, "complicated wires white"), "Error Test #3", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires white"), Is.EqualTo("Cut it."), "Error Test #3", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Cut it.", complicatedWires.Command(bomb, "complicated wires notheing special"), "Error Test #4", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires notheing special"), Is.EqualTo("Cut it."), "Error Test #4", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Leave it.", complicatedWires.Command(bomb, "complicated wires red blue star led"), "Error Test #5", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires red blue star led"), Is.EqualTo("Leave it."), "Error Test #5", null);
         }
 
         [Test]
@@ -44,10 +44,10 @@ namespace Tests
             bomb.BatteryAA = 1;
 
             var complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Cut it.", complicatedWires.Command(bomb, "complicated wires red blue"), "Error Test #1", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires red blue"), Is.EqualTo("Cut it."), "Error Test #1", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Leave it.", complicatedWires.Command(bomb, "complicated wires star led"), "Error Test #2", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires star led"), Is.EqualTo("Leave it."), "Error Test #2", null);
         }
 
         [Test]
@@ -59,10 +59,10 @@ namespace Tests
             bomb.Ports.Add(new Port("parallel", 1));
 
             var complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Leave it.", complicatedWires.Command(bomb, "complicated wires red blue"), "Error Test #1", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires red blue"), Is.EqualTo("Leave it."), "Error Test #1", null);
 
             complicatedWires = new ComplicatedWires();
-            Assert.AreEqual("Leave it.", complicatedWires.Command(bomb, "complicated wires star led"), "Error Test #2", null);
+            Assert.That(complicatedWires.Command(bomb, "complicated wires star led"), Is.EqualTo("Leave it."), "Error Test #2", null);
         }
     }
 }

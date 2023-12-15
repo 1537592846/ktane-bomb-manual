@@ -24,7 +24,7 @@ namespace Tests
             passwordsModule.Command(bomb, "passwords third one is alpha tango sierra hotel xray");
             passwordsModule.Command(bomb, "passwords fourth is mike november uniform whiskey romeo");
             passwordsModule.Command(bomb, "passwords last one is november foxtrot lima delta alpha");
-            Assert.AreEqual("The password is learn.", passwordsModule.Command(bomb,"solve passwords"), "Error Test #1", null);
+            Assert.That(passwordsModule.Command(bomb,"solve passwords"), Is.EqualTo("The password is learn."), "Error Test #1", null);
         }
     }
 }

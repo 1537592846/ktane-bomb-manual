@@ -33,7 +33,7 @@ namespace Tests
             forgetMeNotModule.AddNumber(bomb, "9");
             forgetMeNotModule.AddNumber(bomb, "3");
 
-            Assert.AreEqual("Listing the number, pay attention. 3, 9, 8 next. 1, 4, 8 next. 0, 7 done.", forgetMeNotModule.Solve(bomb), "Error test #1", null);
+            Assert.That(forgetMeNotModule.Solve(bomb), Is.EqualTo("Listing the number, pay attention. 3, 9, 8 next. 1, 4, 8 next. 0, 7 done."), "Error test #1", null);
 
             bomb = new Bomb();
             bomb.Serial = "TH8ZK9";
@@ -141,7 +141,7 @@ namespace Tests
             forgetMeNotModule.AddNumber(bomb, "5");
             forgetMeNotModule.AddNumber(bomb, "9");
 
-            Assert.AreEqual("Listing the number, pay attention. 4, 1, 7 next. 9, 6, 2 next. 4, 4, 2 next. 0, 2, 9 next. 1, 3, 1 next. 1, 1, 3 next. 0, 8, 4 next. 6, 0, 1 next. 1, 8, 0 next. 5, 0, 5 next. 6, 6, 4 next. 2, 5, 1 next. 3, 0, 7 next. 9, 5, 1 next. 4, 1, 2 next. 7, 9, 4 next. 2, 8, 2 next. 4, 9, 5 next. 8, 1, 5 next. 7, 9, 6 next. 0, 7, 6 next. 5, 6, 7 next. 9, 6, 8 next. 7, 6, 3 next. 0, 7, 9 next. 1, 4, 3 next. 5, 2, 5 next. 9, 2, 5 next. 2, 2, 5 next. 5, 8, 8 next. 5, 0, 2 next. 9, 0, 4 next. 8 done.", forgetMeNotModule.Solve(bomb), "Error test #1", null);
+            Assert.That(forgetMeNotModule.Solve(bomb), Is.EqualTo("Listing the number, pay attention. 4, 1, 7 next. 9, 6, 2 next. 4, 4, 2 next. 0, 2, 9 next. 1, 3, 1 next. 1, 1, 3 next. 0, 8, 4 next. 6, 0, 1 next. 1, 8, 0 next. 5, 0, 5 next. 6, 6, 4 next. 2, 5, 1 next. 3, 0, 7 next. 9, 5, 1 next. 4, 1, 2 next. 7, 9, 4 next. 2, 8, 2 next. 4, 9, 5 next. 8, 1, 5 next. 7, 9, 6 next. 0, 7, 6 next. 5, 6, 7 next. 9, 6, 8 next. 7, 6, 3 next. 0, 7, 9 next. 1, 4, 3 next. 5, 2, 5 next. 9, 2, 5 next. 2, 2, 5 next. 5, 8, 8 next. 5, 0, 2 next. 9, 0, 4 next. 8 done."), "Error test #1", null);
         }
     }
 }
